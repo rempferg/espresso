@@ -1783,7 +1783,7 @@ int ek_init() {
 
   ek_integrate_electrostatics();
   
-  ek_print_parameters(); //TODO delete
+//  ek_print_parameters(); //TODO delete
 
   return 0;
 }
@@ -2447,14 +2447,8 @@ int ek_set_T(double T) {
 }
 
 int ek_load_efield_from_file(char* filename) {
-
-  printf("reading efield\n"); //TODO delete
-
-  cuda_safe_mem( cudaMalloc( (void**) &ek_parameters.efield,
-                             ek_parameters.number_of_nodes * 3 * sizeof(float) ) );
                              
-  float* tmp = (float*) malloc(ek_parameters.number_of_nodes * 3 * sizeof(float));
-  
+  float* efield_host = (float*) malloc(ek_parameters.number_of_nodes * 3 * sizeof(float));
   FILE* fp = fopen(filename, "r");
   
   if(fp == NULL)
@@ -2463,14 +2457,16 @@ int ek_load_efield_from_file(char* filename) {
   for(int z = 0; z < ek_parameters.dim_z; z++)
     for(int y = 0; y < ek_parameters.dim_y; y++)
       for(int x = 0; x < ek_parameters.dim_x; x++)
-        for(int i = 0; x < 3; i++)
-          fscanf(fp, "%f", &tmp[ i * ek_parameters.number_of_nodes + z * ek_parameters.dim_y * ek_parameters.dim_x + y * ek_parameters.dim_x + x ]);
+        for(int i = 0; i < 3; i++)
+          fscanf(fp, "%f", &efield_host[ i * ek_parameters.number_of_nodes + z * ek_parameters.dim_y * ek_parameters.dim_x + y * ek_parameters.dim_x + x ]);
 
   fclose(fp);
+
+  cuda_safe_mem( cudaMalloc( (void**) &ek_parameters.efield,
+                             ek_parameters.number_of_nodes * 3 * sizeof(float) ) );
+  cuda_safe_mem( cudaMemcpy( ek_parameters.efield, efield_host, ek_parameters.number_of_nodes * 3 * sizeof(float), cudaMemcpyHostToDevice) );
   
-  cuda_safe_mem( cudaMemcpy( tmp, ek_parameters.efield, ek_parameters.number_of_nodes * 3 * sizeof(float), cudaMemcpyHostToDevice) );
-  
-  free(tmp);
+  free(efield_host);
   
   return 0;
 }
