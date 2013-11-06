@@ -102,6 +102,7 @@ typedef struct {
   cufftReal* greensfcn;
   cufftComplex* charge_potential;
   float* j;
+  float* efield;
   float* rho[MAX_NUMBER_OF_SPECIES];
   int species_index[MAX_NUMBER_OF_SPECIES];
   float density[MAX_NUMBER_OF_SPECIES];
@@ -136,6 +137,7 @@ int ek_set_density(int species, double density);
 int ek_set_D(int species, double D);
 int ek_set_valency(int species, double valency);
 int ek_set_ext_force(int species, double ext_force_x, double ext_force_y, double ext_force_z);
+int ek_load_efield_from_file(char* filename);
 
 #ifdef EK_BOUNDARIES
 void ek_init_species_density_wallcharge(float* wallcharge_species_density, int wallcharge_species);

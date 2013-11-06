@@ -37,6 +37,7 @@ int tclcommand_electrokinetics(ClientData data, Tcl_Interp *interp, int argc, ch
     Tcl_AppendResult(interp, "Usage of \"electrokinetics\":", (char *)NULL);
     Tcl_AppendResult(interp, "electrokinetics [agrid #float] [viscosity #float] [friction #float]\n", (char *)NULL);
     Tcl_AppendResult(interp, "                [bulk_viscosity #float] [gamma_even #float] [gamma_odd #float]\n", (char *)NULL);
+    Tcl_AppendResult(interp, "                [efield #string]\n", (char *)NULL);
     Tcl_AppendResult(interp, "                [reaction [reactant_index #int] [product0_index #int] [product1_index #int] \
                                               [reactant_resrv_density #float] [product0_resrv_density #float] \
                                               [product1_resrv_density #float] [reaction_rate #float] \
@@ -368,6 +369,25 @@ int tclcommand_electrokinetics(ClientData data, Tcl_Interp *interp, int argc, ch
         else {
             Tcl_AppendResult(interp, "Unknown feature \"", argv[0], "\" in electrokinetics print\n", (char *)NULL);
             return TCL_ERROR;
+        }
+      }
+      else if(ARG0_IS_S("efield")) {
+        argc--;
+        argv++;
+        
+        if(argc < 1) {
+          Tcl_AppendResult(interp, "electrokinetics efield requires one string as argument\n", (char *)NULL);
+          return TCL_ERROR;
+        }
+        else {
+          if(ek_load_efield_from_file(argv[0]) == 0) {
+            argc--;
+            argv++;
+          }
+          else {
+            Tcl_AppendResult(interp, "Unknown error loading electrokinetics efield from file\n", (char *)NULL);
+            return TCL_ERROR;
+          }
         }
       }
       else if(ARG0_IS_S("T")) {
