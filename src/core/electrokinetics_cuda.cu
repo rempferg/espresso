@@ -1875,8 +1875,7 @@ __global__ void ek_calculate_system_charge() {
 
 
 //TODO delete ?? (it has the previous step setting now)
-__global__ void ek_clear_node_force( LB_node_force_gpu node_f ) {
-
+__global__ void ek_clear_node_force( LB_node_force_gpu node_f, LB_parameters_gpu * ek_lbparameters_gpu ) {
   unsigned int index = ek_getThreadIndex();
 
   if( index < ek_parameters_gpu.number_of_nodes )
@@ -1888,9 +1887,26 @@ __global__ void ek_clear_node_force( LB_node_force_gpu node_f ) {
     ek_parameters_gpu.lb_force_previous[ 2 * ek_parameters_gpu.number_of_nodes + index ] = 
                            node_f.force[ 2 * ek_parameters_gpu.number_of_nodes + index ];
 
-    node_f.force[ index ]                                         = 0.0f;
-    node_f.force[ ek_parameters_gpu.number_of_nodes + index ]     = 0.0f;
-    node_f.force[ 2 * ek_parameters_gpu.number_of_nodes + index ] = 0.0f;
+#ifdef EXTERNAL_FORCES
+    if(ek_lbparameters_gpu->external_force)
+    {
+      float force_factor=powf(ek_lbparameters_gpu->agrid,4)*ek_lbparameters_gpu->tau*ek_lbparameters_gpu->tau;
+      node_f.force[                                         index] = ek_lbparameters_gpu->ext_force[0]*force_factor;
+      node_f.force[     ek_parameters_gpu.number_of_nodes + index] = ek_lbparameters_gpu->ext_force[1]*force_factor;
+      node_f.force[ 2 * ek_parameters_gpu.number_of_nodes + index] = ek_lbparameters_gpu->ext_force[2]*force_factor;
+    }
+    else
+    {
+      node_f.force[                                         index] = 0.0f;
+      node_f.force[     ek_parameters_gpu.number_of_nodes + index] = 0.0f;
+      node_f.force[ 2 * ek_parameters_gpu.number_of_nodes + index] = 0.0f;
+    }
+#else
+    /** reset force */
+    node_f.force[                                         index] = 0.0f;
+    node_f.force[     ek_parameters_gpu.number_of_nodes + index] = 0.0f;
+    node_f.force[ 2 * ek_parameters_gpu.number_of_nodes + index] = 0.0f;
+#endif
   }
 }
 
@@ -2002,7 +2018,7 @@ void ek_integrate() {
      since in the reaction set up the previous-step LB force is added to the flux
      (in ek_calculate_quantities / ek_displacement), which is copied in this routine */
 
-  KERNELCALL( ek_clear_node_force, dim_grid, threads_per_block, ( node_f ) );
+  KERNELCALL( ek_clear_node_force, dim_grid, threads_per_block, ( node_f, ek_lbparameters_gpu ) );
 
 
 
@@ -2307,7 +2323,7 @@ int ek_init() {
         threads_per_block * blocks_per_grid_y - 1
       ) / ( threads_per_block * blocks_per_grid_y );
     dim_grid = make_uint3( blocks_per_grid_x, blocks_per_grid_y, 1 );
-    KERNELCALL( ek_clear_node_force, dim_grid, threads_per_block, ( node_f ) );
+    KERNELCALL( ek_clear_node_force, dim_grid, threads_per_block, ( node_f, ek_lbparameters_gpu ) );
     
     cuda_safe_mem( cudaMalloc( (void**) &ek_parameters.charge_potential,
                              sizeof( cufftComplex ) *
