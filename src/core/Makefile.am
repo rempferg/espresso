@@ -65,6 +65,8 @@ libEspresso_la_SOURCES = \
 	lb.cpp lb.hpp \
 	lb-boundaries.cpp lb-boundaries.hpp \
 	lb-d3q18.hpp lb-d3q19.hpp \
+	lb/lbfluid.cpp lb/lbfluid.hpp \
+	lb/scfluid.cpp lb/scfluid.hpp \
 	lbgpu.cpp lbgpu.hpp\
 	lees_edwards.cpp lees_edwards.hpp \
 	lees_edwards_domain_decomposition.cpp lees_edwards_domain_decomposition.hpp \

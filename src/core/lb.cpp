@@ -2884,8 +2884,10 @@ void lattice_boltzmann_update() {
     if (fluidstep>=factor) {
         fluidstep=0;
 #ifdef PULL
+printf("WAAAAAAAAA SHIT FUUUUUCK\n");
         lb_stream_collide();
 #else // PULL
+printf("PUUUUUUH SHHH\n");
         lb_collide_stream();
 #endif // PULL
     }
