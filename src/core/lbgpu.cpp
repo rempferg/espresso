@@ -286,17 +286,7 @@ void lb_reinit_parameters_gpu() {
       //lbpar_gpu.gamma_odd[ii] = lbpar_gpu.gamma_shear[ii]; //uncomment for BGK
     }
     
-    //lbpar_gpu.gamma_even[ii] = 0.0; //uncomment for special case of BGK
-    //lbpar_gpu.gamma_odd[ii] = 0.0;
-    //lbpar_gpu.gamma_shear[ii] = 0.0;
-    //lbpar_gpu.gamma_bulk[ii] = 0.0;
-    
-    //printf("gamma_shear=%e\n", lbpar_gpu.gamma_shear[ii]);
-    //printf("gamma_bulk=%e\n", lbpar_gpu.gamma_bulk[ii]);
-    //printf("TRT gamma_odd=%e\n", lbpar_gpu.gamma_odd[ii]);
-    //printf("TRT gamma_even=%e\n", lbpar_gpu.gamma_even[ii]);
-    //printf("\n");
-
+   
 #ifdef SHANCHEN
     if (lbpar_gpu.mobility[0] > 0.0) {
       lbpar_gpu.gamma_mobility[0] = 1. - 2./(6.*lbpar_gpu.mobility[0]*lbpar_gpu.tau/(lbpar_gpu.agrid*lbpar_gpu.agrid) + 1.);

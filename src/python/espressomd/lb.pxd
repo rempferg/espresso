@@ -31,6 +31,11 @@ IF LB_GPU or LB:
     # extern functions and structs
     #
     ##############################################
+    cdef extern from "lbgpu.hpp": 
+        int lb_lbnode_set_extforce_GPU(int * ind, double * f)
+
+    cdef extern from "lattice.hpp":
+        cdef int LATTICE_LB_GPU "LATTICE_LB_GPU"
 
     cdef extern from "lb.hpp":
 
@@ -187,6 +192,46 @@ IF LB_GPU or LB:
 
 ###############################################
 
+    cdef inline python_lbfluid_set_gamma_odd(p_gamma_odd):
+
+        IF SHANCHEN:
+            cdef double c_gamma_odd[2]
+        ELSE:
+            cdef double c_gamma_odd[1]
+        # get pointers
+        if isinstance(p_gamma_odd, float) or isinstance(p_gamma_odd, int):
+            c_gamma_odd[0] = <float > p_gamma_odd
+        else:
+            c_gamma_odd = p_gamma_odd
+        # call c-function
+        if(lb_lbfluid_set_gamma_odd(c_gamma_odd)):
+            raise Exception(
+                "lb_fluid_set_gamma_odd error at C-level interface")
+
+        return 0
+
+###############################################
+
+    cdef inline python_lbfluid_set_gamma_even(p_gamma_even):
+
+        IF SHANCHEN:
+            cdef double c_gamma_even[2]
+        ELSE:
+            cdef double c_gamma_even[1]
+        # get pointers
+        if isinstance(p_gamma_even, float) or isinstance(p_gamma_even, int):
+            c_gamma_even[0] = <float > p_gamma_even
+        else:
+            c_gamma_even = p_gamma_even
+        # call c-function
+        if(lb_lbfluid_set_gamma_even(c_gamma_even)):
+            raise Exception(
+                "lb_fluid_set_gamma_even error at C-level interface")
+
+        return 0
+
+###############################################
+
     cdef inline python_lbfluid_set_friction(p_friction):
 
         IF SHANCHEN:
@@ -302,6 +347,42 @@ IF LB_GPU or LB:
             p_bvisc = <double > c_bvisc[0]
         else:
             p_bvisc = c_bvisc
+
+        return 0
+
+###############################################
+    cdef inline python_lbfluid_get_gamma_odd(p_gamma_odd):
+
+        IF SHANCHEN:
+            cdef double c_gamma_odd[2]
+        ELSE:
+            cdef double c_gamma_odd[1]
+        # call c-function
+        if(lb_lbfluid_get_gamma_odd(c_gamma_odd)):
+            raise Exception(
+                "lb_fluid_get_gamma_odd error at C-level interface")
+        if isinstance(p_gamma_odd, float) or isinstance(p_gamma_odd, int):
+            p_gamma_odd = <double > c_gamma_odd[0]
+        else:
+            p_gamma_odd = c_gamma_odd
+
+        return 0
+
+###############################################
+    cdef inline python_lbfluid_get_gamma_even(p_gamma_even):
+
+        IF SHANCHEN:
+            cdef double c_gamma_even[2]
+        ELSE:
+            cdef double c_gamma_even[1]
+        # call c-function
+        if(lb_lbfluid_get_gamma_even(c_gamma_even)):
+            raise Exception(
+                "lb_fluid_get_gamma_even error at C-level interface")
+        if isinstance(p_gamma_even, float) or isinstance(p_gamma_even, int):
+            p_gamma_even = <double > c_gamma_even[0]
+        else:
+            p_gamma_even = c_gamma_even
 
         return 0
 

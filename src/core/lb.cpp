@@ -353,7 +353,6 @@ int lb_lbfluid_set_gamma_even(double *p_gamma_even)
   return 0;
 }
 
-
 int lb_lbfluid_set_friction(double * p_friction)
 {
   for (int ii=0;ii<LB_COMPONENTS;ii++){
@@ -1907,7 +1906,6 @@ static void lb_prepare_communication() {
     release_halo_communication(&comm);
 }
 
-
 /** (Re-)initializes the fluid. */
 void lb_reinit_parameters() {
     int i;
@@ -1933,17 +1931,6 @@ void lb_reinit_parameters() {
         gamma_odd = -(7.0*gamma_even+1.0)/(gamma_even+7.0);
         //gamma_odd = gamma_shear; //uncomment for BGK
     }
-
-    //gamma_shear = 0.0; //uncomment for special case of BGK
-    //gamma_bulk = 0.0;
-    //gamma_odd = 0.0;
-    //gamma_even = 0.0;
-
-    //printf("gamma_shear=%e\n", gamma_shear);
-    //printf("gamma_bulk=%e\n", gamma_bulk);
-    //printf("gamma_odd=%e\n", gamma_odd);
-    //printf("gamma_even=%e\n", gamma_even);
-    //printf("\n");
 
     double mu = 0.0;
 

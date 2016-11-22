@@ -528,6 +528,8 @@ int lb_lbfluid_get_visc(double* p_visc);
 int lb_lbfluid_get_bulk_visc(double* p_bulk_visc);
 int lb_lbfluid_get_friction(double * p_friction);
 int lb_lbfluid_get_ext_force(double* p_f);
+int lb_lbfluid_get_gamma_odd(double * p_gamma_odd);
+int lb_lbfluid_get_gamma_even(double * p_gamma_even);
 #ifdef SHANCHEN
 int lb_lbfluid_set_shanchen_coupling(double * p_coupling);
 int lb_lbfluid_set_mobility(double * p_mobility);

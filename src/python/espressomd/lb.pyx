@@ -65,7 +65,7 @@ IF LB_GPU or LB:
         # list of valid keys for parameters
         ####################################################
         def valid_keys(self):
-            return "agrid", "dens", "fric", "ext_force", "visc", "tau"
+            return "agrid", "dens", "fric", "ext_force", "visc", "tau", "gamma_odd", "gamma_even"
 
         # list of esential keys required for the fluid
         ####################################################
@@ -82,7 +82,9 @@ IF LB_GPU or LB:
                         "ext_force": [0.0, 0.0, 0.0],
                         "visc": [-1.0, -1.0],
                         "bulk_visc": [-1.0, -1.0],
-                        "tau": -1.0}
+                        "tau": -1.0,
+                        "gamma_odd": [0.0, 0.0],
+                        "gamma_even": [0.0, 0.0]}
             ELSE:
                 return {"agrid": -1.0,
                         "dens": -1.0,
@@ -90,7 +92,9 @@ IF LB_GPU or LB:
                         "ext_force": [0.0, 0.0, 0.0],
                         "visc": -1.0,
                         "bulk_visc": -1.0,
-                        "tau": -1.0}
+                        "tau": -1.0,
+                        "gamma_odd": 0.0,
+                        "gamma_even": 0.0}
 
         # function that calls wrapper functions which set the parameters at C-Level
         ####################################################
@@ -125,6 +129,14 @@ IF LB_GPU or LB:
                 if python_lbfluid_set_ext_force(self._params["ext_force"]):
                     raise Exception("lb_lbfluid_set_ext_force error")
 
+            if not self._params["gamma_odd"] == default_params["gamma_odd"]:
+                if python_lbfluid_set_gamma_odd(self._params["gamma_odd"]):
+                    raise Exception("lb_lbfluid_set_gamma_odd error")
+
+            if not self._params["gamma_even"] == default_params["gamma_even"]:
+                if python_lbfluid_set_gamma_even(self._params["gamma_even"]):
+                    raise Exception("lb_lbfluid_set_gamma_even error")
+
         # function that calls wrapper functions which get the parameters from C-Level
         ####################################################
         def _get_params_from_es_core(self):
@@ -154,6 +166,14 @@ IF LB_GPU or LB:
                 if python_lbfluid_get_ext_force(self._params["ext_force"]):
                     raise Exception("lb_lbfluid_set_ext_force error")
 
+            if not self._params["gamma_odd"] == default_params["gamma_odd"]:
+                if python_lbfluid_get_gamma_odd(self._params["gamma_odd"]):
+                    raise Exception("lb_lbfluid_get_gamma_odd error")
+
+            if not self._params["gamma_even"] == default_params["gamma_even"]:
+                if python_lbfluid_get_gamma_even(self._params["gamma_even"]):
+                    raise Exception("lb_lbfluid_get_gamma_even error")
+
             return self._params
 
         # input/output function wrappers for whole LB fields
@@ -171,12 +191,6 @@ IF LB_GPU or LB:
         def load_checkpoint(self, path, binary):
             lb_lbfluid_load_checkpoint(utils.to_char_pointer(path), binary)
        
-        # input/output function wrappers for LB nodes
-        ####################################################
-
-
-
-
         # Activate Actor
         ####################################################
         def _activate_method(self):
@@ -184,16 +198,11 @@ IF LB_GPU or LB:
             self._set_lattice_switch()
             self._set_params_in_es_core()
 
-
-
-
-
 IF LB_GPU:
     cdef class LBFluid_GPU(LBFluid):
         def _set_lattice_switch(self):
             if lb_set_lattice_switch(2):
                 raise Exception("lb_set_lattice_switch error")
-
 
 IF LB or LB_GPU:
     cdef class LBFluidRoutines:
@@ -261,3 +270,18 @@ IF LB or LB_GPU:
 
             def __set__(self, value):
                 raise Exception("Not implemented.")
+
+        property force:
+            def __get__(self):
+                raise Exception("Not implemented.")
+
+            def __set__(self, value):
+                cdef int lattice_switch
+                cdef double f[3]
+                if(lb_get_lattice_switch(&lattice_switch) != 0):
+                    raise Exception("Flag field lattice_switch not set. lattice_switch contains information about which LB is initialized.")
+                if lattice_switch & LATTICE_LB_GPU:
+                    f = value
+                    lb_lbnode_set_extforce_GPU(self.node, f)
+                else:
+                    raise Exception("Setting the node force is only implemented for the GPU LB.")
