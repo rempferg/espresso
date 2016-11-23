@@ -56,6 +56,7 @@ IF LB_GPU or LB:
             double gamma_odd[2]
             double gamma_even[2]
             int resent_halo
+            bool force_reset
 ###############################################
 #
 # init struct
@@ -87,6 +88,8 @@ IF LB_GPU or LB:
         int lb_lbfluid_get_ext_force(double * c_f)
         int lb_lbfluid_set_bulk_visc(double * c_bulk_visc)
         int lb_lbfluid_get_bulk_visc(double * c_bulk_visc)
+        int lb_lbfluid_set_force_reset(bool c_force_reset)
+        int lb_lbfluid_get_force_reset(bool * c_force_reset)
         int lb_lbfluid_print_vtk_velocity(char * filename)
         int lb_lbfluid_print_vtk_boundary(char * filename)
         int lb_lbfluid_print_velocity(char * filename)
@@ -270,6 +273,15 @@ IF LB_GPU or LB:
 
 ###############################################
 
+    cdef inline python_lbfluid_set_force_reset(p_force_reset):
+        if(lb_lbfluid_set_force_reset(p_force_reset)):
+            raise Exception(
+                "lb_fluid_set_force_reset error at C-level interface")
+
+        return 0
+
+###############################################
+
 
 ###############################################
 #
@@ -404,7 +416,6 @@ IF LB_GPU or LB:
         return 0
 
 ###############################################
-
     cdef inline python_lbfluid_get_ext_force(p_ext_force):
 
         cdef double c_ext_force[3]
@@ -413,5 +424,17 @@ IF LB_GPU or LB:
             raise Exception(
                 "lb_fluid_get_ext_force error at C-level interface")
         p_ext_force = c_ext_force
+
+        return 0
+
+###############################################
+    cdef inline python_lbfluid_get_force_reset(p_force_reset):
+
+        cdef bool c_force_reset[1]
+        # call c-function
+        if(lb_lbfluid_get_force_reset(c_force_reset)):
+            raise Exception(
+                "lb_fluid_get_force_reset error at C-level interface")
+        p_force_reset = c_force_reset
 
         return 0

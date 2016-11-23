@@ -45,13 +45,14 @@ extern int lb_components ; // global variable holding the number of fluid compon
  * to determine what actions have to take place upon change
  * of the respective parameter. */
 /*@{*/
-#define LBPAR_DENSITY   0 /**< fluid density */
-#define LBPAR_VISCOSITY 1 /**< fluid kinematic viscosity */
-#define LBPAR_AGRID     2 /**< grid constant for fluid lattice */
-#define LBPAR_TAU       3 /**< time step for fluid propagation */
-#define LBPAR_FRICTION  4 /**< friction coefficient for viscous coupling between particles and fluid */
-#define LBPAR_EXTFORCE  5 /**< external force acting on the fluid */
-#define LBPAR_BULKVISC  6 /**< fluid bulk viscosity */
+#define LBPAR_DENSITY    0 /**< fluid density */
+#define LBPAR_VISCOSITY  1 /**< fluid kinematic viscosity */
+#define LBPAR_AGRID      2 /**< grid constant for fluid lattice */
+#define LBPAR_TAU        3 /**< time step for fluid propagation */
+#define LBPAR_FRICTION   4 /**< friction coefficient for viscous coupling between particles and fluid */
+#define LBPAR_EXTFORCE   5 /**< external force acting on the fluid */
+#define LBPAR_BULKVISC   6 /**< fluid bulk viscosity */
+#define LBPAR_FORCERESET 7 /**< fluid bulk viscosity */
 
 /** Note these are used for binary logic so should be powers of 2 */
 #define LB_COUPLE_NULL        1
@@ -178,6 +179,7 @@ typedef struct {
 
   int resend_halo;
           
+  bool force_reset;
 } LB_Parameters;
 
 /** The DnQm model to be used. */
@@ -520,6 +522,7 @@ int lb_lbfluid_set_friction(double * p_friction);
 int lb_lbfluid_set_couple_flag(int couple_flag);
 int lb_lbfluid_set_agrid(double p_agrid);
 int lb_lbfluid_set_ext_force(int component, double p_fx, double p_fy, double p_fz);
+int lb_lbfluid_set_force_reset(bool force_reset);
 int lb_lbfluid_set_tau(double p_tau);
 int lb_lbfluid_set_remove_momentum(void);
 int lb_lbfluid_get_agrid(double* p_agrid);
@@ -528,6 +531,7 @@ int lb_lbfluid_get_visc(double* p_visc);
 int lb_lbfluid_get_bulk_visc(double* p_bulk_visc);
 int lb_lbfluid_get_friction(double * p_friction);
 int lb_lbfluid_get_ext_force(double* p_f);
+int lb_lbfluid_get_force_reset(bool* force_reset);
 int lb_lbfluid_get_gamma_odd(double * p_gamma_odd);
 int lb_lbfluid_get_gamma_even(double * p_gamma_even);
 #ifdef SHANCHEN

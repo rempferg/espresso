@@ -1230,7 +1230,8 @@ __device__ void apply_forces(unsigned int index, float *mode, LB_node_force_gpu 
 //#if !defined(IMMERSED_BOUNDARY)
   // This must not be done here since we need the forces after LB update for the velocity interpolation
   // It is done by calling IBM_ResetLBForces_GPU from integrate_vv
-  reset_LB_forces(index, node_f);
+  if(para.force_reset)
+    reset_LB_forces(index, node_f);
 //#endif
 
 #ifdef SHANCHEN

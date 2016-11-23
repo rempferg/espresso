@@ -65,7 +65,7 @@ IF LB_GPU or LB:
         # list of valid keys for parameters
         ####################################################
         def valid_keys(self):
-            return "agrid", "dens", "fric", "ext_force", "visc", "tau", "gamma_odd", "gamma_even"
+            return "agrid", "dens", "fric", "ext_force", "visc", "tau", "gamma_odd", "gamma_even", "force_reset"
 
         # list of esential keys required for the fluid
         ####################################################
@@ -84,7 +84,8 @@ IF LB_GPU or LB:
                         "bulk_visc": [-1.0, -1.0],
                         "tau": -1.0,
                         "gamma_odd": [0.0, 0.0],
-                        "gamma_even": [0.0, 0.0]}
+                        "gamma_even": [0.0, 0.0],
+                        "force_reset": True}
             ELSE:
                 return {"agrid": -1.0,
                         "dens": -1.0,
@@ -94,7 +95,8 @@ IF LB_GPU or LB:
                         "bulk_visc": -1.0,
                         "tau": -1.0,
                         "gamma_odd": 0.0,
-                        "gamma_even": 0.0}
+                        "gamma_even": 0.0,
+                        "force_reset": True}
 
         # function that calls wrapper functions which set the parameters at C-Level
         ####################################################
@@ -137,6 +139,10 @@ IF LB_GPU or LB:
                 if python_lbfluid_set_gamma_even(self._params["gamma_even"]):
                     raise Exception("lb_lbfluid_set_gamma_even error")
 
+            if not self._params["force_reset"] == default_params["force_reset"]:
+                if python_lbfluid_set_force_reset(self._params["force_reset"]):
+                    raise Exception("lb_lbfluid_set_force_reset error")
+
         # function that calls wrapper functions which get the parameters from C-Level
         ####################################################
         def _get_params_from_es_core(self):
@@ -173,6 +179,10 @@ IF LB_GPU or LB:
             if not self._params["gamma_even"] == default_params["gamma_even"]:
                 if python_lbfluid_get_gamma_even(self._params["gamma_even"]):
                     raise Exception("lb_lbfluid_get_gamma_even error")
+
+            if not self._params["force_reset"] == default_params["force_reset"]:
+                if python_lbfluid_get_force_reset(self._params["force_reset"]):
+                    raise Exception("lb_lbfluid_get_force_reset error")
 
             return self._params
 

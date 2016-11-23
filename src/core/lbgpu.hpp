@@ -140,6 +140,8 @@ typedef struct {
   int remove_momentum;
 #endif // SHANCHEN  
 
+  bool force_reset;
+
 } LB_parameters_gpu;
 
 /** Data structure holding the conserved quantities for the Lattice Boltzmann system. */

@@ -82,7 +82,9 @@ LB_Parameters lbpar = {
     // is_TRT
     false,
     // resend_halo
-    0
+    0,
+    // force_reset
+    true
 };
 
 /** The DnQm model to be used. */
@@ -513,6 +515,21 @@ int lb_lbfluid_set_ext_force(int component, double p_fx, double p_fy, double p_f
   return 0;
 }
 
+int lb_lbfluid_set_force_reset(bool force_reset) {
+  if (lattice_switch & LATTICE_LB_GPU) {
+#ifdef LB_GPU
+    lbpar_gpu.force_reset = force_reset;
+    on_lb_params_change_gpu(0);
+#endif // LB_GPU
+  } else {
+#ifdef LB
+    lbpar.force_reset = force_reset;
+    mpi_bcast_lb_params(LBPAR_FORCERESET);
+#endif // LB
+  }
+  return 0;
+}
+
 
 int lb_lbfluid_get_density(double *p_dens) {
   for (int ii=0;ii<LB_COMPONENTS;ii++){
@@ -629,6 +646,20 @@ int lb_lbfluid_get_ext_force(double* p_f){
     p_f[0] = lbpar.ext_force[0];
     p_f[1] = lbpar.ext_force[1];
     p_f[2] = lbpar.ext_force[2];
+#endif // LB
+  }
+  return 0;
+}
+
+
+int lb_lbfluid_get_force_reset(double* force_reset){
+  if (lattice_switch & LATTICE_LB_GPU) {
+#ifdef LB_GPU
+    *force_reset = lbpar_gpu.force_reset;
+#endif // LB_GPU
+  } else {
+#ifdef LB
+    *force_reset = lbpar.force_reset;
 #endif // LB
   }
   return 0;
@@ -2515,18 +2546,20 @@ inline void lb_apply_forces(index_t index, double* mode) {
     mode[9] += C[4];
 
     /* reset force */
+    if(lbpar.force_reset)
+    {
 #ifdef EXTERNAL_FORCES
-    // unit conversion: force density
-    lbfields[index].force[0] = lbpar.ext_force[0]*pow(lbpar.agrid,2)*lbpar.tau*lbpar.tau;
-    lbfields[index].force[1] = lbpar.ext_force[1]*pow(lbpar.agrid,2)*lbpar.tau*lbpar.tau;
-    lbfields[index].force[2] = lbpar.ext_force[2]*pow(lbpar.agrid,2)*lbpar.tau*lbpar.tau;
+      // unit conversion: force density
+      lbfields[index].force[0] = lbpar.ext_force[0]*pow(lbpar.agrid,2)*lbpar.tau*lbpar.tau;
+      lbfields[index].force[1] = lbpar.ext_force[1]*pow(lbpar.agrid,2)*lbpar.tau*lbpar.tau;
+      lbfields[index].force[2] = lbpar.ext_force[2]*pow(lbpar.agrid,2)*lbpar.tau*lbpar.tau;
 #else // EXTERNAL_FORCES
-    lbfields[index].force[0] = 0.0;
-    lbfields[index].force[1] = 0.0;
-    lbfields[index].force[2] = 0.0;
-    lbfields[index].has_force = 0;
+      lbfields[index].force[0] = 0.0;
+      lbfields[index].force[1] = 0.0;
+      lbfields[index].force[2] = 0.0;
+      lbfields[index].has_force = 0;
 #endif // EXTERNAL_FORCES
- 
+    }
 }
 
 

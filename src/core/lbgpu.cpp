@@ -134,8 +134,10 @@ LB_parameters_gpu lbpar_gpu = {
   // coupling
   SC20,
   // remove_momentum
-  0
-#endif // SHANCHEN  
+  0,
+#endif // SHANCHEN
+  // force_reset
+  true
 };
 
 
