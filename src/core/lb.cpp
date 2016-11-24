@@ -652,7 +652,7 @@ int lb_lbfluid_get_ext_force(double* p_f){
 }
 
 
-int lb_lbfluid_get_force_reset(double* force_reset){
+int lb_lbfluid_get_force_reset(bool* force_reset){
   if (lattice_switch & LATTICE_LB_GPU) {
 #ifdef LB_GPU
     *force_reset = lbpar_gpu.force_reset;
