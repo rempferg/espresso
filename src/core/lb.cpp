@@ -758,7 +758,7 @@ int lb_lbfluid_print_vtk_density(char** filename) {
 
             for(j=0; j<int(lbpar_gpu.number_of_nodes); ++j){
                 /** print the calculated phys values */
-                fprintf(fp, "%f\n", host_values[j].rho[ii]);
+                fprintf(fp, "%e\n", host_values[j].rho[ii]);
             }
             free(host_values);
 
@@ -827,7 +827,7 @@ int lb_lbfluid_print_vtk_velocity(char* filename, std::vector<int> bb1, std::vec
                 for(pos[0] = bb_low[0]; pos[0] <= bb_high[0]; pos[0]++)
                 {
                     int j = lbpar_gpu.dim_y*lbpar_gpu.dim_x * pos[2] + lbpar_gpu.dim_x * pos[1] + pos[0];
-                    fprintf(fp, "%f %f %f\n", host_values[j].v[0], host_values[j].v[1], host_values[j].v[2]);
+                    fprintf(fp, "%e %e %e\n", host_values[j].v[0], host_values[j].v[1], host_values[j].v[2]);
                 }
         free(host_values);
 #endif // LB_GPU
@@ -849,7 +849,7 @@ int lb_lbfluid_print_vtk_velocity(char* filename, std::vector<int> bb1, std::vec
                 for(pos[0] = bb_low[0]; pos[0] <= bb_high[0]; pos[0]++)
                 {
                     lb_lbnode_get_u(pos, u);
-                    fprintf(fp, "%f %f %f\n", u[0], u[1], u[2]);
+                    fprintf(fp, "%e %e %e\n", u[0], u[1], u[2]);
                 }
 #endif // LB
     }
@@ -944,7 +944,7 @@ int lb_lbfluid_print_velocity(char* filename) {
             k /= lbpar_gpu.dim_y;
             xyz[2] = k;
             /** print of the calculated phys values */
-            fprintf(fp, "%f %f %f %f %f %f\n", (xyz[0]+0.5)*lbpar_gpu.agrid, (xyz[1]+0.5)*lbpar_gpu.agrid, (xyz[2]+0.5)*lbpar_gpu.agrid, host_values[j].v[0], host_values[j].v[1], host_values[j].v[2]);
+            fprintf(fp, "%e %e %e %e %e %e\n", (xyz[0]+0.5)*lbpar_gpu.agrid, (xyz[1]+0.5)*lbpar_gpu.agrid, (xyz[2]+0.5)*lbpar_gpu.agrid, host_values[j].v[0], host_values[j].v[1], host_values[j].v[2]);
         }
         free(host_values);
 #endif // LB_GPU
@@ -968,7 +968,7 @@ int lb_lbfluid_print_velocity(char* filename) {
                     errexit();
 #endif // SHANCHEN
                     lb_lbnode_get_u(pos, u);
-                    fprintf(fp, "%f %f %f %f %f %f\n",
+                    fprintf(fp, "%e %e %e %e %e %e\n",
                             (pos[0]+0.5)*lblattice.agrid[0],
                             (pos[1]+0.5)*lblattice.agrid[1],
                             (pos[2]+0.5)*lblattice.agrid[2],
