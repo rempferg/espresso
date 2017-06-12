@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: 06-active_matter.aux
+The style file: unsrt.bst
+Database file #1: 06-active_matterNotes.bib
+Warning--entry type for "Note1" isn't style-file defined
+--line 1 of file 06-active_matterNotes.bib
+Database file #2: refs.bib
+You've used 45 entries,
+            1791 wiz_defined-function locations,
+            745 strings with 11823 characters,
+and the built_in function-call counts, 10517 in all, are:
+= -- 781
+> -- 707
+< -- 3
++ -- 251
+- -- 206
+* -- 825
+:= -- 1851
+add.period$ -- 135
+call.type$ -- 45
+change.case$ -- 44
+chr.to.int$ -- 0
+cite$ -- 45
+duplicate$ -- 419
+empty$ -- 935
+format.name$ -- 206
+if$ -- 2233
+int.to.chr$ -- 0
+int.to.str$ -- 45
+missing$ -- 44
+newline$ -- 226
+num.names$ -- 48
+pop$ -- 63
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 155
+stack$ -- 0
+substring$ -- 557
+swap$ -- 58
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 90
+width$ -- 47
+write$ -- 494
+(There was 1 warning)

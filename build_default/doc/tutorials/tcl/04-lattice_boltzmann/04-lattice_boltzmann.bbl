@@ -1,0 +1,39 @@
+\begin{thebibliography}{1}
+
+\bibitem{succi01a}
+S~Succi.
+\newblock {\em The lattice Boltzmann equation for fluid dynamics and beyond}.
+\newblock Clarendon Press, Oxford, 2001.
+
+\bibitem{duenweg09a}
+B.~D\"{u}nweg and A.~J.~C. Ladd.
+\newblock {\em Advanced Computer Simulation Approaches for Soft Matter Sciences
+  III}, chapter~II, pages 89--166.
+\newblock Springer, 2009.
+
+\bibitem{duenweg07a}
+B.~D{\"u}nweg, U.~Schiller, and A.J.C. Ladd.
+\newblock Statistical mechanics of the fluctuating lattice-boltzmann equation.
+\newblock {\em Phys. Rev. E}, 76:36704, 2007.
+
+\bibitem{degennes79a}
+P.~G. de~Gennes.
+\newblock {\em Scaling Concepts in Polymer Physics}.
+\newblock Cornell University Press, Ithaca, NY, 1979.
+
+\bibitem{doi96a}
+M.~Doi.
+\newblock {\em Introduction do Polymer Physics}.
+\newblock Clarendon Press, Oxford, 1996.
+
+\bibitem{rubinstein03a}
+Michael Rubinstein and Ralph~H. Colby.
+\newblock {\em Polymer Physics}.
+\newblock Oxford University Press, Oxford, UK, 2003.
+
+\bibitem{frenkel02b}
+Daan Frenkel and Berend Smit.
+\newblock {\em Understanding Molecular Simulation}.
+\newblock Academic Press, San Diego, second edition, 2002.
+
+\end{thebibliography}

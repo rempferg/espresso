@@ -1,0 +1,1701 @@
+\begin{essyntax}
+  observable new \var{name} \opt{\var{parameters+}}
+\end{essyntax}
+\begin{essyntax}
+observable \var{id} print \opt{no_calculation} \opt{formatted}
+\end{essyntax}
+\begin{essyntax}
+observable \var{id} write_checkpoint \var{filename} \opt{binary}
+\end{essyntax}
+\begin{essyntax}
+observable \var{id} read_checkpoint \var{filename} \opt{binary}
+\end{essyntax}
+\begin{essyntax}
+observable \var{id} delete
+\end{essyntax}
+\begin{essyntax}
+    observable new needs\_profile\_specs \opt{\var{other\_parameters}} 
+    \opt{ minx \var{minx}  }
+    \opt{ maxx \var{maxx}  }
+    \opt{ miny \var{miny}  }
+    \opt{ maxy \var{maxy}  }
+    \opt{ minz \var{minz}  }
+    \opt{ maxz \var{maxz}  }
+    \opt{ xbins \var{xbins}  }
+    \opt{ ybins \var{ybins}  }
+    \opt{ zbins \var{zbins}  }
+\end{essyntax}
+\begin{essyntax}
+    observable new needs\_radial\_profile\_specs \opt{\var{other\_parameters}} 
+    \opt{ \var{center} <cx> <cy> <cx> }
+    \opt{ maxr \var{maxr}  }
+    \opt{ minz \var{minz}  }
+    \opt{ maxz \var{maxz}  }
+    \opt{ rbins \var{rbins}  }
+    \opt{ phibins \var{phibins}  }
+    \opt{ zbins \var{zbins}  }
+\end{essyntax}
+\begin{essyntax}
+correlation new obs1 \var{id1} \opt{obs2 \var{id2}} corr_operation \var{operation} dt \var{dt} tau_max \var{tau\_max} \opt{tau_lin \var{tau\_lin}} \opt{compress1 \var{name} \opt{compress2 \var{name}} }
+\end{essyntax}
+\begin{essyntax}
+\variant{1} correlation 
+\variant{2} correlation n_corr
+\end{essyntax}
+\begin{essyntax}
+\variant{1} correlation \var{id} autoupdate \{ start | stop\} 
+\variant{2} correlation \var{id} update 
+\variant{3} correlation \var{id} finalize
+\end{essyntax}
+\begin{essyntax}
+\variant{1} correlation \var{id} write_to_file \var{filename}
+\variant{2} correlation \var{id} print 
+\variant{3a} correlation \var{id} print \opt{ average1 | variance1 | correlation_time } 
+\variant{3b} correlation \var{id} print \opt{ average_errorbars }
+\end{essyntax}
+\begin{essyntax}
+\variant{1} correlation \var{id} write_checkpoint_binary \var{filename}
+\variant{2} correlation \var{id} write_checkpoint_ascii \var{filename}
+\end{essyntax}
+\begin{essyntax}
+\variant{1} correlation \var{id} read_checkpoint_binary \var{filename}
+\variant{2} correlation \var{id} read_checkpoint_ascii \var{filename}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} analyze mindist \opt{\var{type\_list\_a} \var{type\_list\_b}}
+  \variant{2} analyze distto \var{pid}
+  \variant{3} analyze distto \var{x} \var{y} \var{z}
+\end{essyntax}
+\begin{essyntax}
+ \variant{1} analyze nbhood \var{pid} \var{r\_catch}
+ \variant{2} analyze nbhood \var{x} \var{y} \var{z}
+ \var{r_catch}
+\end{essyntax}
+\begin{essyntax}
+  analyze distribution \var{part\_type\_list\_a} \var{part\_type\_list\_b}
+  \opt{\var{rmin} \opt{\var{rmax} \opt{\var{rbins} 
+        \opt{\var{log\_flag} \opt{\var{int\_flag}}}}}}
+\end{essyntax}
+\begin{essyntax}
+  analyze radial_density_map \var{xbins} \var{ybins} \var{xrange} \var{yrange}
+  \opt{\var{axisofrotation} \var{centerofrotation} \var{beadtypelist}
+  \opt{\var{thetabins}}}
+\end{essyntax}
+\begin{essyntax}
+  analyze cylindrical_average \var{center} \var{direction}
+  \var{length} \var{radius} \var{bins\_axial} \var{bins\_radial}
+  \opt{\var{types}}
+\end{essyntax}
+\begin{essyntax}
+  analyze modes2d
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} analyze get_lipid_orients
+  \variant{2} analyze lipid_orient_order
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} analyze bilayer_set
+  \variant{2} analyze bilayer_density_profile
+\end{essyntax}
+\begin{essyntax}
+  analyze cell_gpb \var{Manning parameter} \var{outer cell radius}
+  \var{inner cell radius} \opt{\var{accuracy}
+    \opt{\var{number of interactions}}}
+\end{essyntax}
+\begin{essyntax}
+  analyze get_folded_positions \opt{-molecule} \opt{shift \var{x} \var{y} \var{z}}
+\end{essyntax}
+\begin{essyntax}
+  analyze Vkappa \opt{\alt{ reset \asep read \asep set \var{V_{\kappa, 1}} \var{V_{\kappa, 2}} \var{avk} } }
+\end{essyntax}
+\begin{essyntax}
+  analyze \alt{rdf \asep <rdf>} 
+  \var{part\_type\_list\_a} \var{part\_type\_list\_b} 
+  \opt{\var{rmin} \var{rmax} \var{rbins}}
+\end{essyntax}
+\begin{essyntax}
+  analyze structurefactor \var{types} \var{order}
+\end{essyntax}
+\begin{essyntax}
+  analyze vanhove \var{type} \var{rmin} \var{rmax} \var{rbins}
+  \opt{\var{tmax}}
+\end{essyntax}
+\begin{essyntax}
+  analyze centermass \var{part\_type}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} analyze momentofinertiamatrix { \var{typeid} } 
+  \variant{2} analyze find_principal_axis \var{typeid}
+\end{essyntax}
+\begin{essyntax}
+  analyze gyration\_tensor \opt{\var{typeid}} 
+\end{essyntax}
+\begin{essyntax}
+  analyze aggregation \var{dist\_criteria} \var{s\_mol\_id}
+  \var{f\_mol\_id} \opt{\var{min\_contact} \opt{\var{charge\_criteria}}}
+\end{essyntax}
+\begin{essyntax}
+ analyze necklace \var{pearl\_threshold} \var{back\_dist} \var{space\_dist}
+\var{first} \var{length} 
+\end{essyntax}
+\begin{essyntax}
+  analyze holes \var{typeid_\mathrm{probe}} \var{mesh\_size}
+  \begin{features}
+    \required{LENNARD_JONES}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \require{1 or 2 or 3}{analyze fluid temp}
+  \begin{features}
+  \required[1]{LB}
+  \required[2]{LB_GPU}
+  \required[3]{ELECTROKINETICS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+    analyze momentum \opt{\alt{particles \asep lbfluid}}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} analyze energy
+  \variant{2} analyze energy \alt{total \asep kinetic \asep coulomb \asep magnetic}
+  \variant{3} analyze energy bonded \var{bondid}
+  \variant{4} analyze energy nonbonded \var{typeid1} \var{typeid2}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} analyze pressure
+  \variant{2} analyze pressure total
+  \variant{3} analyze pressure \alt{totals \asep ideal \asep coulomb
+    \asep \\tot_nonbonded_inter \asep tot_nonbonded_intra \asep vs_relative}
+  \variant{4} analyze pressure bonded \var{bondid}
+  \variant{5} analyze pressure nonbonded \var{typeid1} \var{typeid2}
+  \variant{6} analyze pressure nonbonded_intra \opt{\var{typeid}}
+  \variant{7} analyze pressure nonbonded_inter \opt{\var{typeid}}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} analyze stress_tensor
+  \variant{2} analyze stress_tensor total
+  \variant{3} analyze stress_tensor \alt{totals \asep ideal \asep coulomb
+    \asep \\tot_nonbonded_inter \asep tot_nonbonded_intra}
+  \variant{4} analyze stress_tensor bonded \var{bond_type}
+  \variant{5} analyze stress_tensor nonbonded \var{typeid1} \var{typeid2}
+  \variant{6} analyze stress_tensor nonbonded_intra \opt{\var{typeid}}
+  \variant{7} analyze stress_tensor nonbonded_inter \opt{\var{typeid}}
+\end{essyntax}
+\begin{essyntax}
+  analyze local_stress_tensor \var{periodic\_x} \var{periodic\_y} \var{periodic\_z} \var{range\_start\_x} \var{range\_start\_y} \var{range\_start\_z} \var{range\_x} \var{range\_y} \var{range\_z}  \var{bins\_x} \var{bins\_y} \var{bins\_z}
+\end{essyntax}
+\begin{essyntax}
+  \require{1}{analyze configtemp}
+  \begin{features}
+  \required[1]{CONFIGTEMP}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} analyze set chains \opt{\var{chain\_start} \var{n\_chains}
+    \var{chain\_length}}
+  \variant{2} analyze set topo\_part\_sync
+  \variant{3} analyze set
+  %\variant{4} analyze set trapmol \var{mol\_id} \var{xpos} \var{ypos} \var{zpos} \var{isrelative} \var{spring\_constant} \var{drag\_constant} coords \var{trapped\_coord\_x} \var{trapped\_coord\_y} \var{trapped\_coord\_z} noforce\_coords \var{noforce\_coord\_x} \var{noforce\_coord\_y} \var{noforce\_coord\_z}
+\end{essyntax}
+\begin{essyntax}
+  analyze \alt{re \asep <re>} 
+  \opt{\var{chain\_start} \var{n\_chains} \var{chain\_length}}
+\end{essyntax}
+\begin{essyntax}
+  analyze \alt{rg \asep <rg>} 
+  \opt{\var{chain\_start} \var{n\_chains} \var{chain\_length}}
+\end{essyntax}
+\begin{essyntax}
+  analyze \alt{rh \asep <rh>} 
+  \opt{\var{chain\_start} \var{n\_chains} \var{chain\_length}}
+\end{essyntax}
+\begin{essyntax}
+ analyze \alt{internal_dist \asep <internal_dist>} 
+ \opt{\var{chain\_start} \var{n\_chains} \var{chain\_length}}
+\end{essyntax}
+\begin{essyntax}
+  analyze \alt{bond_dist \asep <bond_dist>} \opt{index \var{index}} 
+  \opt{\var{chain\_start} \var{n\_chains} \var{chain\_length}}
+\end{essyntax}
+\begin{essyntax}
+  analyze \alt{bond_l \asep <bond_l>} 
+  \opt{\var{chain\_start} \var{n\_chains} \var{chain\_length}}
+\end{essyntax}
+\begin{essyntax}
+  analyze \alt{formfactor \asep <formfactor> } 
+  \var{qmin} \var{qmax} \var{qbins}\\
+  \opt{\var{chain\_start} \var{n\_chains} \var{chain\_length}}
+\end{essyntax}
+\begin{essyntax}
+ analyze rdfchain \var{rmin} \var{rmax} \var{rbins} 
+ \opt{\var{chain\_start} \var{n\_chains} \var{chain\_length}}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} analyze \alt{<g1>\asep<g2>\asep<g3>} 
+  \opt{\var{chain\_start} \var{n\_chains} \var{chain\_length}}
+  \variant{2} analyze g123 \opt{-init} 
+  \opt{\var{chain\_start} \var{n\_chains} \var{chain\_length}}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} analyze append
+  \variant{2} analyze remove \opt{\var{index}}
+  \variant{3} analyze replace \var{index} 
+  \variant{4} analyze push \opt{\var{size}}
+  \variant{5} analyze configs \var{config}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} analyze configs
+  \variant{2} analyze stored 
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} uwerr \var{data} \var{nrep} 
+  \var{col} \opt{\var{s\_tau}} \opt{plot}
+
+  \variant{2} uwerr \var{data} \var{nrep} 
+  \var{f} \opt{\var{s\_tau} \opt{\var{f\_args}}} \opt{plot}
+\end{essyntax}
+\begin{essyntax}
+  countBonds \var{particle_list}
+\end{essyntax}
+\begin{essyntax}
+  findPropPos \var{particle_property_list} \var{property}
+\end{essyntax}
+\begin{essyntax}
+  findBondPos \var{particle_property_list}
+\end{essyntax}
+\begin{essyntax}
+  timeStamp \var{path} \var{prefix} \var{postfix} \var{suffix}
+\end{essyntax}
+\begin{essyntax}
+  \require{1 or 2 or 3}{electrokinetics}
+  \opt{agrid  \var{agrid}}
+  \opt{lb_density  \var{lb\_density}}
+  \opt{visc  \var{viscosity}}
+  \opt{bulk_visc  \var{bulk\_viscosity}}
+  \opt{friction   \var{gamma} } 
+  \opt{gamma_odd  \var{gamma\_odd}}
+  \opt{gamma_even  \var{gamma\_even}}
+  \opt{T  \var{T}}
+  \opt{bjerrum_length  \var{bjerrum\_length}}
+  \opt{advection  \var{advection}}
+  \opt{fluid-coupling  \var{fluid-coupling}}
+  \opt{\require{4}{electrostatics_coupling}}
+  \begin{features}
+  \required[1]{ELECTROKINETICS}
+  \required[2]{EK_BOUNDARIES}
+  \required[3]{EK_REACTIONS}
+  \required[4]{EK_ELECTROSTATIC_COUPLING}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \require{1 or 2 or 3}{electrokinetics}
+  \var{species\_number}
+  \opt{density  \var{density}}
+  \opt{D  \var{D}}
+  \opt{valency  \var{valency}}
+  \opt{ext_force  \var{f_x} \var{f_y} \var{f_z}}
+  \begin{features}
+  \required[1]{ELECTROKINETICS}
+  \required[2]{EK_BOUNDARIES}
+  \required[3]{EK_REACTIONS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \require{1 or 2 or 3}{electrokinetics}
+  \require{2}{boundary} 
+  \opt{charge_density \var{charge\_density}}
+  \opt{shape \var{shape\_args}}
+  \begin{features}
+  \required[1]{ELECTROKINETICS}
+  \required[2]{EK_BOUNDARIES}
+  \required[3]{EK_REACTIONS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \require{1 or 2 or 3}{electrokinetics}
+  print 
+  \require{1 or 2}{\var{property}}
+  \opt{vtk}
+  \var{filename}
+  \begin{features}
+  \required[1]{ELECTROKINETICS}
+  \required[2]{EK_BOUNDARIES}
+  \required[3]{EK_REACTIONS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \require{1 or 2 or 3}{electrokinetics}
+  \var{species\_number} 
+  print 
+  \var{property} 
+  \opt{vtk}
+  \var{filename}
+  \begin{features}
+  \required[1]{ELECTROKINETICS}
+  \required[2]{EK_BOUNDARIES}
+  \required[3]{EK_REACTIONS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \require{1 or 2 or 3}{electrokinetics}
+  node \var{x} \var{y} \var{z} 
+  velocity
+  \begin{features}
+  \required[1]{ELECTROKINETICS}
+  \required[2]{EK_BOUNDARIES}
+  \required[3]{EK_REACTIONS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \require{1 or 2 or 3}{electrokinetics}
+  \var{species\_number}
+  node \var{x} \var{y} \var{z}
+  density
+  \begin{features}
+  \required[1]{ELECTROKINETICS}
+  \required[2]{EK_BOUNDARIES}
+  \required[3]{EK_REACTIONS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1}\require{1 or 2 or 3}{electrokinetics} checkpoint save \var{filename}
+  \variant{1}\require{1 or 2 or 3}{electrokinetics} checkpoint load \var{filename}
+  \begin{features}
+  \required[1]{ELECTROKINETICS}
+  \required[2]{EK_BOUNDARIES}
+  \required[3]{EK_REACTIONS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \require{1 or 2 or 3}{electrokinetics}
+  \require{3}{reaction}
+  \opt{reactant_index \var{reactant\_index}}
+  \opt{product0_index \var{product0\_index}}
+  \opt{product1_index \var{product1\_index}}
+  \opt{reactant_resrv_density \var{reactant\_resrv\_density}}
+  \opt{product0_resrv_density \var{product0\_resrv\_density}}
+  \opt{product1_resrv_density \var{product1\_resrv\_density}}
+  \opt{reaction_rate \var{reaction\_rate}}
+  \opt{mass_reactant \var{mass\_reactant}}
+  \opt{mass_product0 \var{mass\_product0}}
+  \opt{mass_product1 \var{mass\_product1}}
+  \opt{reaction_fraction_pr_0 \var{reaction\_fraction\_pr\_0}}
+  \opt{reaction_fraction_pr_1 \var{reaction\_fraction\_pr\_1}}
+  \begin{features}
+  \required[1]{ELECTROKINETICS}
+  \required[2]{EK_BOUNDARIES}
+  \required[3]{EK_REACTIONS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \require{1 or 2 or 3}{electrokinetics}
+  \require{3}{reaction}
+  \require{3}{region}
+  \opt{reaction_type \var{reaction\_type}}
+  \opt{shape \var{shape\_args}}
+  \begin{features}
+  \required[1]{ELECTROKINETICS}
+  \required[2]{EK_BOUNDARIES}
+  \required[3]{EK_REACTIONS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \require{1 or 2 or 3}{electrokinetics}
+  \require{2}{pdb-parse}
+  \var{pdb\_filename}
+  \var{itp\_filename}
+  \begin{features}
+  \required[1]{ELECTROKINETICS}
+  \required[2]{EK_BOUNDARIES}
+  \required[3]{EK_REACTIONS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \require{1 or 2 or 3}{electrokinetics}
+  print 
+  \require{3}{\var{property}}
+  \opt{vtk} 
+  \var{filename}
+  \begin{features}
+  \required[1]{ELECTROKINETICS}
+  \required[2]{EK_BOUNDARIES}
+  \required[3]{EK_REACTIONS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{ID} ibm_triel \var{ind1} \var{ind2} \var{ind3} \var{max} \var{law}
+  \begin{features}
+    \required{IMMERSED_BOUNDARY}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{ID} ibm_tribend \var{ind1} \var{ind2} \var{ind3} \var{ind4} \var{method} \var{kb} \opt{flat|initial}
+  \begin{features}
+    \required{IMMERSED_BOUNDARY}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{ID} ibm_volCons \var{softID} \var{kv}
+  \begin{features}
+    \required{IMMERSED_BOUNDARY}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter
+\end{essyntax}
+\begin{essyntax}
+  inter \var{type1} \var{type2} tabulated \var{filename}%
+  \begin{features}
+    \required{TABULATED}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{type1} 
+  \var{type2}
+  lennard-jones 
+  \var{\epsilon} \var{\sigma} 
+  \var{r_\mathrm{cut}} 
+  \opt{\alt{\var{c_\mathrm{shift}}|auto}
+    \opt{\var{r_\mathrm{off}}
+      \opt{\var{r_\mathrm{cap}} 
+        \opt{ \var{r_\mathrm{min}}}}}}
+  \begin{features}
+    \required{LENNARD_JONES}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{type1} 
+  \var{type2}
+  lj-gen
+  \var{\epsilon} \var{\sigma} 
+  \var{r_\mathrm{cut}} \var{c_\mathrm{shift}} \var{r_\mathrm{off}}
+  \var{e_1} \var{e_2} \var{b_1} \var{b_2}
+  \opt{\alt{\var{r_\mathrm{cap}}|auto} \var{\lambda} \var{\delta}}
+  \begin{features}
+    \required{LENNARD_JONES_GENERIC}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1}
+  inter \var{type1} \var{type2} lj-cos
+  \var{\epsilon} \var{\sigma}
+  \var{r_\mathrm{cut}} \var{r_\mathrm{off}}
+  \variant{2}
+  inter \var{type1} \var{type2} lj-cos2
+  \var{\epsilon} \var{\sigma} 
+  \var{r_\mathrm{off}} \var{\omega}
+  \begin{features}
+    \required[\variant{1}]{LJCOS}
+    \required[\variant{2}]{LJCOS2}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{type1} \var{type2}
+  smooth-step \var{\sigma_1} \var{n} \var{\epsilon} \var{k_0}
+  \var{\sigma_2} \var{r_\mathrm{cut}}
+  \begin{features}
+    \required{SMOOTH_STEP}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{type1} \var{type2}
+  bmhtf-nacl \var{A} \var{B} \var{C} \var{D} \var{\sigma} \var{r_\mathrm{cut}}
+  \begin{features}
+    \required{BMHTF_NACL}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{type1} \var{type2} morse
+  \var{\epsilon} \var{\alpha} \var{r_\mathrm{min}} \var{r_\mathrm{cut}}
+  \begin{features}
+    \required{MORSE}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{type1} \var{type2} buckingham
+  \var{A} \var{B} \var{C} \var{D}
+  \var{r_\mathrm{cut}} \var{r_\mathrm{discont}} \var{\epsilon_\mathrm{shift}}
+  \begin{features}
+    \required{BUCKINGHAM}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{type1} \var{type2}
+  soft-sphere \var{a} \var{n} \var{r_\mathrm{cut}} \var{r_\mathrm{offset}}
+  \begin{features}
+    \required{SOFT_SPHERE}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{type1} \var{type2}
+  membrane \var{a} \var{n} \var{d_\mathrm{cut}} \var{d_\mathrm{offset}}
+  \begin{features}
+    \required{MEMBRANE_COLLISION}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{type1} \var{type2}
+  hat \var{F_\text{max}} \var{r_c}
+  \begin{features}
+    \required{HAT}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{type1} \var{type2}
+  hertzian \var{\sigma} \var{\epsilon}
+  \begin{features}
+    \required{HERTZIAN}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{type1} \var{type2}
+  gaussian \var{\sigma} \var{\epsilon} \var{r_\mathrm{cut}}
+  \begin{features}
+    \required{GAUSSIAN}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{type1} \var{type2} lj-angle
+  \var{\epsilon} \var{\sigma}
+  \var{r_\mathrm{cut}} \var{b1_a} \var{b1_b}
+  \var{b2_a} \var{b2_b} \opt{\var{r_\mathrm{cap}} 
+    \var{z_0} \var{\delta z} \var{\kappa} \var{\epsilon'}}
+  \begin{features}
+    \required{LJ_ANGLE}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{type1} \var{type2} gay-berne
+  \var{\epsilon_0} \var{\sigma_0} \var{r_\mathrm{cutoff}}
+  \var{k1} \var{k2} \var{\mu} \var{\nu}
+  \begin{features}
+    \required{ROTATION}
+    \required{GAY_BERNE}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{type1} 
+  \var{type2}
+  affinity
+  \var{\alpha_1} \var{\alpha_2} 
+  \begin{features}
+    \required{SHANCHEN}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{bondid}
+  fene
+  \var{K} \var{\Delta r_\mathrm{max}} \opt{\var{r_0}}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{bondid}
+  harmonic \var{K} \var{R} \opt{\var{r_\mathrm{cut}}}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{bondid}
+  harmonic_dumbbell \var{k_1} \var{k_2} \var{r} \opt{\var{r_\mathrm{cut}}}
+  \begin{features}
+    \required{ROTATION}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{bondid}
+  quartic \var{K_0} \var{K_1} \var{R} \opt{\var{r_\mathrm{cut}}}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{bondid}
+  bonded_coulomb \var{\alpha}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{bondid}
+  subt_lj
+  \var{reserved} \var{R}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{bondid}
+  rigid_bond
+  \var{constrained\_bond\_distance} \var{positional\_tolerance} 
+  \var{velocity\_tolerance}
+  \begin{features}
+    \required{BOND_CONSTRAINT}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+    \variant{1} inter \var{bondid}
+    tabulated bond \var{filename}
+    \variant{2} inter \var{bondid}
+    tabulated angle \var{filename}
+    \variant{3} inter \var{bondid}
+    tabulated dihedral \var{filename}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{bondid} virtual_bond
+\end{essyntax}
+\begin{essyntax}
+  inter \var{bondid}
+  oif_local_force
+  \var{L^0_{AB}} \var{k_s} \var{k_{slin}} \var{\phi} \var{k_b} \var{A_1} \var{A_2} \var{k_{al}}  
+     \begin{features}
+    \required{OIF_LOCAL_FORCES}
+  \end{features}
+\end{essyntax}
+%\begin{essyntax}
+  %inter \var{bondid}
+  %stretchlin_force
+  %\var{L^0_{AB}} \var{k_slin}
+%\end{essyntax}
+\begin{essyntax}
+  inter \var{bondid}
+  oif_global_force
+  \var{S^0} \var{k_{ag}}   \var{V^0} \var{k_{v}}
+   \begin{features}
+    \required{OIF_GLOBAL_FORCES}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{bondid}
+  oif\_out\_direction
+    \begin{features}
+    \required{MEMBRANE_COLLISION}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} inter \var{bondid} angle\_harmonic \var{K} \opt{\var{\phi_0}}
+  \variant{2} inter \var{bondid} angle\_cosine \var{K} \opt{\var{\phi_0}}
+  \variant{3} inter \var{bondid} angle\_cossquare \var{K} \opt{\var{\phi_0}}
+  \begin{features}
+    \required{BOND_ANGLE}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{bondid} dihedral \var{n} \var{K} \var{p}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} inter coulomb 0.0
+  \variant{2} inter coulomb
+  \variant{3} inter coulomb \var{parameters}
+\end{essyntax}
+\begin{essyntax}
+  inter coulomb \var{l_B} p3m [gpu] 
+  \var{r_\mathrm{cut}} \alt{\var{mesh} \asep \{\var{mesh_x} \var{mesh_y} \var{mesh_z}\}} \var{cao} \var{alpha}
+  \begin{features}
+    \required{ELECTROSTATICS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter coulomb \var{l_B} p3m [gpu] \alt{tune \asep tunev2}
+  accuracy \var{accuracy}\\
+  \opt{r_cut \var{r_\mathrm{cut}}}
+  \opt{mesh \var{mesh}}
+  \opt{cao \var{cao}}
+  \opt{alpha \var{\alpha}}
+  \begin{features}
+    \required{ELECTROSTATICS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter coulomb \opt{\lit{epsilon} \alt{\lit{metallic} \asep \var{epsilon}}}
+  \opt{\lit{n_interpol} \var{points}} \opt{\lit{mesh_off} \var{xoff}
+    \var{yoff} \var{zoff}}
+\end{essyntax}
+\begin{essyntax}
+  inter coulomb \var{l_B} ewaldgpu 
+  \var{r_\mathrm{cut}} \alt{\var{K_\mathrm{cut}} \asep \{\var{K_\mathrm{cut,x}} \var{K_\mathrm{cut,y}} \var{K_\mathrm{cut,x}}\}} \var{alpha}
+  \begin{features}
+    \required{ELECTROSTATICS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter coulomb \var{l_B} ewaldgpu tune
+  accuracy \var{accuracy} precision \var{precision}
+  K_max \var{K_\mathrm{max}}
+  \begin{features}
+    \required{ELECTROSTATICS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter coulomb \var{l_B} ewaldgpu tunealpha
+  \var{r_\mathrm{cut}} \alt{\var{K_\mathrm{cut}} \asep \{\var{K_\mathrm{cut,x}} \var{K_\mathrm{cut,y}} \var{K_\mathrm{cut,x}}\}} \var{precision}
+  \begin{features}
+    \required{ELECTROSTATICS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+    \require{1}{\variant{1}
+    inter coulomb \var{l_\mathrm{B}} dh \var{\kappa} \var{r_\mathrm{cut}}}
+    \variant{2}
+    inter coulomb \var{l_\mathrm{B}} dh \var{\kappa} \var{r_{\text{cut}}}
+    \var{\varepsilon_{\text{int}}} \var{\varepsilon_{ext}} \var{r_0} \var{r_1}
+    \require{1,2}{\var{\alpha}}
+    \begin{features}
+        \required[1]{ELECTROSTATICS}
+        \required[2]{COULOMB_DEBYE_HUECKEL}
+    \end{features}
+\end{essyntax}\leavevmode
+\begin{essyntax}
+ inter coulomb \var{l_B} mmm2d \var{maximal\_pairwise\_error}
+ \opt{\var{fixed\_far\_cutoff}}
+ \opt{dielectric \var{\epsilon_t} \var{\epsilon_m} \var{\epsilon_b}}
+ \opt{dielectric-contrasts \var{\Delta_t} \var{\Delta_b}}
+ \opt{capacitor \var{U}}
+  \begin{features}
+    \required{ELECTROSTATICS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  efield_caps \alt{total \asep induced \asep applied}
+  \begin{features}
+    \required{ELECTROSTATICS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1}
+  inter coulomb \var{l_B} mmm1d \var{switch\_radius}
+  \var{maximal\_pairwise\_error}
+
+  \variant{2}
+  inter coulomb \var{l_B} mmm1d tune \var{maximal\_pairwise\_error}
+  \begin{features}
+    \required{ELECTROSTATICS}
+    \required{PARTIAL_PERIODIC}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1}
+  inter coulomb \var{l_B} mmm1dgpu \var{switch\_radius}
+  \opt{\var{bessel\_cutoff}} \var{maximal\_pairwise\_error}
+
+  \variant{2}
+  inter coulomb \var{l_B} mmm1dgpu tune \var{maximal\_pairwise\_error}
+  \begin{features}
+    \required{CUDA}
+	\required{ELECTROSTATICS}
+	\required{PARTIAL_PERIODIC}
+	\required{MMM1D_GPU}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter coulomb \var{l_B}
+  memd \var{f\_mass} \var{mesh} \opt{epsilon \var{\varepsilon_{\infty}}}
+  \begin{features}
+    \required{ELECTROSTATICS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter coulomb \var{l_B}
+  memd localeps node \var{node\_x} \var{node\_y} \var{node\_z}
+  dir \var{X/Y/Z} eps \var{\varepsilon}
+  \begin{features}
+    \required{ELECTROSTATICS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter coulomb \var{l_B}
+  memd adaptive \var{scaling}
+  parameters \var{f\_mass} \var{mesh}
+  \begin{features}
+    \required{ELECTROSTATICS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  scafacos_methods
+  \begin{features}
+    \required{ELECTROSTATICS} 
+    \required{SCAFACOS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter coulomb \var{l_b} scafacos \var{method} \opt{\var{parameters}} \opt{tolerance_field \var{prec}}
+  \begin{features}
+    \required{ELECTROSTATICS} 
+    \required{SCAFACOS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter coulomb elc \var{maximal\_pairwise\_error} \var{gap\_size}
+  \opt{\var{far\_cutoff}}
+  \opt{noneutralization}
+  \opt{dielectric \var{\epsilon_t} \var{\epsilon_m} \var{\epsilon_b}}
+  \opt{dielectric-contrasts \var{\Delta_t} \var{\Delta_b}}
+  \opt{capacitor \var{U}}
+  \begin{features}
+    \required{ELECTROSTATICS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  iccp3m \var{n\_induced\_charges} 
+  convergence \var{convergence\_criterion}
+  areas \var{areas}
+  normals \var{normals}
+  sigmas \var{sigmas}
+  epsilons \var{epsilons}
+  \opt{eps\_out \var{eps\_out} }
+  \opt{relax \var{relaxation\_parameter} }
+  \opt{max\_iterations \var{max\_iterations} }
+  \opt{ext\_field \var{ext\_field}}
+  \begin{features}
+    \required{ELECTROSTATICS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} dielectric sphere center \var{cx} \var{cy} \var{cz} radius \var{r} res \var{res} 
+  \variant{2} dielectric wall normal \var{nx} \var{ny} \var{nz} dist \var{d} res \var{res}
+  \variant{3} dielectric cylinder  center \var{cx} \var{cy} \var{cz} axis \var{ax} \var{ay} \var{az} radius \var{r} direction \var{d} 
+  \variant{4} dielectric pore center \var{cx} \var{cy} \var{cz}  axis \var{ax} \var{ay} \var{az} radius \var{r} length \var {l} smoothing\_radius \var{rs} res \var{res}
+  \variant{5} dielectric slitpore pore_mouth \var{z} \
+             channel_width \var{c} \
+             pore_width \var{w} \
+             pore_length \var{l} \
+             upper_smoothing_radius \var{us} \
+             lower_smoothing_radius \var{ls} 
+
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} inter magnetic 0.0
+  \variant{2} inter magnetic
+  \variant{3} inter magnetic \var{parameters}
+\end{essyntax}
+\begin{essyntax}
+  inter magnetic \var{l_B} p3m 
+  \var{r_\mathrm{cut}} \var{mesh} \var{cao} \var{alpha}
+  \begin{features}
+    \required{DIPOLES}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter magnetic \var{l_B} p3m \alt{tune \asep tunev2}
+  accuracy \var{accuracy}\\
+  \opt{r_cut \var{r_\mathrm{cut}}} \opt{mesh \var{mesh}} \opt{cao
+    \var{cao}} \opt{alpha \var{\alpha}}
+  \begin{features}
+    \required{DIPOLES}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter magnetic mdlc \var{accuracy} \var{gap\_size}
+  \opt{\var{far\_cutoff}}
+  \begin{features}
+    \required{DIPOLES}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter magnetic \var{l_{B}} dawaanr
+  \begin{features}
+    \required{DIPOLES}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter magnetic \var{l_{B}} mdds n\_cut \var{value\_n\_cut}
+  \begin{features}
+    \required{DIPOLES}
+    \required{MAGNETIC_DIPOLAR_DIRECT_SUM}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter magnetic \var{l_{B}} dds-gpu
+  \begin{features}
+    \required{DIPOLES}
+    \required{CUDA}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  scafacos_methods
+  \begin{features}
+    \required{DIPOLES} 
+    \required{SCAFACOS_DIPOLES} 
+    \required{SCAFACOS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter magnetic \var{l_b} scafacos \var{method} \opt{\var{parameters}} \opt{tolerance_field \var{prec}}
+  \begin{features}
+    \required{DIPOLES}
+    \required{SCAFACOS_DIPOLES}
+    \required{SCAFACOS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{type1} \var{type2}
+  tunable_slip \var{T} \var{\gamma_L} \var{r_\mathrm{cut}} \var{\delta t}
+  \var{v_x} \var{v_y} \var{v_z}
+  \begin{features}
+    \required{TUNABLE_SLIP}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{type1} \var{type2} inter_dpd \var{gamma} \var{r\_cut} \var{wf}  \var{tgamma} \var{tr\_cut} \var{twf}
+  \begin{features}
+    \required{INTER_DPD}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{typeid1} \var{typeid1} comfixed \var{flag}
+  \begin{features}
+    \required{COMFIXED}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter \var{typeid1} \var{typeid2}
+  comforce \var{flag} \var{dir} \var{force} \var{fratio}
+  \begin{features}
+    \required{COMFORCE}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  inter forcecap \alt{\var{F_\mathrm{max}} \asep individual}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} blockfile \var{channel} 
+  write variable \{\var{varname1} \var{varname2} \dots \}
+  \variant{2} blockfile \var{channel} write variable all
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} blockfile \var{channel} write tclvariable \{
+  \var{varname1} \var{varname2} \dots \}
+  \variant{2} blockfile \var{channel} write tclvariable all
+  \variant{3} blockfile \var{channel} write tclvariable reallyall
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} blockfile \var{channel} write particles 
+  \var{what} \alt{\var{range} \asep all}
+  \variant{2} blockfile \var{channel} write bonds \var{range}
+  \variant{3} blockfile \var{channel} write interactions
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} blockfile \var{channel} write random
+  \variant{3} blockfile \var{channel} write seed
+\end{essyntax}
+\begin{essyntax}
+  blockfile \var{channel} write configs
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} blockfile \var{channel} write start \var{tag}
+  \variant{2} blockfile \var{channel} write end
+  \variant{3} blockfile \var{channel} write \var{tag} \opt{\var{arg}}\dots
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} blockfile \var{channel} read start 
+  \variant{2} blockfile \var{channel} read toend 
+  \variant{3} blockfile \var{channel} read auto 
+  \variant{4} blockfile \var{channel} read \alt{particles \asep
+    interactions \asep bonds \asep variable \asep seed \asep random
+    \asep configs}
+\end{essyntax}
+\begin{essyntax}
+  writemd \var{channel} \opt{posx|posy|posz|vx|vy|vz|fx|fy|fz}\dots
+\end{essyntax}
+\begin{essyntax}
+  readmd \var{channel}
+\end{essyntax}
+\begin{essyntax}
+  mpiio \var{filename} \opt{read|write} \opt{pos|v|bond|type}\dots
+\end{essyntax}
+\begin{essyntax}
+  writevsf \var{channelId} 
+  \opt{\alt{short \asep verbose}}
+  \opt{radius \alt{\var{radii} \asep auto}} 
+  \opt{typedesc \var{typedesc}}
+\end{essyntax}
+\begin{essyntax}
+  writevcf \var{channelId} 
+  \opt{\alt{short \asep verbose}}
+  \opt{\alt{folded \asep absolute}}
+  \opt{pids \alt{\var{pids} \asep all}}
+  \opt{userdata \var{userdata}}
+\end{essyntax}
+\begin{essyntax}
+  vtfpid \var{pid}
+\end{essyntax}
+\begin{essyntax}
+  writevtk \var{filename} 
+  \opt{\alt{all \asep \var{types}}}
+\end{essyntax}
+\begin{essyntax}
+  writepsf \var{file} \opt{-molecule} \var{N_P} \var{MPC} \var{N_CI}
+  \var{N_pS} \var{N_nS}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} writepdb \var{file}
+  \variant{2} writepdbfoldchains \var{file} \var{chain\_start}
+  \var{n\_chains} \var{chain\_length} \var{box\_l}
+  \variant{3} writepdbfoldtopo \var{file} \var{shift}
+\end{essyntax}
+\begin{essyntax}
+  readpdb pdb_file \var{pdbfile} type \var{type} first_id \var{firstid} \opt{
+  itp_file \var{itpfile} first_type \var{fisttype}} \\
+  \opt{\require{1}{lj_with \var{othertype} \var{epsilon} \var{sigma}}}
+  \opt{\require{1}{lj_rel_cutoff \var{cutoff}} } \opt{fit_to_box}
+\begin{features}
+  \required[1]{LENNARD_JONES}
+\end{features}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} imd connect \opt{\var{port}}
+  \variant{2} imd positions \opt{\alt{-unfolded \asep -fold_chains}}
+  \variant{3} imd listen \var{seconds}
+  \variant{4} imd disconnect
+\end{essyntax}
+\begin{essyntax}
+\variant{1} prepare_vmd_connection 
+\var{filename} \opt{start} \opt{wait \var{wait}} \opt{localhost}
+\opt{constraints}
+...
+\variant{2} prepare_vmd_connection 
+\opt{\var{filename} \opt{\var{wait} \opt{\var{start} \opt{\var{constraints}}}}}
+\end{essyntax}
+\begin{essyntax}
+  lbfluid
+  \require{2}{\opt{gpu}}
+  \require{1 or 2}{\opt{agrid  \var{agrid}}}
+  \require{1 or 2 or 3}{\opt{dens  \var{density} }}
+  \require{1 or 2 or 3}{\opt{visc  \var{viscosity}}}
+  \require{1 or 2}{\opt{tau  \var{lb\_timestep}}}
+  \require{1 or 2 or 3}{\opt{bulk_viscosity  \var{bulk\_viscosity}}}
+  \require{1 or 2 or 3}{\opt{ext_force  \var{f_x} \var{f_y} \var{f_z}}}
+  \require{1 or 2 or 3}{\opt{friction   \var{gamma} } }
+  \require{2}{\opt{couple   \var{2pt/3pt} } }
+  \require{1 or 2 or 3}{\opt{gamma_odd  \var{gamma\_odd}}}
+  \require{1 or 2 or 3}{\opt{gamma_even  \var{gamma\_even}}}
+  \require{3}{\opt{mobility} \var{mobilities}  }
+  \require{3}{\opt{sc\_coupling} \var{coupling\_constants}  }
+  \begin{features}
+  \required[1]{LB}
+  \required[2]{LB_GPU}
+  \required[3]{SHANCHEN}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  lbfluid print_interpolated_velocity \var{x} \var{y} \var{z}
+\end{essyntax}
+\begin{essyntax}
+  lbfluid save_ascii_checkpoint \var{filename}\\
+  lbfluid save_binary_checkpoint \var{filename}\\
+  lbfluid load_ascii_checkpoint \var{filename}\\
+  lbfluid load_binary_checkpoint \var{filename}
+\end{essyntax}
+\begin{essyntax}
+  thermostat \require{1 or 2 or 3}{lb} \var{T}
+  \begin{features}
+  \required[1]{LB}
+  \required[2]{LB_GPU}
+  \required[3]{SHANCHEN}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  lbnode \var{x} \var{y} \var{z} \alt{print \asep set} \var{args}
+  \begin{features}
+  \required[1]{LB}
+  \required[2]{LB_GPU}
+  \required[3]{SHANCHEN}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  lbfluid remove_momentum
+  \begin{features}
+  \required[1]{LB}
+  \required[2]{LB_GPU}
+  \required[3]{SHANCHEN}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} lbfluid print \opt{vtk} \var{property} \var{filename}
+  \variant{2} lbfluid print vtk velocity \opt{bb1_x bb1_y bb1_z bb2_x bb2_y bb2_z} \var{filename}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} lbboundary \var{shape} \var{shape\_args} \opt{velocity
+    \var{vx} \var{vy} \var{vz}}
+  \variant{2} lbboundary force \opt{\var{n_\mathrm{boundary}}}
+  \begin{features}
+  \required{LB_BOUNDARIES}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} lbfluid cpu
+  \variant{2} lbfluid gpu
+  \begin{features}
+    \required[1]{LB}
+    \required[2]{LB_GPU}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  setmd mu_E \var{\mu E_x} \var{\mu E_y} \var{\mu E_z}
+  \begin{features}
+    \required{LB}
+    \required{LB_ELECTROHYDRODYNAMICS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  oif_init
+\end{essyntax}
+\begin{essyntax}
+	oif_info
+\end{essyntax}
+\begin{essyntax}
+  \require{1,2}{oif_create_template}
+  template-id  \var{tid}
+  nodes-file  \var{nodes.dat}
+  triangles-file  \var{triangles.dat}
+  \opt{stretch \var{x} \var{y} \var{z}}
+  \opt{mirror \var{x} \var{y} \var{z}}
+  \opt{ks \var{ks\_value}}
+  \opt{kslin \var{kslin\_value}}
+  \opt{kb \var{kb\_value}} 
+  \opt{kal \var{kal\_value}}
+  \require{3}{\opt{kag \var{kag\_value}}}
+  \require{4}{\opt{kv \var{kv\_value}}}
+  \require{5}{\opt{normal}}
+  \begin{features}
+  \required[1]{MASS}
+  \required[2]{EXTERNAL_FORCES}
+  \required[3]{OIF_GLOBAL_FORCES}
+  \required[4]{OIF_LOCAL_FORCES}
+  \required[5]{MEMBRANE_COLLISION}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \require{1,2, possibly 3,4}{oif_add_object}
+  object-id  \var{oid}
+  template-id  \var{tid}
+  origin \var{x} \var{y} \var{z}
+  part-type \var{type}
+  \opt{rotate \var{x} \var{y} \var{z}}
+  \opt{mass \var{m}}
+  \begin{features}
+  \required[1]{MASS}
+  \required[2]{EXTERNAL_FORCES}
+  \required[3]{OIF_GLOBAL_FORCES}
+  \required[4]{OIF_LOCAL_FORCES}
+  \required[5]{MEMBRANE_COLLISION}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  oif_mesh_analyze
+  nodes-file  \var{nodes.dat}
+  triangles-file  \var{triangles.dat}
+  \opt{orientation}
+  \opt{repair \var{output\_file.dat} \var{method}}
+  \opt{shift-node-ids \var{output\_file.dat}}
+\end{essyntax}
+\begin{essyntax}
+  \require{1,2, possibly 3,4}{oif_object_output}
+  object-id  \var{oid}
+  \opt{vtk-pos \var{output\_file1.dat}}
+  \opt{vtk-pos-folded \var{output\_file2.dat}}
+  \opt{vtk-aff \var{output\_file3.dat}}
+  \opt{mesh-nodes \var{output\_file4.dat}}
+  \begin{features}
+  \required[1]{MASS}
+  \required[2]{EXTERNAL_FORCES}
+  \required[3]{OIF_GLOBAL_FORCES}
+  \required[4]{OIF_LOCAL_FORCES}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \require{1,2, possibly 3,4}{oif_object_analyze}
+  object-id  \var{oid}
+  \opt{origin}
+  \opt{pos-bounds \var{bname}}
+  \opt{approx-pos}
+  \opt{edge-statistics}
+  \opt{volume}
+  \opt{surface-area}
+  \opt{velocity}
+  \opt{elastic-forces \var{name(s)} \var{output\_file.dat}}
+  \opt{f-metric \var{name}}
+  %\opt{affinity \var{name}}
+  \begin{features}
+  \required[1]{MASS}
+  \required[2]{EXTERNAL_FORCES}
+  \required[3]{OIF_GLOBAL_FORCES}
+  \required[4]{OIF_LOCAL_FORCES}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \require{1,2, possibly 3,4}{oif_object_set}
+  object-id  \var{oid}
+  \opt{force \var{x} \var{y} \var{z}}
+  \opt{origin \var{x} \var{y} \var{z}}
+  \opt{mesh-nodes \var{mesh\_nodes.dat}}
+  \opt{kill-motion}
+  \opt{un-kill-motion}
+  \begin{features}
+  \required[1]{MASS}
+  \required[2]{EXTERNAL_FORCES}
+  \required[3]{OIF_GLOBAL_FORCES}
+  \required[4]{OIF_LOCAL_FORCES}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  part
+  \var{pid}
+  \opt{pos \var{x} \var{y} \var{z}}
+  \opt{type \var{typeid}}
+  \opt{v \var{vx} \var{vy} \var{vz}}
+  \opt{f \var{fx} \var{fy} \var{fz}}
+  \opt{bond \var{bondid} \var{pid2} \dots}
+  \require{1}{\opt{q \var{charge}}}
+  \require{2}{\opt{quat \var{q1} \var{q2} \var{q3} \var{q4}}}
+  \require{2}{\opt{omega_body/lab \var{x} \var{y} \var{z}}}
+  \require{2}{\opt{torque_body/lab \var{x} \var{y} \var{z}}}
+  \require{2}{\opt{rinertia \var{x} \var{y} \var{z}}}
+  \require{3}{\opt{\opt{un}fix \var{x} \var{y} \var{z}}}
+  \require{3}{\opt{ext_force \var{x} \var{y} \var{z}}}
+  \require{2,3}{\opt{ext_torque \var{x} \var{y} \var{z}}}
+  \require{4}{\opt{exclude \var{pid2}\dots}}
+  \require{4}{\opt{exclude delete \var{pid2}\dots}}
+  \require{5}{\opt{mass \var{mass}}}
+  \require{6}{\opt{dipm \var{moment}}}
+  \require{6}{\opt{dip \var{dx} \var{dy} \var{dz}}}
+  \require{7,8}{\opt{virtual \var{v}}}
+  \require{8}{\opt{vs\_relative \var{pid} \par{distance}}}
+  \require{8}{\opt{vs\_auto\_relate\_to \var{pid}}}
+  \require{9}{\opt{temp \var{T}}}
+  \require{9}{\opt{gamma \alt{\var{gtran} \asep \var{gtranx}\fmark{15} \var{gtrany}\fmark{15} \var{gtranz}\fmark{15}}}}
+  \require{2,9}{\opt{gamma\_rot \alt{\var{grot} \asep \var{grotx}\fmark{14} \var{groty}\fmark{14} \var{grotz}\fmark{14}}}}
+  \require{10}{\opt{rotation \var{rot}}}
+  \require{11}{\opt{solvation \var{lA} \var{kA} \var{lB} \var{kB}}}
+  \require{12}{\opt{swimming \alt{\alt{v_swim \var{v\_swim} \asep
+          f_swim \var{f\_swim}} \asep off}}}
+  \requirelong{12,13}{%
+    \optlong{swimming
+      \alt{%
+        \alt{v_swim \var{v\_swim} \asep f_swim \var{f\_swim}}
+        \alt{pusher \asep puller}
+        dipole_length \var{dipole\_length}
+        rotational_friction \var{rotational\_friction}
+      \asep off}%
+    }%
+  }
+  \begin{features}
+    \required[1]{ELECTROSTATICS} 
+    \required[2]{ROTATION}
+    \required[3]{EXTERNAL_FORCES}
+    \required[4]{EXCLUSIONS}
+    \required[5]{MASS}
+    \required[6]{DIPOLES}
+    \required[7]{VIRTUAL\_SITES\_COM}
+    \required[8]{VIRTUAL\_SITES\_RELATIVE}
+    \required[9]{LANGEVIN\_PER\_PARTICLE}
+    \required[10]{ROTATION\_PER\_PARTICLE}
+    \required[11]{SHANCHEN}
+    \required[12]{ENGINE}
+    \required[13]{LB \MakeLowercase{\textrm{or}} LB_GPU}
+    \required[14]{ROTATIONAL_INERTIA}
+    \required[15]{PARTICLE_ANISOTROPY}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1}
+  part \var{pid} print
+  \optlong{\alt{id \asep pos \asep type \asep folded_position \asep 
+      type \asep q \asep v \asep f \asep torque_body \asep torque_lab 
+      \asep body_frame_velocity \asep fix \asep ext_force 
+      \asep ext_torque \asep bond \asep exclusions 
+      \mbox{connections \opt{\var{range}}} \asep swimming}}\dots
+  \variant{2} part
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} part \var{pid} delete
+  \variant{2} part deleteall
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} part auto\_exclusions \opt{\var{range}}
+  \variant{2} part delete\_exclusions
+  \begin{features}
+    \required{EXCLUSIONS} 
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  polymer 
+  \var{num\_polymers} \var{monomers\_per\_chain}
+  \var{bond\_length}\\
+  \opt{start \var{pid}} 
+  \opt{pos \var{x} \var{y} \var{z}}
+  \opt{mode \alt{RW \asep SAW \asep PSAW} 
+    \opt{\var{shield} \opt{\var{try_\mathrm{max}}}}} 
+  \require{1}{\opt{charge \var{q}}} 
+  \require{1}{\opt{distance \var{d_\mathrm{charged}}}}
+  \opt{types \var{typeid_\mathrm{neutral}}
+    \opt{\var{typeid_\mathrm{charged}}}} 
+  \opt{bond \var{bondid}} 
+  \opt{angle \var{\phi} \opt{\var{\theta} \opt{\var{x} \var{y}
+        \var{z}}}}
+  \require{2}{\opt{constraints}}
+  \begin{features}
+    \required[1]{ELECTROSTATICS}
+    \required[2]{CONSTRAINTS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  counterions
+  \var{N} 
+  \opt{start \var{pid}} 
+  \opt{mode \alt{SAW \asep RW} \opt{\var{shield} \opt{\var{try_\mathrm{max}} }}} 
+  \require{1}{\opt{charge \var{val}}}
+  \opt{type \var{typeid}}
+  \begin{features}
+    \required[1]{ELECTROSTATICS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  salt 
+  \var{N_+} \var{N_-} 
+  \opt{start \var{pid}} 
+  \opt{mode \alt{SAW \asep RW} \opt{\var{shield} \opt{\var{try_\mathrm{max}}}}}
+  \require{1}{\opt{charges \var{val_+} \opt{\var{val_-}}}} 
+  \opt{types \var{typeid_+} \opt{\var{typeid_-}}}
+  \opt{rad \var{r}}
+  \begin{features}
+    \required[1]{ELECTROSTATICS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  diamond 
+  \var{a} \var{bond\_length} \var{monomers\_per\_chain} 
+  \opt{counterions \var{N_\mathrm{CI}}}\\ 
+  \require{1}{\opt{charges \var{val_\mathrm{node}}
+      \var{val_\mathrm{monomer}} \var{val_\mathrm{CI}}}}
+  \require{1}{\opt{distance \var{d_\mathrm{charged}}}}
+  \opt{nonet}
+  \begin{features}
+    \required[1]{ELECTROSTATICS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  icosaeder 
+  \var{a} \var{monomers\_per\_chain} 
+  \opt{counterions \var{N_\mathrm{CI}}} 
+  \require{1}{\opt{charges \var{val_\mathrm{monomers}} \var{val_\mathrm{CI}}}}
+  \require{1}{\opt{distance \var{d_\mathrm{charged}}}}
+  \begin{features}
+    \required[1]{ELECTROSTATICS}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  crosslink 
+  \var{num\_polymer} \var{monomers\_per\_chain} 
+  \opt{start \var{pid}} 
+  \opt{catch \var{r_\mathrm{catch}}}
+  \opt{distLink \var{link\_dist}} 
+  \opt{distChain \var{chain\_dist}} 
+  \opt{FENE \var{bondid}} 
+  \opt{trials \var{try_\mathrm{max}}} 
+\end{essyntax}
+\begin{essyntax}
+  copy_particles
+  \opt{set \var{id1} \var{id2} \dots \asep range \var{from} {to} \dots} 
+  \opt{shift \var{s\_x} \var{s\_y} \var{s\_z}}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} 
+  constraint wall normal \var{n_x} \var{n_y} \var{n_z} 
+  dist \var{d} type \var{id} \opt{penetrable \var{flag}} \opt{reflecting
+  \var{flag}} \opt{only_positive \var{flag}} \opt{tunable_slip \var{flag}}
+  
+  \variant{2}
+  constraint sphere center \var{c_x} \var{c_y} \var{c_z} 
+  radius \var{rad} direction \var{direction} type \var{id} \opt{penetrable \var{flag}} \opt{reflecting \var{flag}}
+  
+  \variant{3}
+  constraint cylinder center \var{c_x} \var{c_y} \var{c_z} 
+  axis \var{n_x} \var{n_y} \var{n_z} 
+  radius \var{rad} length \var{length} 
+  direction \var{direction} 
+  type \var{id}  \opt{penetrable \var{flag}} \opt{reflecting \var{flag}}
+  
+  \variant{4}
+  constraint rhomboid corner \var{p_x} \var{p_y} \var{p_z} 
+  a \var{a_x} \var{a_y} \var{a_z} 
+  b \var{b_x} \var{b_y} \var{b_z} \\
+  c \var{c_x} \var{c_y} \var{c_z} 
+  direction \var{direction} 
+  type \var{id}  \opt{penetrable \var{flag}} \opt{reflecting \var{flag}}
+  
+  \variant{5}
+  constraint maze nsphere \var{n} 
+  dim \var{d} sphrad \var{r_s} cylrad \var{r_c}
+  type \var{id} \opt{penetrable \var{flag}}
+  
+  \variant{6}  
+  constraint pore center \var{c_x} \var{c_y} \var{c_z} 
+  axis \var{n_x} \var{n_y} \var{n_z} 
+  radius \var{rad} \opt{outer_radius \var{rad_S}} 
+  \opt{smoothing_radius \var{rad_S}} length \var{length} 
+  type \var{id} 
+
+  \variant{7}
+  constraint stomatocyte center \var{x} \var{y} \var{z} orientation \var{ox} \var{oy} \var{oz}
+  outer_radius \var{Ro} inner_radius \var{Ri} layer_width \var{w} direction \var{direction} 
+  type \var{id} \opt{penetrable \var{flag}} \opt{reflecting \var{flag}}
+  
+  \variant{8}
+  constraint slitpore
+  pore_mouth \var{z} \
+             channel_width \var{c} \
+             pore_width \var{w} \
+             pore_length \var{l} \
+             upper_smoothing_radius \var{us} \
+             lower_smoothing_radius \var{ls} 
+  
+  
+  \require{1}{%
+    \variant{9}
+    constraint rod center \var{c_x} \var{c_y} 
+    lambda \var{lambda}
+  } 
+  
+  \require{1}{%
+    \variant{10}
+    constraint plate height \var{h}
+    sigma \var{sigma} 
+  }
+  
+  \require{2,3}{%
+    \variant{11}
+    constraint ext_magn_field \var{f_x} \var{f_y} \var{f_z} 
+  }
+
+  \variant{13}
+  constraint mindist_position \var{x} \var{y} \var{z}
+
+  \variant{14}
+  constraint hollow_cone center \var{x} \var{y} \var{z} orientation \var{ox} \var{oy} \var{oz}
+  outer_radius \var{Ro} inner_radius \var{Ri} width \var{w} opening_angle \var{alpha} direction \var{direction} 
+  type \var{id} \opt{penetrable \var{flag}} \opt{reflecting \var{flag}}
+
+  \variant{15}
+  constraint spherocylinder center \var{c_x} \var{c_y} \var{c_z} 
+  axis \var{n_x} \var{n_y} \var{n_z} 
+  radius \var{rad} length \var{length} 
+  direction \var{direction} 
+  type \var{id}  \opt{penetrable \var{flag}} \opt{reflecting \var{flag}}
+
+  \begin{features}
+    \required{CONSTRAINTS}
+    \required[1]{ELECTROSTATICS}
+    \required[2]{ROTATION}
+    \required[3]{DIPOLES}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  constraint delete \opt{\var{num}} 
+\end{essyntax}
+\begin{essyntax}
+constraint force \var{n} 
+\end{essyntax}
+\begin{essyntax}
+constraint  \opt{\var{num}} 
+\end{essyntax}
+ \begin{essyntax}
+   harmonic_well \{ \var{x} \var{y} \var{z} \} \var{k}
+  \begin{features}
+    \required{CUDA}
+  \end{features}
+ \end{essyntax}
+\begin{essyntax}
+part gc
+\alt{\var{type} \asep \alt{\alt{find \asep delete \asep
+status \asep number} \var{type}}}
+\end{essyntax}
+\begin{essyntax}
+	part gc \var{type}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} integrate \var{steps} \opt{recalc_forces} \opt{reuse_forces}
+  \variant{2} integrate set \opt{nvt}
+  \variant{3} integrate set npt_isotropic \var{p_{ext}} \var{piston} \opt{\var{x\; y\; z}} \opt{-cubic_box}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} time_integration
+  \variant{2} time_integration \var{steps}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} minimize_energy \var{f_\mathrm{max}} \var{steps} \var{gamma} \var{maxdisplacement}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} tune_skin \var{min} \var{max} \var{tol} \var{steps}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} change_volume \var{V_\mathrm{new}} 
+  \variant{2} change_volume \var{L_\mathrm{new}} \alt{x \asep y \asep z \asep xyz}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} rotate_system \var{phi} \var{theta} \var{alpha}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} lees_edwards_offset \var{offset_\mathrm{new}}  
+  \begin{features}
+    \required{LEES_EDWARDS}
+  \end{features}
+
+\end{essyntax}
+\begin{essyntax}
+  velocities \var{v_\mathrm{max}} 
+  \opt{start \var{pid}} 
+  \opt{count \var{N}}
+\end{essyntax}
+\begin{essyntax}
+  sort_particles
+\end{essyntax}
+\begin{essyntax}
+  parallel_tempering::main
+  -rounds \var{N}
+  -swap \var{swap}
+  -perform \var{perform}
+  \opt{-init \var{init}}
+  \opt{-values \var{\{T_i\}}}
+  \opt{-connect \var{master}}
+  \opt{-port \var{port}}
+  \opt{-load \var{j_\mathrm{node}}}
+  \opt{-resrate \var{N_\mathrm{reset}}}
+  \opt{-info \var{info}}
+\end{essyntax}
+\begin{essyntax}
+  parallel_tempering::set_shareddata \var{data}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} metadynamics 
+  \variant{2} metadynamics set off
+  \variant{3} metadynamics set distance \var{pid_1} \var{pid_2} \
+  \var{d_\mathrm{min}} \var{d_\mathrm{max}} \var{b_\mathrm{height}} \
+  \var{b_\mathrm{width}} \var{f_\mathrm{bound}} \var{d_\mathrm{bins}} \var{numrelaxationsteps}
+  \variant{4} metadynamics set relative_z \var{pid_1} \var{pid_2} \
+  \var{z_\mathrm{min}} \var{z_\mathrm{max}} \var{b_\mathrm{height}} \
+  \var{b_\mathrm{width}} \var{f_\mathrm{bound}} \var{z_\mathrm{bins}} \var{numrelaxationsteps}
+  \variant{5} metadynamics print_stat current_coord
+  \variant{6} metadynamics print_stat coord_values
+  \variant{7} metadynamics print_stat profile
+  \variant{8} metadynamics print_stat force
+  \variant{9} metadynamics load_stat \var{profile\_list} \
+  \var{force\_list}
+
+  Required features: METADYNAMICS
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} integrate_sd \var{steps}
+\end{essyntax}
+\begin{essyntax}
+  setmd smaller\_time\_step 0.001 \\
+  part $i$ smaller\_timestep 1
+
+  Required features: MULTI\_TIMESTEP
+\end{essyntax}
+\begin{essyntax}
+\variant{1} setmd \var{variable}
+\variant{2} setmd \var{variable} \opt{\var{value}}+
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} thermostat
+  \variant{2} thermostat off
+  \variant{3} thermostat \var{parameters}
+\end{essyntax}
+\begin{essyntax}
+  thermostat langevin \var{temperature} \var{gamma\_trans} \\
+  \asep \var{g\_trans\_x} \var{g\_trans\_y} \var{g\_trans\_z} \\
+  \opt{\alt{\var{gamma\_rotate} \asep
+  \var{g\_rot\_x} \var{g\_rot\_y} \var{g\_rot\_z}}} \opt{on/off} \opt{on/off}
+\end{essyntax}
+\begin{essyntax}
+  thermostat ghmc \var{temperature} \var{n\_md} \var{phi} \opt{-no_flip | -flip
+| -random_flip} \opt{-no_scale | -scale}
+\end{essyntax}
+\begin{essyntax}
+  thermostat dpd \var{temperature} \var{gamma} \var{r\_cut} \opt{ WF
+    \var{wf}  \var{tgamma} \var{tr\_cut} TWF \var{twf}}
+  \begin{features}
+    \required{DPD} or \required{TRANS_DPD}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  thermostat inter_dpd \var{temperature}
+  \begin{features}
+    \required{INTER_DPD}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  setmd dpd_ignore_fixed_particles 0
+  \begin{features}
+    \required{INTER_DPD}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  thermostat npt_isotropic \var{temperature} \var{gamma0} \var{gammaV}
+  \begin{features}
+    \required{NPT}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  thermostat cpu \var{temperature}
+\end{essyntax}
+\begin{essyntax}
+  thermostat sd \var{temperature}
+  \begin{features}
+    \required{CUDA} and \required{SD}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1}nemd exchange \var{n\_slabs} \var{n\_exchange}
+  \variant{2}nemd shearrate \var{n\_slabs} \var{shearrate}
+  \variant{3}nemd off
+  \variant{4}nemd
+  \variant{5}nemd profile
+  \variant{6}nemd viscosity
+  \begin{features}
+    \required{NEMD}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  cellsystem domain_decomposition \opt{-no_verlet_list}
+\end{essyntax}
+\begin{essyntax}
+  cellsystem nsquare 
+\end{essyntax}
+\begin{essyntax}
+  cellsystem layered \var{n\_layers}
+\end{essyntax}
+\begin{essyntax}
+  \variant{1} cuda list
+  \variant{2} cuda setdevice \var{id}
+  \variant{3} cuda getdevice
+\end{essyntax}
+\begin{essyntax}
+\variant{1} on\_collision
+\variant{2} on\_collision off
+\variant{3} on\_collision \opt{exception} bind_centers \var{d} \var{bond1}
+\variant{4} on\_collision \opt{exception} bind_at_point_of_collision \var{d} \var{bond1} \var{bond2} \var{type}
+\variant{5} on\_collision \opt{exception} glue_to_surface \var{d} \var{bond1} \var{bond2} \var{type} \var{type2} \var{type3} \var{type4} \var{d2}
+\variant{6} on\_collision \opt{exception} bind_three_particles \var{d} \var{bond1} \var{bond2} \var{res}
+\end{essyntax}
+\begin{essyntax}
+\variant{0} reaction reactant_type \var{rt} catalyzer_type \var{ct} 
+product_type \var{pt} range \var{r} ct_rate \var{k\_ct}
+\opt{eq_rate \var{k\_eq}} \opt{react_once \var{on/off}} \opt{swap \var{on/off}}
+\variant{1} reaction off
+\variant{2} reaction print
+\begin{features}
+  \required{CATALYTIC_REACTIONS\footnote{The current implementation
+      also requires the use of verlet lists and domain
+      decomposition.}}
+\end{features}
+\end{essyntax}
+\begin{essyntax}
+  kill_particle_motion \require{1}{\opt{rotation}}
+  \begin{features}
+    \required[1]{ROTATION}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  kill_particle_forces \require{1}{\opt{torques}}
+  \begin{features}
+    \required[1]{ROTATION}
+  \end{features}
+\end{essyntax}
+\begin{essyntax}
+  system_CMS
+\end{essyntax}
+\begin{essyntax}
+  system_CMS_velocity
+\end{essyntax}
+\begin{essyntax}
+  galilei_transform
+\end{essyntax}

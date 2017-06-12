@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: 04-lattice_boltzmann.aux
+The style file: unsrt.bst
+Database file #1: refs.bib
+Warning--can't use both author and editor fields in duenweg09a
+You've used 7 entries,
+            1791 wiz_defined-function locations,
+            489 strings with 4296 characters,
+and the built_in function-call counts, 1372 in all, are:
+= -- 120
+> -- 47
+< -- 2
++ -- 19
+- -- 12
+* -- 66
+:= -- 214
+add.period$ -- 21
+call.type$ -- 7
+change.case$ -- 2
+chr.to.int$ -- 0
+cite$ -- 8
+duplicate$ -- 78
+empty$ -- 152
+format.name$ -- 12
+if$ -- 322
+int.to.chr$ -- 0
+int.to.str$ -- 7
+missing$ -- 13
+newline$ -- 38
+num.names$ -- 7
+pop$ -- 36
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 28
+stack$ -- 0
+substring$ -- 42
+swap$ -- 16
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 11
+width$ -- 8
+write$ -- 80
+(There was 1 warning)

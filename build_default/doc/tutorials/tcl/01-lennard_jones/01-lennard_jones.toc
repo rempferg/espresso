@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {section}{\numberline {2}Background}{2}{section.2}
+\contentsline {section}{\numberline {3}Tutorial Outline}{2}{section.3}
+\contentsline {section}{\numberline {4}First steps}{3}{section.4}
+\contentsline {section}{\numberline {5}Short TCL Tutorial}{4}{section.5}
+\contentsline {subsection}{\numberline {5.1}Assignments and evaluation}{4}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Comparisons and looping}{5}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Lists}{6}{subsection.5.3}
+\contentsline {section}{\numberline {6}Adding a new Tcl command}{7}{section.6}
+\contentsline {subsection}{\numberline {6.1}Writing to a file}{7}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}System setup}{9}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Lennard-Jones Potential}{9}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Units}{10}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Simulation Parameters}{10}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}Assigning Particle Properties}{11}{subsection.6.6}
+\contentsline {subsection}{\numberline {6.7}Assigning Interactions}{11}{subsection.6.7}
+\contentsline {subsection}{\numberline {6.8}Generating Data: Lennard-Jones Liquid Simulation}{11}{subsection.6.8}
+\contentsline {subsubsection}{\numberline {6.8.1}System Setup}{12}{subsubsection.6.8.1}
+\contentsline {subsection}{\numberline {6.9}Simple Error Analysis on Time Series Data with \texttt {uwerr}}{20}{subsection.6.9}
+\contentsline {subsection}{\numberline {6.10}Online analysis of correlations}{22}{subsection.6.10}
+\contentsline {subsection}{\numberline {6.11}Other Useful Scripts}{23}{subsection.6.11}

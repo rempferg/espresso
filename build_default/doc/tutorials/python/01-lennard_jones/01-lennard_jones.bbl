@@ -1,0 +1,33 @@
+\begin{thebibliography}{1}
+
+\bibitem{esp_url}
+http://espressomd.org/.
+
+\bibitem{limbach2006ees}
+HJ~Limbach, A.~Arnold, and B.~Mann.
+\newblock {ESPResSo; an extensible simulation package for research on soft
+  matter systems}.
+\newblock {\em Computer Physics Communications}, 174(9):704--727, 2006.
+
+\bibitem{arnold13a}
+A.~Arnold, O.~Lenz, S.~Kesselheim, R.~Weeber, F.~Fahrenberger, D.~R{\"o}hm,
+  P.~Ko\v{s}ovan, and C.~Holm.
+\newblock {ESPResSo}~3.1 --- molecular dynamics software for coarse-grained
+  models.
+\newblock In M.~Griebel and M.~A. Schweitzer, editors, {\em Meshfree Methods
+  for Partial Differential Equations {VI}}, volume~89 of {\em Lecture Notes in
+  Computational Science and Engineering}, pages 1--23. Springer Berlin
+  Heidelberg, 2013.
+
+\bibitem{arnold2003ees}
+A.~Arnold, BA~Mann, HJ~Limbach, and C.~Holm.
+\newblock {ESPResSo--An Extensible Simulation Package for Research on Soft
+  Matter Systems}.
+\newblock {\em Forschung und wissenschaftliches Rechnen}, 63:43--59, 2003.
+
+\bibitem{frenkel02b}
+Daan Frenkel and Berend Smit.
+\newblock {\em Understanding Molecular Simulation}.
+\newblock Academic Press, San Diego, second edition, 2002.
+
+\end{thebibliography}

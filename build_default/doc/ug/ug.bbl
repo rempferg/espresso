@@ -1,0 +1,435 @@
+\begin{thebibliography}{67}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Allen(2006)]{allen06}
+Michael~P. Allen.
+\newblock Configurational temperature in membrane simulations using dissipative
+  particle dynamics.
+\newblock \emph{J.~Phys.~Chem.~B}, 110:\penalty0 3823--3830, 2006.
+
+\bibitem[Andersen(1980)]{andersen80a}
+Andersen.
+\newblock {Molecular-Dynamics Simulations At Constant Pressure And/Or
+  Temperature}.
+\newblock \emph{J. Chem. Phys}, 72\penalty0 (4):\penalty0 {2384--2393}, 1980.
+\newblock ISSN {0021-9606}.
+
+\bibitem[Andersen(1983)]{andersen83a}
+Hans~C. Andersen.
+\newblock Rattle: A "velocity" version of the shake algorithm for molecular
+  dynamics calculations.
+\newblock \emph{J. Comp. Phys.}, 51:\penalty0 24--34, 1983.
+
+\bibitem[Arnold and Holm(2005)]{mmm1d}
+A.~Arnold and C.~Holm.
+\newblock {MMM1D}: {A} method for calculating electrostatic interactions in
+  1{D} periodic geometries.
+\newblock \emph{J. Chem. Phys.}, 123\penalty0 (12):\penalty0 144103, 2005.
+
+\bibitem[Arnold and Holm(2002{\natexlab{a}})]{arnold02b}
+Axel Arnold and Christian Holm.
+\newblock A novel method for calculating electrostatic interactions in 2{D}
+  periodic slab geometries.
+\newblock \emph{Chem. Phys. Lett.}, 354:\penalty0 324--330, 2002{\natexlab{a}}.
+
+\bibitem[Arnold and Holm(2002{\natexlab{b}})]{mmm2d}
+Axel Arnold and Christian Holm.
+\newblock {MMM2D}: A fast and accurate summation methodlimnb for electrostatic
+  interactions in 2d slab geometries.
+\newblock \emph{Comput. Phys. Commun.}, 148\penalty0 (3):\penalty0 327--348,
+  2002{\natexlab{b}}.
+
+\bibitem[Arnold et~al.(2002)Arnold, {de Joannis}, and Holm]{elc}
+Axel Arnold, Jason {de Joannis}, and Christian Holm.
+\newblock {Electrostatics in Periodic Slab Geometries I+II}.
+\newblock \emph{J. Chem. Phys.}, 117:\penalty0 2496--2512, 2002.
+
+\bibitem[Arnold et~al.(submitted)Arnold, Lenz, Kesselheim, Weeber,
+  Fahrenberger, Roehm, Kosovan, and Holm]{espresso2}
+Axel Arnold, Olaf Lenz, Stefan Kesselheim, Rudolf Weeber, Florian Fahrenberger,
+  Dominic Roehm, Peter Kosovan, and Christian Holm.
+\newblock {ESPResSo 3.1} -- molecular dynamics software for coarse-grained
+  models.
+\newblock In Michael Griebel, Christian Rieger, and Marc~Alexander Schweitzer,
+  editors, \emph{Proceedings of the Sixth International Workshop on Meshfree
+  Methods for Partial Differential Equations}, Lecture Notes in Computational
+  Science and Engineering. Springer, Berlin, Germany, submitted.
+
+\bibitem[Ballenegger et~al.(2009)Ballenegger, Arnold, and
+  Cerda]{ballenegger09a}
+V.~Ballenegger, A.~Arnold, and J.~J. Cerda.
+\newblock Simulations of non-neutral slab systems with long-range electrostatic
+  interactions in two-dimensional periodic boundary conditions.
+\newblock \emph{J. Chem. Phys.}, 131\penalty0 (9):\penalty0 094107, 2009.
+\newblock \doi{10.1063/1.3216473}.
+\newblock URL \url{http://link.aip.org/link/?JCP/131/094107/1}.
+
+\bibitem[Beenakker(1986)]{beenakker86a}
+C.~W.~J. Beenakker.
+\newblock Ewald sum of the rotne--prager tensor.
+\newblock \emph{The Journal of Chemical Physics}, 85\penalty0 (3):\penalty0
+  1581--1582, 1986.
+\newblock \doi{10.1063/1.451199}.
+\newblock URL
+  \url{http://scitation.aip.org/content/aip/journal/jcp/85/3/10.1063/1.451199}.
+
+\bibitem[Bereau(2015)]{bereau15}
+Tristan Bereau.
+\newblock Multi-timestep integrator for the modified andersen barostat.
+\newblock \emph{Physics Procedia}, 68:\penalty0 7--15, 2015.
+
+\bibitem[Brodka(2004)]{brodka04a}
+A.~Brodka.
+\newblock Ewald summation method with electrostatic layer correction for
+  interactions of point dipoles in slab geometry.
+\newblock \emph{Chem. Phys. Lett.}, 400:\penalty0 62--67, 2004.
+
+\bibitem[Cerda et~al.(2008)Cerda, Ballenegger, Lenz, and C.Holm]{cerda08a}
+Juan~J. Cerda, V.~Ballenegger, O.~Lenz, and C.Holm.
+\newblock {P3M algorithm for dipolar interactions}.
+\newblock \emph{J. Chem. Phys.}, 129:\penalty0 234104, 2008.
+
+\bibitem[Chatterjee(2007)]{chatterjee2007}
+A.~Chatterjee.
+\newblock Modification to {Lees--Edwards} periodic boundary condition for
+  dissipative particle dynamics simulation with high dissipation rates.
+\newblock \emph{Molecular Simulation}, 33\penalty0 (15):\penalty0 1233--1236,
+  2007.
+
+\bibitem[Cimr\'ak et~al.(2012)Cimr\'ak, Gusenbauer, and Schrefl]{cimrak}
+I.~Cimr\'ak, M.~Gusenbauer, and T.~Schrefl.
+\newblock Modelling and simulation of processes in microfluidic devices for
+  biomedical applications.
+\newblock \emph{Computers \& Mathematics with Applications}, 64\penalty0
+  (3):\penalty0 278--288, 2012.
+
+\bibitem[Crowl and Fogelson(2010)]{Crowl2010}
+Lindsay~M Crowl and Aaron~L Fogelson.
+\newblock {Computational model of whole blood exhibiting lateral platelet
+  motion induced by red blood cells}.
+\newblock \emph{Int. J. Numer. Meth. Biomed. Engng.}, 26\penalty0
+  (3-4):\penalty0 471--487, 2010.
+
+\bibitem[Dao et~al.(2003)Dao, Lim, and Suresh]{dao03}
+M.~Dao, C.T. Lim, and S.~Suresh.
+\newblock Mechanics of the human red blood cell deformed by optical tweezers.
+\newblock \emph{J. Mech. Phys. Solids}, 51:\penalty0 2259--2280, 2003.
+
+\bibitem[Deserno(2000)]{deserno00a}
+M.~Deserno.
+\newblock \emph{Counterion condensation for rigid linear polyelectrolytes}.
+\newblock PhD thesis, Universit{\"a}t Mainz, 2000.
+
+\bibitem[Deserno and Holm(1998{\natexlab{a}})]{deserno98}
+M.~Deserno and C.~Holm.
+\newblock How to mesh up {E}wald sums. i.
+\newblock \emph{J. Chem. Phys.}, 109:\penalty0 7678, 1998{\natexlab{a}}.
+
+\bibitem[Deserno and Holm(1998{\natexlab{b}})]{deserno98a}
+M.~Deserno and C.~Holm.
+\newblock How to mesh up {E}wald sums. ii.
+\newblock \emph{J. Chem. Phys.}, 109:\penalty0 7694, 1998{\natexlab{b}}.
+
+\bibitem[Deserno et~al.(2000)Deserno, Holm, and Limbach]{deserno00}
+M.~Deserno, C.~Holm, and H.~J. Limbach.
+\newblock \emph{Molecular Dynamics on Parallel Computers}, chapter How to mesh
+  up {E}wald sums.
+\newblock World Scientific, Singapore, 2000.
+
+\bibitem[Doi and Edwards(1986)]{doi86a}
+M~Doi and S~F Edwards.
+\newblock \emph{The theory of polymer dynamics}.
+\newblock Oxford Science Publications, 1986.
+
+\bibitem[D{\"u}nweg and Ladd(2008)]{duenweg08a}
+Burkhard D{\"u}nweg and Anthony~J.C. Ladd.
+\newblock {Lattice Boltzmann Simulations of Soft Matter Systems}.
+\newblock In \emph{Lattice Boltzmann Simulations of Soft Matter Systems},
+  {Advances in Polymer Science}, pages 1--78. Springer Berlin Heidelberg, 2008.
+\newblock \doi{10.1007/12_2008_4}.
+\newblock URL \url{http://dx.doi.org/10.1007/12_2008_4}.
+
+\bibitem[Dupin et~al.(2007)Dupin, Halliday, Care, and Alboul]{dupin07}
+M.M. Dupin, I.~Halliday, C.M. Care, and L.~Alboul.
+\newblock Modeling the flow of dense suspensions of deformable particles in
+  three dimensions.
+\newblock \emph{Phys Rev E Stat Nonlin Soft Matter Phys.}, 75:\penalty0 066707,
+  2007.
+
+\bibitem[Ewald(1921)]{ewald21}
+P.P. Ewald.
+\newblock Die berechnung optischer und elektrostatischer gitterpotentiale.
+\newblock \emph{Ann. Phys.}, 64:\penalty0 253--287, 1921.
+
+\bibitem[Fahrenberger et~al.(2015)Fahrenberger, Hickey, Smiatek, and
+  Holm]{fahrenberger15b}
+F.~Fahrenberger, O.~A. Hickey, J.~Smiatek, and C.~Holm.
+\newblock Importance of varying permittivity on the conductivity of
+  polyelectrolyte solutions.
+\newblock \emph{Physical Review Letters}, 2015.
+
+\bibitem[Frenkel and Smit(2002)]{frenkel02b}
+Daan Frenkel and Berend Smit.
+\newblock \emph{Understanding Molecular Simulation}.
+\newblock Academic Press, San Diego, second edition, 2002.
+
+\bibitem[Gompper and Kroll(1996)]{Gompper1996}
+G~Gompper and D~M Kroll.
+\newblock {Random surface discretizations and the renormalization of the
+  bending rigidity}.
+\newblock \emph{Journal de Physique I}, 6:\penalty0 1305--1320, 1996.
+
+\bibitem[Grest and Kremer(1986)]{grest86a}
+Gary~S. Grest and Kurt Kremer.
+\newblock Molecular dynamics simulation for polymers in the presence of a heat
+  bath.
+\newblock \emph{Phys. Rev. A}, 33\penalty0 (5):\penalty0 3628--31, 1986.
+
+\bibitem[Hickey et~al.(2010)Hickey, Holm, Harden, and Slater]{hickey10a}
+Owen~A. Hickey, Christian Holm, James~L. Harden, and Gary~W. Slater.
+\newblock {Implicit Method for Simulating Electrohydrodynamics of
+  Polyelectrolytes}.
+\newblock \emph{{Phys. Rev. Lett.}}, {105}\penalty0 ({14}), {SEP 29} 2010.
+\newblock \doi{{10.1103/PhysRevLett.105.148301}}.
+
+\bibitem[Hockney and Eastwood(1988)]{hockney88}
+R.~W. Hockney and J.~W. Eastwood.
+\newblock \emph{Computer Simulation Using Particles}.
+\newblock IOP, 1988.
+
+\bibitem[H\"{o}fling et~al.(2011)H\"{o}fling, Bamberg, and
+  Franosch]{hofling11a}
+F.~H\"{o}fling, Karl-Ulrich Bamberg, and Thomas Franosch.
+\newblock Anomalous transport resolved in space and time by fluorescence
+  correlation spectroscopy.
+\newblock \emph{Soft Matter}, 7:\penalty0 1358, 2011.
+
+\bibitem[Horowitz(1991)]{horowitz91}
+Alan~M. Horowitz.
+\newblock A generalized guided monte carlo algorithm.
+\newblock \emph{Phys. Lett. B}, 268:\penalty0 247 -- 252, 1991.
+
+\bibitem[Humphrey et~al.(1996)Humphrey, Dalke, and Schulten]{humphrey96a}
+W.~Humphrey, A.~Dalke, and K.~Schulten.
+\newblock {VMD}: Visual molecular dynamics.
+\newblock \emph{J. Mol. Graphics}, 14:\penalty0 33--38, 1996.
+
+\bibitem[Junghans et~al.(2008)Junghans, Praprotnik, and Kremer]{junghans2008}
+C.~Junghans, M.~Praprotnik, and K.~Kremer.
+\newblock Transport properties controlled by a thermostat: An extended
+  dissipative particle dynamics thermostat.
+\newblock \emph{Soft Matter}, 4:\penalty0 156, 2008.
+
+\bibitem[Kesselheim et~al.(2011)Kesselheim, Sega, and Holm]{kesselheim11a}
+Stefan Kesselheim, Marcello Sega, and Christian Holm.
+\newblock Applying to dna translocation: Effect of dielectric boundaries.
+\newblock \emph{Computer Physics Communications}, 182\penalty0 (1):\penalty0 33
+  -- 35, 2011.
+\newblock ISSN 0010-4655.
+\newblock \doi{10.1016/j.cpc.2010.08.014}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S001046551000305X}.
+\newblock <ce:title>Computer Physics Communications Special Edition for
+  Conference on Computational Physics Kaohsiung, Taiwan, Dec 15-19,
+  2009</ce:title>.
+
+\bibitem[Kolafa and Perram(1992)]{kolafa92}
+Jiri Kolafa and John~W. Perram.
+\newblock Cutoff errors in the ewald summation formulae for point charge
+  systems.
+\newblock \emph{Molecular Simulation}, 9\penalty0 (5):\penalty0 351--368, 1992.
+
+\bibitem[Kolb and D{\"u}nweg(1999)]{kolb99a}
+A.~Kolb and B.~D{\"u}nweg.
+\newblock Optimized constant pressure stochastic dynamics.
+\newblock \emph{J. Chem. Phys.}, 111\penalty0 (10):\penalty0 4453--59, 1999.
+
+\bibitem[Kr{\"u}ger(2011)]{KruegerThesis}
+Timm Kr{\"u}ger.
+\newblock \emph{{Computer simulation study of collective phenomena in dense
+  suspensions of red blood cells under shear}}.
+\newblock PhD thesis, Universit{\"a}t Bochum, 2011.
+
+\bibitem[Limbach and Holm(2003)]{limbach03a}
+H.~J. Limbach and C.~Holm.
+\newblock Single-chain properties of polyelectrolytes in poor solvent.
+\newblock \emph{J. Phys. Chem. B}, 107\penalty0 (32):\penalty0 8041--8055,
+  2003.
+
+\bibitem[Magatti and Ferri(2001)]{magatti01a}
+D~Magatti and F~Ferri.
+\newblock Fast multi-tau real-time software correlator for dynamic light
+  scattering.
+\newblock \emph{Applied Optics}, 40\penalty0 ({24}):\penalty0 4011--4021, {AUG
+  20} 2001.
+\newblock ISSN {0003-6935}.
+\newblock \doi{{10.1364/AO.40.004011}}.
+
+\bibitem[Maggs and Rosseto(2002)]{maggs02a}
+A.~C. Maggs and V.~Rosseto.
+\newblock Local simulation algorithms for coulombic interactions.
+\newblock \emph{Phys. Rev. Lett.}, 88:\penalty0 196402, 2002.
+
+\bibitem[Mann(2005)]{mann05d}
+Bernward~A. Mann.
+\newblock \emph{{The Swelling Behaviour of Polyelectrolyte Networks}}.
+\newblock PhD thesis, {Johannes Gutenberg-University}, Mainz, Germany, December
+  2005.
+
+\bibitem[Marsili et~al.(2009)Marsili, Signorini, Chelli, Marchi, and
+  Procacci]{marsili09}
+S.~Marsili, G.F. Signorini, R.~Chelli, M.~Marchi, and P.~Procacci.
+\newblock Orac: A molecular dynamics simulation program to explore free energy
+  surfaces in biomolecular systems at the atomistic level.
+\newblock \emph{J. Comp. Chem.}, 31:\penalty0 1106, 2009.
+
+\bibitem[Martys and Mountain(1999)]{martys99}
+Nicos~S. Martys and Raymond~D. Mountain.
+\newblock Velocity verlet algorithm for dissipative-particle-dynamics-based
+  models of suspensions.
+\newblock \emph{Phys. Rev. E}, 59:\penalty0 3733--3736, 1999.
+\newblock \doi{10.1103/PhysRevE.59.3733}.
+
+\bibitem[Mehlig et~al.(1992)Mehlig, Heermann, and Forrest]{mehlig92}
+B.~Mehlig, D.~W. Heermann, and B.~M. Forrest.
+\newblock Hybrid monte carlo method for condensed-matter systems.
+\newblock \emph{Phys. Rev. B}, 45:\penalty0 679--685, 1992.
+
+\bibitem[Nikunen et~al.(2003)Nikunen, Karttunen, and Vattulainen]{Nikunen03}
+P.~Nikunen, M.~Karttunen, and I.~Vattulainen.
+\newblock How would you integrate the equations of motion in dissipative
+  particle dynamics simulations.
+\newblock \emph{Com. Phys. Comm.}, 153:\penalty0 407, 2003.
+
+\bibitem[Pasichnyk and D{\"u}nweg(2004)]{pasichnyk04a}
+Igor Pasichnyk and Burkhard D{\"u}nweg.
+\newblock Coulomb interactions via local dynamics: {A} molecular-dynamics
+  algorithm.
+\newblock \emph{J. Phys.: Condens. Matter}, 16\penalty0 (38):\penalty0
+  3999--4020, September 2004.
+
+\bibitem[Peskin(2003)]{Peskin2002}
+Charles~S Peskin.
+\newblock {The immersed boundary method}.
+\newblock \emph{Acta Numerica}, 11:\penalty0 479--517, 2003.
+
+\bibitem[Ramirez et~al.(2010)Ramirez, Sukumaran, Vorselaars, and
+  Likhtman]{ramirez10a}
+Jorge Ramirez, Sathish~K. Sukumaran, Bart Vorselaars, and Alexei~E. Likhtman.
+\newblock Efficient on the fly calculation of time correlation functions in
+  computer simulations.
+\newblock \emph{J. Chem. Phys.}, 133\penalty0 ({15}):\penalty0 154103, {OCT 21}
+  2010.
+\newblock ISSN {0021-9606}.
+\newblock \doi{{10.1063/1.3491098}}.
+
+\bibitem[Roehm and Arnold(2012)]{lbgpu}
+D.~Roehm and A.~Arnold.
+\newblock Lattice boltzmann simulations on {GPU}s with {ESPResSo}.
+\newblock \emph{Eur. Phys. J. ST}, 210:\penalty0 73--88, 2012.
+
+\bibitem[Rubinstein and Colby(2003)]{rubinstein03a}
+Michael Rubinstein and Ralph~H. Colby.
+\newblock \emph{Polymer Physics}.
+\newblock Oxford University Press, Oxford, UK, 2003.
+
+\bibitem[Sch\"atzel et~al.(1988)Sch\"atzel, Drewel, and Stimac]{schatzel88a}
+K.~Sch\"atzel, M.~Drewel, and S~Stimac.
+\newblock Photon-correlation measurements at large lag times - improving
+  statistical accuracy.
+\newblock \emph{Journal of Modern Optics}, 35\penalty0 ({4}):\penalty0
+  711--718, {APR} 1988.
+\newblock ISSN {0950-0340}.
+\newblock \doi{{10.1080/09500348814550731}}.
+
+\bibitem[Schmitz and Muller-Plathe(2000)]{schmitz00a}
+Heiko Schmitz and Florian Muller-Plathe.
+\newblock Calculation of the lifetime of positronium in polymers via molecular
+  dynamics simulations.
+\newblock \emph{J. Chem. Phys.}, 112\penalty0 (2):\penalty0 1040--1045, 2000.
+\newblock \doi{10.1063/1.480627}.
+\newblock URL \url{http://link.aip.org/link/?JCP/112/1040/1}.
+
+\bibitem[Sega et~al.(2013, in press)Sega, Sbragaglia, Kantorovich, and
+  Ivanov]{sega13c}
+M.~Sega, M.~Sbragaglia, S.~S. Kantorovich, and A.~O. Ivanov.
+\newblock Mesoscale structures at complex fluid–fluid interfaces: a novel
+  lattice boltzmann/molecular dynamics coupling.
+\newblock \emph{Soft Matter}, 2013, in press.
+\newblock \doi{10.1039/C3SM51556G}.
+
+\bibitem[Shan and Chen(1993)]{shan93a}
+X.~Shan and H.~Chen.
+\newblock Lattice boltzmann model for simulating flows with multiple phases and
+  components.
+\newblock \emph{Phys. Rev. E}, 47:\penalty0 1815, 1993.
+
+\bibitem[Smiatek et~al.(2008)Smiatek, Allen, and Schmidt]{smiatek08a}
+J.~Smiatek, M.~P. Allen, and F.~Schmidt.
+\newblock Tunable slip boundaries for coarse-grained simulations of fluid flow.
+\newblock \emph{Eur. Phys. J. E}, 26:\penalty0 115, 2008.
+
+\bibitem[Smith(1981)]{smith81a}
+E.~R. Smith.
+\newblock {Electrostatic energy in ionic crystals}.
+\newblock \emph{Proc. R. Soc. Lond. A}, 375:\penalty0 475--505, 1981.
+
+\bibitem[Soddemann et~al.(2001)Soddemann, D\"unweg, and Kremer]{soddeman01a}
+T.~Soddemann, B.~D\"unweg, and K.~Kremer.
+\newblock A generic computer model for amphiphilic systems.
+\newblock \emph{Eur. Phys. J. E}, 6:\penalty0 409, 2001.
+
+\bibitem[Soddemann et~al.(2003)Soddemann, D\"unweg, and Kremer]{soddeman03a}
+T.~Soddemann, B.~D\"unweg, and K.~Kremer.
+\newblock Dissipative particle dynamics: A useful thermostat for equilibrium
+  and nonequilibrium molecular dynamics simulations.
+\newblock \emph{Phys. Rev. E}, 68:\penalty0 046702, 2003.
+
+\bibitem[Strebel(1999)]{strebel99a}
+R.~Strebel.
+\newblock \emph{{Pieces of software for the Coulombic $m$ body problem}}.
+\newblock Dissertation, ETH Z\"urich, 1999.
+\newblock URL
+  \url{http://e-collection.ethbib.ethz.ch/show?type=diss\&nr=13504}.
+
+\bibitem[Succi(2001)]{succi01a}
+S.~Succi.
+\newblock \emph{The lattice Boltzmann equation for fluid dynamics and beyond}.
+\newblock Oxford University Press, USA, 2001.
+
+\bibitem[Thompson et~al.(2009)Thompson, Plimpton, and Mattson]{thompson09a}
+A.~P. Thompson, S.~J. Plimpton, and W.~Mattson.
+\newblock General formulation of pressure and stress tensor for arbitrary
+  many-body interaction potentials under periodic boundary conditions.
+\newblock \emph{Journal of Chemical Physics}, 131:\penalty0 154107, 2009.
+
+\bibitem[Tyagi et~al.(2010)Tyagi, S{\"u}zen, Sega, Barbosa, Kantorovich, and
+  Holm]{tyagi10a}
+C.~Tyagi, M.~S{\"u}zen, M.~Sega, M.~Barbosa, S.~Kantorovich, and C.~Holm.
+\newblock An iterative, fast, linear-scaling method for computing induced
+  charges on arbitrary dielectric boundaries.
+\newblock \emph{J. Chem. Phys.}, 132:\penalty0 154112, 2010.
+\newblock \doi{10.1063/1.3376011}.
+
+\bibitem[Tyagi et~al.(2007)Tyagi, Arnold, and Holm]{icmmm2d}
+S.~Tyagi, A.~Arnold, and C.~Holm.
+\newblock {ICMMM2D}: An accurate method to include planar dielectric interfaces
+  via image charge summation.
+\newblock \emph{J. Chem. Phys.}, 127:\penalty0 154723, 2007.
+
+\bibitem[Tyagi et~al.(2008)Tyagi, Arnold, and Holm]{icelc}
+Sandeep Tyagi, Axel Arnold, and Christian Holm.
+\newblock Electrostatic layer correction with image charges: A linear scaling
+  method to treat slab 2d + h systems with dielectric interfaces.
+\newblock \emph{J. Chem. Phys.}, 129\penalty0 (20):\penalty0 204102, 2008.
+
+\bibitem[Wolff(2004)]{wolff04a}
+Ulli Wolff.
+\newblock Monte carlo errors with less errors.
+\newblock \emph{Comput. Phys. Commun.}, 156:\penalty0 143--153, 2004.
+
+\end{thebibliography}
