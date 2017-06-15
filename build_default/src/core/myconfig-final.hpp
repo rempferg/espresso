@@ -83,7 +83,7 @@
 //#define TABULATED
 #define LENNARD_JONES
 //#define LJ_WARN_WHEN_CLOSE
-//#define LENNARD_JONES_GENERIC
+#define LENNARD_JONES_GENERIC
 //#define LJCOS
 //#define LJCOS2
 //#define LJ_ANGLE

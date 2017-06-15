@@ -31,6 +31,10 @@ if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMP
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE PROGRAM FILES "/Users/bindgens2/Documents/espresso_dev/espresso/build_default/src/python/pypresso")
 endif()
 
+if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE PROGRAM FILES "/Users/bindgens2/Documents/espresso_dev/espresso/build_default/src/python/ipypresso")
+endif()
+
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/Users/bindgens2/Documents/espresso_dev/espresso/build_default/src/python/espressomd/cmake_install.cmake")

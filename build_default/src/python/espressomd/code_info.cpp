@@ -774,11 +774,13 @@ static const char __pyx_k_SOFT_SPHERE[] = "SOFT_SPHERE";
 static const char __pyx_k_LEES_EDWARDS[] = "LEES_EDWARDS";
 static const char __pyx_k_LENNARD_JONES[] = "LENNARD_JONES";
 static const char __pyx_k_espressomd_code_info[] = "espressomd.code_info";
+static const char __pyx_k_LENNARD_JONES_GENERIC[] = "LENNARD_JONES_GENERIC";
 static const char __pyx_k_Users_bindgens2_Documents_espre[] = "/Users/bindgens2/Documents/espresso_dev/espresso/build_default/src/python/espressomd/code_info.pyx";
 static PyObject *__pyx_n_s_DPD;
 static PyObject *__pyx_n_s_FFTW;
 static PyObject *__pyx_n_s_LEES_EDWARDS;
 static PyObject *__pyx_n_s_LENNARD_JONES;
+static PyObject *__pyx_n_s_LENNARD_JONES_GENERIC;
 static PyObject *__pyx_n_s_SOFT_SPHERE;
 static PyObject *__pyx_kp_s_Users_bindgens2_Documents_espre;
 static PyObject *__pyx_n_s_espressomd_code_info;
@@ -851,6 +853,15 @@ static PyObject *__pyx_pf_10espressomd_9code_info_features(CYTHON_UNUSED PyObjec
  *     IF VIRTUAL_SITES_NO_VELOCITY == 1:
  */
   __pyx_t_2 = __Pyx_PyList_Append(__pyx_v_f, __pyx_n_s_SOFT_SPHERE); if (unlikely(__pyx_t_2 == -1)) __PYX_ERR(0, 277, __pyx_L1_error)
+
+  /* "espressomd/code_info.pyx":286
+ * 
+ *     IF LENNARD_JONES_GENERIC == 1:
+ *         f.append("LENNARD_JONES_GENERIC")             # <<<<<<<<<<<<<<
+ * 
+ *     IF VIRTUAL_SITES_THERMOSTAT == 1:
+ */
+  __pyx_t_2 = __Pyx_PyList_Append(__pyx_v_f, __pyx_n_s_LENNARD_JONES_GENERIC); if (unlikely(__pyx_t_2 == -1)) __PYX_ERR(0, 286, __pyx_L1_error)
 
   /* "espressomd/code_info.pyx":343
  * 
@@ -942,6 +953,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_FFTW, __pyx_k_FFTW, sizeof(__pyx_k_FFTW), 0, 0, 1, 1},
   {&__pyx_n_s_LEES_EDWARDS, __pyx_k_LEES_EDWARDS, sizeof(__pyx_k_LEES_EDWARDS), 0, 0, 1, 1},
   {&__pyx_n_s_LENNARD_JONES, __pyx_k_LENNARD_JONES, sizeof(__pyx_k_LENNARD_JONES), 0, 0, 1, 1},
+  {&__pyx_n_s_LENNARD_JONES_GENERIC, __pyx_k_LENNARD_JONES_GENERIC, sizeof(__pyx_k_LENNARD_JONES_GENERIC), 0, 0, 1, 1},
   {&__pyx_n_s_SOFT_SPHERE, __pyx_k_SOFT_SPHERE, sizeof(__pyx_k_SOFT_SPHERE), 0, 0, 1, 1},
   {&__pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_k_Users_bindgens2_Documents_espre, sizeof(__pyx_k_Users_bindgens2_Documents_espre), 0, 0, 1, 0},
   {&__pyx_n_s_espressomd_code_info, __pyx_k_espressomd_code_info, sizeof(__pyx_k_espressomd_code_info), 0, 0, 1, 1},

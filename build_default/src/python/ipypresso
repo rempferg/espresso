@@ -1,0 +1,26 @@
+#!/bin/sh
+# Copyright (C) 2010,2011,2014,2015,2016 The ESPResSo project
+# 
+# Copying and distribution of this file, with or without modification,
+# are permitted in any medium without royalty provided the copyright
+# notice and this notice are preserved.  This file is offered as-is,
+# without any warranty.
+#
+
+
+if test -n "$PYTHONPATH"; then
+  PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+else
+  PYTHONPATH=/usr/local/lib/python2.7/site-packages
+fi
+export PYTHONPATH
+
+if [ "$1" = "--gdb" ]; then
+  shift
+  exec gdb -ex run --args /usr/local/bin/ipython $@
+elif [ "$1" = "--cuda-gdb" ]; then
+  shift
+  exec cuda-gdb -ex run --args /usr/local/bin/ipython $@
+fi
+
+exec /usr/local/bin/ipython $@

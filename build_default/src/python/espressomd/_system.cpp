@@ -968,7 +968,7 @@ typedef npy_cdouble __pyx_t_5numpy_complex_t;
 typedef std::vector<std::string>  __pyx_t_10espressomd_7_system_string_vec;
 
 /* "espressomd/_system.pyx":56
- * #  setable_properties.append("lees_edwards_offset")
+ *   setable_properties.append("lees_edwards_offset")
  * 
  * cdef class System(object):             # <<<<<<<<<<<<<<
  *     """ The base class for espressomd.system.System().
@@ -1359,6 +1359,12 @@ static PyObject *__Pyx_Import(PyObject *name, PyObject *from_list, int level);
 /* ImportFrom.proto */
 static PyObject* __Pyx_ImportFrom(PyObject* module, PyObject* name);
 
+/* PyObjectCallMethod1.proto */
+static PyObject* __Pyx_PyObject_CallMethod1(PyObject* obj, PyObject* method_name, PyObject* arg);
+
+/* append.proto */
+static CYTHON_INLINE int __Pyx_PyObject_Append(PyObject* L, PyObject* x);
+
 /* CodeObjectCache.proto */
 typedef struct {
     PyCodeObject* code_object;
@@ -1666,6 +1672,7 @@ static const char __pyx_k_split[] = "split";
 static const char __pyx_k_zeros[] = "zeros";
 static const char __pyx_k_Actors[] = "Actors";
 static const char __pyx_k_actors[] = "actors";
+static const char __pyx_k_append[] = "append";
 static const char __pyx_k_import[] = "__import__";
 static const char __pyx_k_random[] = "random";
 static const char __pyx_k_system[] = "_system";
@@ -1780,6 +1787,7 @@ static PyObject *__pyx_kp_s__8;
 static PyObject *__pyx_n_s_actors;
 static PyObject *__pyx_n_s_analysis;
 static PyObject *__pyx_n_s_analyze;
+static PyObject *__pyx_n_s_append;
 static PyObject *__pyx_n_s_array;
 static PyObject *__pyx_n_s_auto_update_correlators;
 static PyObject *__pyx_n_s_auto_update_observables;
@@ -5236,7 +5244,7 @@ static PyObject *__pyx_pf_10espressomd_7_system_6System_29random_number_generato
  *             rng_state = map(int, (mpi_random_get_stat().c_str()).split())
  *             return rng_state             # <<<<<<<<<<<<<<
  * 
- * #IF LEES_EDWARDS == 1:
+ *     IF LEES_EDWARDS == 1:
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_rng_state);
@@ -5266,11 +5274,11 @@ static PyObject *__pyx_pf_10espressomd_7_system_6System_29random_number_generato
 }
 
 /* "espressomd/_system.pyx":298
- *     property lees_edwards_offset:
- *     # defines the lees edwards offset
- *       def __set__(self, double _lees_edwards_offset):             # <<<<<<<<<<<<<<
+ *         property lees_edwards_offset:
+ *         # defines the lees edwards offset
+ *             def __set__(self, double _lees_edwards_offset):             # <<<<<<<<<<<<<<
  * 
- *           if isinstance(_lees_edwards_offset, float):
+ *               if isinstance(_lees_edwards_offset, float):
  */
 
 /* Python wrapper */
@@ -5305,11 +5313,11 @@ static int __pyx_pf_10espressomd_7_system_6System_19lees_edwards_offset___set__(
   __Pyx_RefNannySetupContext("__set__", 0);
 
   /* "espressomd/_system.pyx":300
- *       def __set__(self, double _lees_edwards_offset):
+ *             def __set__(self, double _lees_edwards_offset):
  * 
- *           if isinstance(_lees_edwards_offset, float):             # <<<<<<<<<<<<<<
- *             global lees_edwards_offset
- *             lees_edwards_offset = _lees_edwards_offset
+ *               if isinstance(_lees_edwards_offset, float):             # <<<<<<<<<<<<<<
+ *                 global lees_edwards_offset
+ *                 lees_edwards_offset = _lees_edwards_offset
  */
   __pyx_t_1 = PyFloat_FromDouble(__pyx_v__lees_edwards_offset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 300, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -5319,39 +5327,39 @@ static int __pyx_pf_10espressomd_7_system_6System_19lees_edwards_offset___set__(
   if (__pyx_t_3) {
 
     /* "espressomd/_system.pyx":302
- *           if isinstance(_lees_edwards_offset, float):
- *             global lees_edwards_offset
- *             lees_edwards_offset = _lees_edwards_offset             # <<<<<<<<<<<<<<
- *             #new_offset = _lees_edwards_offset
- *             mpi_bcast_parameter(FIELD_LEES_EDWARDS_OFFSET)
+ *               if isinstance(_lees_edwards_offset, float):
+ *                 global lees_edwards_offset
+ *                 lees_edwards_offset = _lees_edwards_offset             # <<<<<<<<<<<<<<
+ *                 #new_offset = _lees_edwards_offset
+ *                 mpi_bcast_parameter(FIELD_LEES_EDWARDS_OFFSET)
  */
     lees_edwards_offset = __pyx_v__lees_edwards_offset;
 
     /* "espressomd/_system.pyx":304
- *             lees_edwards_offset = _lees_edwards_offset
- *             #new_offset = _lees_edwards_offset
- *             mpi_bcast_parameter(FIELD_LEES_EDWARDS_OFFSET)             # <<<<<<<<<<<<<<
+ *                 lees_edwards_offset = _lees_edwards_offset
+ *                 #new_offset = _lees_edwards_offset
+ *                 mpi_bcast_parameter(FIELD_LEES_EDWARDS_OFFSET)             # <<<<<<<<<<<<<<
  * 
- *           else:
+ *               else:
  */
     mpi_bcast_parameter(FIELD_LEES_EDWARDS_OFFSET);
 
     /* "espressomd/_system.pyx":300
- *       def __set__(self, double _lees_edwards_offset):
+ *             def __set__(self, double _lees_edwards_offset):
  * 
- *           if isinstance(_lees_edwards_offset, float):             # <<<<<<<<<<<<<<
- *             global lees_edwards_offset
- *             lees_edwards_offset = _lees_edwards_offset
+ *               if isinstance(_lees_edwards_offset, float):             # <<<<<<<<<<<<<<
+ *                 global lees_edwards_offset
+ *                 lees_edwards_offset = _lees_edwards_offset
  */
     goto __pyx_L3;
   }
 
   /* "espressomd/_system.pyx":307
  * 
- *           else:
- *               raise ValueError("Wrong # of args! Usage: lees_edwards_offset { new_offset }")             # <<<<<<<<<<<<<<
+ *               else:
+ *                 raise ValueError("Wrong # of args! Usage: lees_edwards_offset { new_offset }")             # <<<<<<<<<<<<<<
  * 
- *       def __get__(self):
+ *             def __get__(self):
  */
   /*else*/ {
     __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__12, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 307, __pyx_L1_error)
@@ -5363,11 +5371,11 @@ static int __pyx_pf_10espressomd_7_system_6System_19lees_edwards_offset___set__(
   __pyx_L3:;
 
   /* "espressomd/_system.pyx":298
- *     property lees_edwards_offset:
- *     # defines the lees edwards offset
- *       def __set__(self, double _lees_edwards_offset):             # <<<<<<<<<<<<<<
+ *         property lees_edwards_offset:
+ *         # defines the lees edwards offset
+ *             def __set__(self, double _lees_edwards_offset):             # <<<<<<<<<<<<<<
  * 
- *           if isinstance(_lees_edwards_offset, float):
+ *               if isinstance(_lees_edwards_offset, float):
  */
 
   /* function exit code */
@@ -5383,11 +5391,11 @@ static int __pyx_pf_10espressomd_7_system_6System_19lees_edwards_offset___set__(
 }
 
 /* "espressomd/_system.pyx":309
- *               raise ValueError("Wrong # of args! Usage: lees_edwards_offset { new_offset }")
+ *                 raise ValueError("Wrong # of args! Usage: lees_edwards_offset { new_offset }")
  * 
- *       def __get__(self):             # <<<<<<<<<<<<<<
- *     #   global lees_edwards_offset
- *         return lees_edwards_offset
+ *             def __get__(self):             # <<<<<<<<<<<<<<
+ *           #   global lees_edwards_offset
+ *               return lees_edwards_offset
  */
 
 /* Python wrapper */
@@ -5410,9 +5418,9 @@ static PyObject *__pyx_pf_10espressomd_7_system_6System_19lees_edwards_offset_2_
   __Pyx_RefNannySetupContext("__get__", 0);
 
   /* "espressomd/_system.pyx":311
- *       def __get__(self):
- *     #   global lees_edwards_offset
- *         return lees_edwards_offset             # <<<<<<<<<<<<<<
+ *             def __get__(self):
+ *           #   global lees_edwards_offset
+ *               return lees_edwards_offset             # <<<<<<<<<<<<<<
  * 
  *     def change_volume_and_rescale_particles(d_new, dir="xyz"):
  */
@@ -5424,11 +5432,11 @@ static PyObject *__pyx_pf_10espressomd_7_system_6System_19lees_edwards_offset_2_
   goto __pyx_L0;
 
   /* "espressomd/_system.pyx":309
- *               raise ValueError("Wrong # of args! Usage: lees_edwards_offset { new_offset }")
+ *                 raise ValueError("Wrong # of args! Usage: lees_edwards_offset { new_offset }")
  * 
- *       def __get__(self):             # <<<<<<<<<<<<<<
- *     #   global lees_edwards_offset
- *         return lees_edwards_offset
+ *             def __get__(self):             # <<<<<<<<<<<<<<
+ *           #   global lees_edwards_offset
+ *               return lees_edwards_offset
  */
 
   /* function exit code */
@@ -5443,7 +5451,7 @@ static PyObject *__pyx_pf_10espressomd_7_system_6System_19lees_edwards_offset_2_
 }
 
 /* "espressomd/_system.pyx":313
- *         return lees_edwards_offset
+ *               return lees_edwards_offset
  * 
  *     def change_volume_and_rescale_particles(d_new, dir="xyz"):             # <<<<<<<<<<<<<<
  *         """Change box size and rescale particle coordinates
@@ -5702,7 +5710,7 @@ static PyObject *__pyx_pf_10espressomd_7_system_6System_10change_volume_and_resc
   __pyx_L4:;
 
   /* "espressomd/_system.pyx":313
- *         return lees_edwards_offset
+ *               return lees_edwards_offset
  * 
  *     def change_volume_and_rescale_particles(d_new, dir="xyz"):             # <<<<<<<<<<<<<<
  *         """Change box size and rescale particle coordinates
@@ -9720,6 +9728,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_actors, __pyx_k_actors, sizeof(__pyx_k_actors), 0, 0, 1, 1},
   {&__pyx_n_s_analysis, __pyx_k_analysis, sizeof(__pyx_k_analysis), 0, 0, 1, 1},
   {&__pyx_n_s_analyze, __pyx_k_analyze, sizeof(__pyx_k_analyze), 0, 0, 1, 1},
+  {&__pyx_n_s_append, __pyx_k_append, sizeof(__pyx_k_append), 0, 0, 1, 1},
   {&__pyx_n_s_array, __pyx_k_array, sizeof(__pyx_k_array), 0, 0, 1, 1},
   {&__pyx_n_s_auto_update_correlators, __pyx_k_auto_update_correlators, sizeof(__pyx_k_auto_update_correlators), 0, 0, 1, 1},
   {&__pyx_n_s_auto_update_observables, __pyx_k_auto_update_observables, sizeof(__pyx_k_auto_update_observables), 0, 0, 1, 1},
@@ -9919,10 +9928,10 @@ static int __Pyx_InitCachedConstants(void) {
 
   /* "espressomd/_system.pyx":307
  * 
- *           else:
- *               raise ValueError("Wrong # of args! Usage: lees_edwards_offset { new_offset }")             # <<<<<<<<<<<<<<
+ *               else:
+ *                 raise ValueError("Wrong # of args! Usage: lees_edwards_offset { new_offset }")             # <<<<<<<<<<<<<<
  * 
- *       def __get__(self):
+ *             def __get__(self):
  */
   __pyx_tuple__12 = PyTuple_Pack(1, __pyx_kp_s_Wrong_of_args_Usage_lees_edwards); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 307, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__12);
@@ -10075,7 +10084,8 @@ PyMODINIT_FUNC PyInit__system(void)
 {
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
+  int __pyx_t_3;
+  PyObject *__pyx_t_4 = NULL;
   __Pyx_RefNannyDeclarations
   #if CYTHON_REFNANNY
   __Pyx_RefNanny = __Pyx_RefNannyImportAPI("refnanny");
@@ -10511,7 +10521,7 @@ PyMODINIT_FUNC PyInit__system(void)
  * 
  * setable_properties = ["box_l", "min_global_cut", "periodicity", "time",             # <<<<<<<<<<<<<<
  *                       "time_step", "timings", "lees_edwards_offset"]
- * #if LEES_EDWARDS == 1:
+ * IF LEES_EDWARDS == 1:
  */
   __pyx_t_1 = PyList_New(7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -10539,6 +10549,18 @@ PyMODINIT_FUNC PyInit__system(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_setable_properties, __pyx_t_1) < 0) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
+  /* "espressomd/_system.pyx":54
+ *                       "time_step", "timings", "lees_edwards_offset"]
+ * IF LEES_EDWARDS == 1:
+ *   setable_properties.append("lees_edwards_offset")             # <<<<<<<<<<<<<<
+ * 
+ * cdef class System(object):
+ */
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_setable_properties); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_3 = __Pyx_PyObject_Append(__pyx_t_1, __pyx_n_s_lees_edwards_offset); if (unlikely(__pyx_t_3 == -1)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
   /* "espressomd/_system.pyx":65
  * 
  *     """
@@ -10548,27 +10570,27 @@ PyMODINIT_FUNC PyInit__system(void)
  */
   __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_particle_data); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_ParticleList); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 65, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_ParticleList); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_4);
     if (likely(__pyx_t_2)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
       __Pyx_INCREF(__pyx_t_2);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __Pyx_DECREF_SET(__pyx_t_4, function);
     }
   }
   if (__pyx_t_2) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
   }
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (PyDict_SetItem((PyObject *)__pyx_ptype_10espressomd_7_system_System->tp_dict, __pyx_n_s_part, __pyx_t_1) < 0) __PYX_ERR(0, 65, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_10espressomd_7_system_System);
@@ -10580,24 +10602,24 @@ PyMODINIT_FUNC PyInit__system(void)
  *     bonded_inter = interactions.BondedInteractions()
  *     cell_system = CellSystem()
  */
-  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_interactions); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_NonBondedInteractions); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_interactions); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_NonBondedInteractions); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 66, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = NULL;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_3)) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_4)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_2, function);
     }
   }
-  if (__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (__pyx_t_4) {
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   } else {
     __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
   }
@@ -10616,27 +10638,27 @@ PyMODINIT_FUNC PyInit__system(void)
  */
   __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_interactions); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_BondedInteractions); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_BondedInteractions); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 67, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_4);
     if (likely(__pyx_t_2)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
       __Pyx_INCREF(__pyx_t_2);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __Pyx_DECREF_SET(__pyx_t_4, function);
     }
   }
   if (__pyx_t_2) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
   }
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (PyDict_SetItem((PyObject *)__pyx_ptype_10espressomd_7_system_System->tp_dict, __pyx_n_s_bonded_inter, __pyx_t_1) < 0) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_10espressomd_7_system_System);
@@ -10648,26 +10670,26 @@ PyMODINIT_FUNC PyInit__system(void)
  *     thermostat = Thermostat()
  *     minimize_energy = MinimizeEnergy()
  */
-  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_CellSystem); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_CellSystem); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 68, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_2 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_4);
     if (likely(__pyx_t_2)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
       __Pyx_INCREF(__pyx_t_2);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __Pyx_DECREF_SET(__pyx_t_4, function);
     }
   }
   if (__pyx_t_2) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 68, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 68, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 68, __pyx_L1_error)
   }
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (PyDict_SetItem((PyObject *)__pyx_ptype_10espressomd_7_system_System->tp_dict, __pyx_n_s_cell_system, __pyx_t_1) < 0) __PYX_ERR(0, 68, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_10espressomd_7_system_System);
@@ -10679,26 +10701,26 @@ PyMODINIT_FUNC PyInit__system(void)
  *     minimize_energy = MinimizeEnergy()
  *     actors = None
  */
-  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_Thermostat); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 69, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_Thermostat); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_2 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_4);
     if (likely(__pyx_t_2)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
       __Pyx_INCREF(__pyx_t_2);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __Pyx_DECREF_SET(__pyx_t_4, function);
     }
   }
   if (__pyx_t_2) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 69, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 69, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 69, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 69, __pyx_L1_error)
   }
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (PyDict_SetItem((PyObject *)__pyx_ptype_10espressomd_7_system_System->tp_dict, __pyx_n_s_thermostat, __pyx_t_1) < 0) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_10espressomd_7_system_System);
@@ -10710,26 +10732,26 @@ PyMODINIT_FUNC PyInit__system(void)
  *     actors = None
  *     analysis = None
  */
-  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_MinimizeEnergy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 70, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_MinimizeEnergy); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_2 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_4);
     if (likely(__pyx_t_2)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
       __Pyx_INCREF(__pyx_t_2);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __Pyx_DECREF_SET(__pyx_t_4, function);
     }
   }
   if (__pyx_t_2) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 70, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 70, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 70, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 70, __pyx_L1_error)
   }
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (PyDict_SetItem((PyObject *)__pyx_ptype_10espressomd_7_system_System->tp_dict, __pyx_n_s_minimize_energy, __pyx_t_1) < 0) __PYX_ERR(0, 70, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_10espressomd_7_system_System);
@@ -10761,26 +10783,26 @@ PyMODINIT_FUNC PyInit__system(void)
  *     integrator = integrate.Integrator()
  *     if CONSTRAINTS == 1:
  */
-  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_GalileiTransform); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_GalileiTransform); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_2 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_4);
     if (likely(__pyx_t_2)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
       __Pyx_INCREF(__pyx_t_2);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __Pyx_DECREF_SET(__pyx_t_4, function);
     }
   }
   if (__pyx_t_2) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
   }
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (PyDict_SetItem((PyObject *)__pyx_ptype_10espressomd_7_system_System->tp_dict, __pyx_n_s_galilei, __pyx_t_1) < 0) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_10espressomd_7_system_System);
@@ -10792,24 +10814,24 @@ PyMODINIT_FUNC PyInit__system(void)
  *     if CONSTRAINTS == 1:
  *         constraints = Constraints()
  */
-  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_integrate); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 74, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_Integrator); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_integrate); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_Integrator); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = NULL;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_3)) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_4)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_2, function);
     }
   }
-  if (__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (__pyx_t_4) {
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   } else {
     __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
   }
@@ -10828,19 +10850,19 @@ PyMODINIT_FUNC PyInit__system(void)
  */
   __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_EKBoundaries); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 79, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = NULL;
+  __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_3)) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_4)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_2, function);
     }
   }
-  if (__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (__pyx_t_4) {
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   } else {
     __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
   }
@@ -10859,19 +10881,19 @@ PyMODINIT_FUNC PyInit__system(void)
  */
   __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_AutoUpdateObservables); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 81, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = NULL;
+  __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_3)) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_4)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_2, function);
     }
   }
-  if (__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (__pyx_t_4) {
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   } else {
     __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
   }
@@ -10890,19 +10912,19 @@ PyMODINIT_FUNC PyInit__system(void)
  */
   __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_AutoUpdateCorrelators); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 82, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = NULL;
+  __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_3)) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_4)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_2, function);
     }
   }
-  if (__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 82, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (__pyx_t_4) {
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 82, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   } else {
     __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 82, __pyx_L1_error)
   }
@@ -10946,7 +10968,7 @@ PyMODINIT_FUNC PyInit__system(void)
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
   if (__pyx_m) {
     if (__pyx_d) {
       __Pyx_AddTraceback("init espressomd._system", __pyx_clineno, __pyx_lineno, __pyx_filename);
@@ -12432,6 +12454,65 @@ bad:
         #endif
     }
     return value;
+}
+
+/* PyObjectCallMethod1 */
+            static PyObject* __Pyx_PyObject_CallMethod1(PyObject* obj, PyObject* method_name, PyObject* arg) {
+    PyObject *method, *result = NULL;
+    method = __Pyx_PyObject_GetAttrStr(obj, method_name);
+    if (unlikely(!method)) goto done;
+#if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(method))) {
+        PyObject *self = PyMethod_GET_SELF(method);
+        if (likely(self)) {
+            PyObject *args;
+            PyObject *function = PyMethod_GET_FUNCTION(method);
+            #if CYTHON_FAST_PYCALL
+            if (PyFunction_Check(function)) {
+                PyObject *args[2] = {self, arg};
+                result = __Pyx_PyFunction_FastCall(function, args, 2);
+                goto done;
+            }
+            #endif
+            #if CYTHON_FAST_PYCCALL
+            if (__Pyx_PyFastCFunction_Check(function)) {
+                PyObject *args[2] = {self, arg};
+                result = __Pyx_PyCFunction_FastCall(function, args, 2);
+                goto done;
+            }
+            #endif
+            args = PyTuple_New(2);
+            if (unlikely(!args)) goto done;
+            Py_INCREF(self);
+            PyTuple_SET_ITEM(args, 0, self);
+            Py_INCREF(arg);
+            PyTuple_SET_ITEM(args, 1, arg);
+            Py_INCREF(function);
+            Py_DECREF(method); method = NULL;
+            result = __Pyx_PyObject_Call(function, args, NULL);
+            Py_DECREF(args);
+            Py_DECREF(function);
+            return result;
+        }
+    }
+#endif
+    result = __Pyx_PyObject_CallOneArg(method, arg);
+done:
+    Py_XDECREF(method);
+    return result;
+}
+
+/* append */
+            static CYTHON_INLINE int __Pyx_PyObject_Append(PyObject* L, PyObject* x) {
+    if (likely(PyList_CheckExact(L))) {
+        if (unlikely(__Pyx_PyList_Append(L, x) < 0)) return -1;
+    } else {
+        PyObject* retval = __Pyx_PyObject_CallMethod1(L, __pyx_n_s_append, x);
+        if (unlikely(!retval))
+            return -1;
+        Py_DECREF(retval);
+    }
+    return 0;
 }
 
 /* CodeObjectCache */

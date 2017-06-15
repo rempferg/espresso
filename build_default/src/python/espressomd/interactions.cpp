@@ -914,6 +914,7 @@ static CYTHON_INLINE __pyx_t_double_complex __pyx_t_double_complex_from_parts(do
 /*--- Type declarations ---*/
 struct __pyx_obj_10espressomd_12interactions_NonBondedInteraction;
 struct __pyx_obj_10espressomd_12interactions_LennardJonesInteraction;
+struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction;
 struct __pyx_obj_10espressomd_12interactions_NonBondedInteractions;
 struct __pyx_obj_10espressomd_12interactions_BondedInteraction;
 struct __pyx_obj_10espressomd_12interactions___pyx_scope_struct____getattribute__;
@@ -987,6 +988,18 @@ struct __pyx_obj_10espressomd_12interactions_NonBondedInteraction {
  *         def validate_params(self):
  */
 struct __pyx_obj_10espressomd_12interactions_LennardJonesInteraction {
+  struct __pyx_obj_10espressomd_12interactions_NonBondedInteraction __pyx_base;
+};
+
+
+/* "espressomd/interactions.pyx":270
+ * IF LENNARD_JONES_GENERIC == 1:
+ * 
+ *     cdef class GenericLennardJonesInteraction(NonBondedInteraction):             # <<<<<<<<<<<<<<
+ * 
+ *         def validate_params(self):
+ */
+struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction {
   struct __pyx_obj_10espressomd_12interactions_NonBondedInteraction __pyx_base;
 };
 
@@ -1757,6 +1770,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *, cha
 /* Module declarations from 'espressomd.interactions' */
 static PyTypeObject *__pyx_ptype_10espressomd_12interactions_NonBondedInteraction = 0;
 static PyTypeObject *__pyx_ptype_10espressomd_12interactions_LennardJonesInteraction = 0;
+static PyTypeObject *__pyx_ptype_10espressomd_12interactions_GenericLennardJonesInteraction = 0;
 static PyTypeObject *__pyx_ptype_10espressomd_12interactions_NonBondedInteractions = 0;
 static PyTypeObject *__pyx_ptype_10espressomd_12interactions_BondedInteraction = 0;
 static PyTypeObject *__pyx_ptype_10espressomd_12interactions___pyx_scope_struct____getattribute__ = 0;
@@ -1780,14 +1794,18 @@ static const char __pyx_k_r[] = "r";
 static const char __pyx_k_V0[] = "V0";
 static const char __pyx_k__2[] = "(";
 static const char __pyx_k__3[] = ")";
+static const char __pyx_k_b1[] = "b1";
+static const char __pyx_k_b2[] = "b2";
+static const char __pyx_k_e1[] = "e1";
+static const char __pyx_k_e2[] = "e2";
 static const char __pyx_k_kb[] = "kb";
 static const char __pyx_k_ks[] = "ks";
 static const char __pyx_k_kv[] = "kv";
 static const char __pyx_k_r0[] = "r0";
 static const char __pyx_k_A01[] = "A01";
 static const char __pyx_k_A02[] = "A02";
-static const char __pyx_k__34[] = "): ";
-static const char __pyx_k__75[] = "";
+static const char __pyx_k__40[] = "): ";
+static const char __pyx_k__81[] = "";
 static const char __pyx_k_add[] = "add";
 static const char __pyx_k_cap[] = "cap";
 static const char __pyx_k_doc[] = "__doc__";
@@ -1817,6 +1835,7 @@ static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_RIGID[] = "RIGID";
 static const char __pyx_k_class[] = "__class__";
 static const char __pyx_k_close[] = "close";
+static const char __pyx_k_delta[] = "delta";
 static const char __pyx_k_kslin[] = "kslin";
 static const char __pyx_k_phase[] = "phase";
 static const char __pyx_k_r_cut[] = "r_cut";
@@ -1832,6 +1851,7 @@ static const char __pyx_k_value[] = "value";
 static const char __pyx_k_cutoff[] = "cutoff";
 static const char __pyx_k_import[] = "__import__";
 static const char __pyx_k_kwargs[] = "kwargs";
+static const char __pyx_k_lambda[] = "lambda";
 static const char __pyx_k_module[] = "__module__";
 static const char __pyx_k_mult_2[] = "mult'";
 static const char __pyx_k_name_2[] = "name";
@@ -1915,6 +1935,7 @@ static const char __pyx_k_is_not_yet_defined[] = " is not yet defined.";
 static const char __pyx_k_set_default_params[] = "set_default_params";
 static const char __pyx_k_Dihedral_valid_keys[] = "Dihedral.valid_keys";
 static const char __pyx_k_FeneBond_valid_keys[] = "FeneBond.valid_keys";
+static const char __pyx_k_GenericLennardJones[] = "GenericLennardJones";
 static const char __pyx_k_HarmonicBond___init[] = "HarmonicBond.__init__";
 static const char __pyx_k_Subt_Lj_type_number[] = "Subt_Lj.type_number";
 static const char __pyx_k_Tabulated_type_name[] = "Tabulated.type_name";
@@ -1966,6 +1987,7 @@ static const char __pyx_k_getattribute___locals_sync_par[] = "__getattribute__.<
 static const char __pyx_k_BondedInteractionNotDefined_set[] = "BondedInteractionNotDefined.set_default_params";
 static const char __pyx_k_Dihedral__set_params_in_es_core[] = "Dihedral._set_params_in_es_core";
 static const char __pyx_k_FeneBond__set_params_in_es_core[] = "FeneBond._set_params_in_es_core";
+static const char __pyx_k_Generic_Lennard_Jones_sigma_has[] = "Generic Lennard-Jones sigma has to be >=0";
 static const char __pyx_k_HarmonicBond_set_default_params[] = "HarmonicBond.set_default_params";
 static const char __pyx_k_HarmonicDumbbellBond_valid_keys[] = "HarmonicDumbbellBond.valid_keys";
 static const char __pyx_k_Index_to_BondedInteractions_has[] = "Index to BondedInteractions[] has to ba an integer referring to a bond id";
@@ -1986,10 +2008,13 @@ static const char __pyx_k_BondedInteractionNotDefined__set[] = "BondedInteractio
 static const char __pyx_k_BondedInteractionNotDefined_requ[] = "BondedInteractionNotDefined.required_keys";
 static const char __pyx_k_BondedInteractionNotDefined_type[] = "BondedInteractionNotDefined.type_number";
 static const char __pyx_k_BondedInteractionNotDefined_vali[] = "BondedInteractionNotDefined.valid_keys";
+static const char __pyx_k_Could_not_set_Generic_Lennard_Jo[] = "Could not set Generic Lennard Jones parameters";
 static const char __pyx_k_Could_not_set_Lennard_Jones_para[] = "Could not set Lennard Jones parameters";
 static const char __pyx_k_Dihedral__get_params_from_es_cor[] = "Dihedral._get_params_from_es_core";
 static const char __pyx_k_FeneBond__get_params_from_es_cor[] = "FeneBond._get_params_from_es_core";
 static const char __pyx_k_Format_string_allocated_too_shor[] = "Format string allocated too short, see comment in numpy.pxd";
+static const char __pyx_k_Generic_Lennard_Jones_cutoff_has[] = "Generic Lennard-Jones cutoff has to be >=0";
+static const char __pyx_k_Generic_Lennard_Jones_eps_has_to[] = "Generic Lennard-Jones eps has to be >=0";
 static const char __pyx_k_HarmonicBond__get_params_from_es[] = "HarmonicBond._get_params_from_es_core";
 static const char __pyx_k_HarmonicBond__set_params_in_es_c[] = "HarmonicBond._set_params_in_es_core";
 static const char __pyx_k_HarmonicDumbbellBond_ROTATION_ha[] = "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.";
@@ -2063,6 +2088,7 @@ static PyObject *__pyx_n_s_BondedInteractions___iter;
 static PyObject *__pyx_n_s_BondedInteractions___setitem;
 static PyObject *__pyx_n_s_BondedInteractions___setstate;
 static PyObject *__pyx_n_s_BondedInteractions_add;
+static PyObject *__pyx_kp_s_Could_not_set_Generic_Lennard_Jo;
 static PyObject *__pyx_kp_s_Could_not_set_Lennard_Jones_para;
 static PyObject *__pyx_kp_s_Could_not_set_forcecap;
 static PyObject *__pyx_n_s_DIHEDRAL;
@@ -2087,6 +2113,10 @@ static PyObject *__pyx_n_s_FeneBond_type_number;
 static PyObject *__pyx_n_s_FeneBond_valid_keys;
 static PyObject *__pyx_kp_u_Format_string_allocated_too_shor;
 static PyObject *__pyx_kp_u_Format_string_allocated_too_shor_2;
+static PyObject *__pyx_n_s_GenericLennardJones;
+static PyObject *__pyx_kp_s_Generic_Lennard_Jones_cutoff_has;
+static PyObject *__pyx_kp_s_Generic_Lennard_Jones_eps_has_to;
+static PyObject *__pyx_kp_s_Generic_Lennard_Jones_sigma_has;
 static PyObject *__pyx_n_s_HARMONIC;
 static PyObject *__pyx_n_s_HarmonicBond;
 static PyObject *__pyx_n_s_HarmonicBond___init;
@@ -2189,11 +2219,13 @@ static PyObject *__pyx_n_s_ValueError;
 static PyObject *__pyx_n_s_Virtual;
 static PyObject *__pyx_kp_s__2;
 static PyObject *__pyx_kp_s__3;
-static PyObject *__pyx_kp_s__34;
-static PyObject *__pyx_n_s__75;
+static PyObject *__pyx_kp_s__40;
+static PyObject *__pyx_n_s__81;
 static PyObject *__pyx_n_s_add;
 static PyObject *__pyx_n_s_args;
 static PyObject *__pyx_n_s_auto;
+static PyObject *__pyx_n_s_b1;
+static PyObject *__pyx_n_s_b2;
 static PyObject *__pyx_n_s_bend;
 static PyObject *__pyx_n_s_bond_class;
 static PyObject *__pyx_n_s_bond_id;
@@ -2209,7 +2241,10 @@ static PyObject *__pyx_n_s_close;
 static PyObject *__pyx_n_s_cutoff;
 static PyObject *__pyx_n_s_d_r_max;
 static PyObject *__pyx_n_s_default_params;
+static PyObject *__pyx_n_s_delta;
 static PyObject *__pyx_n_s_doc;
+static PyObject *__pyx_n_s_e1;
+static PyObject *__pyx_n_s_e2;
 static PyObject *__pyx_n_s_enumerate;
 static PyObject *__pyx_n_s_epsilon;
 static PyObject *__pyx_n_s_espressomd_interactions;
@@ -2240,6 +2275,7 @@ static PyObject *__pyx_n_s_ks;
 static PyObject *__pyx_n_s_kslin;
 static PyObject *__pyx_n_s_kv;
 static PyObject *__pyx_n_s_kwargs;
+static PyObject *__pyx_n_s_lambda;
 static PyObject *__pyx_n_s_lennard_jones;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_metaclass;
@@ -2327,6 +2363,15 @@ static PyObject *__pyx_pf_10espressomd_12interactions_23LennardJonesInteraction_
 static PyObject *__pyx_pf_10espressomd_12interactions_23LennardJonesInteraction_12type_name(CYTHON_UNUSED struct __pyx_obj_10espressomd_12interactions_LennardJonesInteraction *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_10espressomd_12interactions_23LennardJonesInteraction_14valid_keys(CYTHON_UNUSED struct __pyx_obj_10espressomd_12interactions_LennardJonesInteraction *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_10espressomd_12interactions_23LennardJonesInteraction_16required_keys(CYTHON_UNUSED struct __pyx_obj_10espressomd_12interactions_LennardJonesInteraction *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_validate_params(struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_2_get_params_from_es_core(struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_4is_active(struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_6_set_params_in_es_core(struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_8default_params(CYTHON_UNUSED struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_10type_name(CYTHON_UNUSED struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_12set_params(struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *__pyx_v_self, PyObject *__pyx_v_kwargs); /* proto */
+static PyObject *__pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_14valid_keys(CYTHON_UNUSED struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_16required_keys(CYTHON_UNUSED struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_10espressomd_12interactions_26NonBondedInteractionHandle___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v__type1, PyObject *__pyx_v__type2); /* proto */
 static PyObject *__pyx_pf_10espressomd_12interactions_21NonBondedInteractions___getitem__(CYTHON_UNUSED struct __pyx_obj_10espressomd_12interactions_NonBondedInteractions *__pyx_v_self, PyObject *__pyx_v_key); /* proto */
 static PyObject *__pyx_pf_10espressomd_12interactions_21NonBondedInteractions_2set_force_cap(CYTHON_UNUSED struct __pyx_obj_10espressomd_12interactions_NonBondedInteractions *__pyx_v_self, PyObject *__pyx_v_cap); /* proto */
@@ -2427,6 +2472,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
 static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info); /* proto */
 static PyObject *__pyx_tp_new_10espressomd_12interactions_NonBondedInteraction(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_10espressomd_12interactions_LennardJonesInteraction(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_10espressomd_12interactions_GenericLennardJonesInteraction(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_10espressomd_12interactions_NonBondedInteractions(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_10espressomd_12interactions_BondedInteraction(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_10espressomd_12interactions___pyx_scope_struct____getattribute__(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
@@ -2463,19 +2509,19 @@ static PyObject *__pyx_tuple__22;
 static PyObject *__pyx_tuple__23;
 static PyObject *__pyx_tuple__24;
 static PyObject *__pyx_tuple__25;
+static PyObject *__pyx_tuple__26;
 static PyObject *__pyx_tuple__27;
 static PyObject *__pyx_tuple__28;
 static PyObject *__pyx_tuple__29;
 static PyObject *__pyx_tuple__30;
 static PyObject *__pyx_tuple__31;
-static PyObject *__pyx_tuple__32;
 static PyObject *__pyx_tuple__33;
+static PyObject *__pyx_tuple__34;
 static PyObject *__pyx_tuple__35;
 static PyObject *__pyx_tuple__36;
 static PyObject *__pyx_tuple__37;
 static PyObject *__pyx_tuple__38;
 static PyObject *__pyx_tuple__39;
-static PyObject *__pyx_tuple__40;
 static PyObject *__pyx_tuple__41;
 static PyObject *__pyx_tuple__42;
 static PyObject *__pyx_tuple__43;
@@ -2510,8 +2556,11 @@ static PyObject *__pyx_tuple__71;
 static PyObject *__pyx_tuple__72;
 static PyObject *__pyx_tuple__73;
 static PyObject *__pyx_tuple__74;
+static PyObject *__pyx_tuple__75;
 static PyObject *__pyx_tuple__76;
+static PyObject *__pyx_tuple__77;
 static PyObject *__pyx_tuple__78;
+static PyObject *__pyx_tuple__79;
 static PyObject *__pyx_tuple__80;
 static PyObject *__pyx_tuple__82;
 static PyObject *__pyx_tuple__84;
@@ -2585,10 +2634,10 @@ static PyObject *__pyx_tuple__216;
 static PyObject *__pyx_tuple__218;
 static PyObject *__pyx_tuple__220;
 static PyObject *__pyx_tuple__222;
-static PyObject *__pyx_codeobj__26;
-static PyObject *__pyx_codeobj__77;
-static PyObject *__pyx_codeobj__79;
-static PyObject *__pyx_codeobj__81;
+static PyObject *__pyx_tuple__224;
+static PyObject *__pyx_tuple__226;
+static PyObject *__pyx_tuple__228;
+static PyObject *__pyx_codeobj__32;
 static PyObject *__pyx_codeobj__83;
 static PyObject *__pyx_codeobj__85;
 static PyObject *__pyx_codeobj__87;
@@ -2660,6 +2709,9 @@ static PyObject *__pyx_codeobj__217;
 static PyObject *__pyx_codeobj__219;
 static PyObject *__pyx_codeobj__221;
 static PyObject *__pyx_codeobj__223;
+static PyObject *__pyx_codeobj__225;
+static PyObject *__pyx_codeobj__227;
+static PyObject *__pyx_codeobj__229;
 
 /* "espressomd/interactions.pyx":33
  *     user_interactions = {}
@@ -6507,6 +6559,1109 @@ static PyObject *__pyx_pf_10espressomd_12interactions_23LennardJonesInteraction_
   return __pyx_r;
 }
 
+/* "espressomd/interactions.pyx":272
+ *     cdef class GenericLennardJonesInteraction(NonBondedInteraction):
+ * 
+ *         def validate_params(self):             # <<<<<<<<<<<<<<
+ *             if self._params["epsilon"] < 0:
+ *                 raise ValueError("Generic Lennard-Jones eps has to be >=0")
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_1validate_params(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_10espressomd_12interactions_30GenericLennardJonesInteraction_validate_params[] = "GenericLennardJonesInteraction.validate_params(self)";
+static PyObject *__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_1validate_params(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("validate_params (wrapper)", 0);
+  __pyx_r = __pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_validate_params(((struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_validate_params(struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  int __pyx_t_3;
+  __Pyx_RefNannySetupContext("validate_params", 0);
+
+  /* "espressomd/interactions.pyx":273
+ * 
+ *         def validate_params(self):
+ *             if self._params["epsilon"] < 0:             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Generic Lennard-Jones eps has to be >=0")
+ *             if self._params["sigma"] < 0:
+ */
+  __pyx_t_1 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_epsilon); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 273, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 273, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 273, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (__pyx_t_3) {
+
+    /* "espressomd/interactions.pyx":274
+ *         def validate_params(self):
+ *             if self._params["epsilon"] < 0:
+ *                 raise ValueError("Generic Lennard-Jones eps has to be >=0")             # <<<<<<<<<<<<<<
+ *             if self._params["sigma"] < 0:
+ *                 raise ValueError("Generic Lennard-Jones sigma has to be >=0")
+ */
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 274, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __PYX_ERR(0, 274, __pyx_L1_error)
+
+    /* "espressomd/interactions.pyx":273
+ * 
+ *         def validate_params(self):
+ *             if self._params["epsilon"] < 0:             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Generic Lennard-Jones eps has to be >=0")
+ *             if self._params["sigma"] < 0:
+ */
+  }
+
+  /* "espressomd/interactions.pyx":275
+ *             if self._params["epsilon"] < 0:
+ *                 raise ValueError("Generic Lennard-Jones eps has to be >=0")
+ *             if self._params["sigma"] < 0:             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Generic Lennard-Jones sigma has to be >=0")
+ *             if self._params["cutoff"] < 0:
+ */
+  __pyx_t_2 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_sigma); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 275, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = PyObject_RichCompare(__pyx_t_2, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 275, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 275, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (__pyx_t_3) {
+
+    /* "espressomd/interactions.pyx":276
+ *                 raise ValueError("Generic Lennard-Jones eps has to be >=0")
+ *             if self._params["sigma"] < 0:
+ *                 raise ValueError("Generic Lennard-Jones sigma has to be >=0")             # <<<<<<<<<<<<<<
+ *             if self._params["cutoff"] < 0:
+ *                 raise ValueError("Generic Lennard-Jones cutoff has to be >=0")
+ */
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 276, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __PYX_ERR(0, 276, __pyx_L1_error)
+
+    /* "espressomd/interactions.pyx":275
+ *             if self._params["epsilon"] < 0:
+ *                 raise ValueError("Generic Lennard-Jones eps has to be >=0")
+ *             if self._params["sigma"] < 0:             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Generic Lennard-Jones sigma has to be >=0")
+ *             if self._params["cutoff"] < 0:
+ */
+  }
+
+  /* "espressomd/interactions.pyx":277
+ *             if self._params["sigma"] < 0:
+ *                 raise ValueError("Generic Lennard-Jones sigma has to be >=0")
+ *             if self._params["cutoff"] < 0:             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Generic Lennard-Jones cutoff has to be >=0")
+ *             return True
+ */
+  __pyx_t_1 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_cutoff); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 277, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 277, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 277, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (__pyx_t_3) {
+
+    /* "espressomd/interactions.pyx":278
+ *                 raise ValueError("Generic Lennard-Jones sigma has to be >=0")
+ *             if self._params["cutoff"] < 0:
+ *                 raise ValueError("Generic Lennard-Jones cutoff has to be >=0")             # <<<<<<<<<<<<<<
+ *             return True
+ * 
+ */
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 278, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __PYX_ERR(0, 278, __pyx_L1_error)
+
+    /* "espressomd/interactions.pyx":277
+ *             if self._params["sigma"] < 0:
+ *                 raise ValueError("Generic Lennard-Jones sigma has to be >=0")
+ *             if self._params["cutoff"] < 0:             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Generic Lennard-Jones cutoff has to be >=0")
+ *             return True
+ */
+  }
+
+  /* "espressomd/interactions.pyx":279
+ *             if self._params["cutoff"] < 0:
+ *                 raise ValueError("Generic Lennard-Jones cutoff has to be >=0")
+ *             return True             # <<<<<<<<<<<<<<
+ * 
+ *         def _get_params_from_es_core(self):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(Py_True);
+  __pyx_r = Py_True;
+  goto __pyx_L0;
+
+  /* "espressomd/interactions.pyx":272
+ *     cdef class GenericLennardJonesInteraction(NonBondedInteraction):
+ * 
+ *         def validate_params(self):             # <<<<<<<<<<<<<<
+ *             if self._params["epsilon"] < 0:
+ *                 raise ValueError("Generic Lennard-Jones eps has to be >=0")
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_AddTraceback("espressomd.interactions.GenericLennardJonesInteraction.validate_params", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "espressomd/interactions.pyx":281
+ *             return True
+ * 
+ *         def _get_params_from_es_core(self):             # <<<<<<<<<<<<<<
+ *             cdef ia_parameters * ia_params
+ *             ia_params = get_ia_param_safe(self._part_types[0], self._part_types[1])
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_3_get_params_from_es_core(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_10espressomd_12interactions_30GenericLennardJonesInteraction_2_get_params_from_es_core[] = "GenericLennardJonesInteraction._get_params_from_es_core(self)";
+static PyObject *__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_3_get_params_from_es_core(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("_get_params_from_es_core (wrapper)", 0);
+  __pyx_r = __pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_2_get_params_from_es_core(((struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_2_get_params_from_es_core(struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *__pyx_v_self) {
+  IA_parameters *__pyx_v_ia_params;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_t_2;
+  int __pyx_t_3;
+  PyObject *__pyx_t_4 = NULL;
+  __Pyx_RefNannySetupContext("_get_params_from_es_core", 0);
+
+  /* "espressomd/interactions.pyx":283
+ *         def _get_params_from_es_core(self):
+ *             cdef ia_parameters * ia_params
+ *             ia_params = get_ia_param_safe(self._part_types[0], self._part_types[1])             # <<<<<<<<<<<<<<
+ *             return {
+ *                 "epsilon": ia_params.LJGEN_eps,
+ */
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_self->__pyx_base._part_types, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 283, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_self->__pyx_base._part_types, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_3 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_3 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 283, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_v_ia_params = get_ia_param_safe(__pyx_t_2, __pyx_t_3);
+
+  /* "espressomd/interactions.pyx":284
+ *             cdef ia_parameters * ia_params
+ *             ia_params = get_ia_param_safe(self._part_types[0], self._part_types[1])
+ *             return {             # <<<<<<<<<<<<<<
+ *                 "epsilon": ia_params.LJGEN_eps,
+ *                 "sigma": ia_params.LJGEN_sig,
+ */
+  __Pyx_XDECREF(__pyx_r);
+
+  /* "espressomd/interactions.pyx":285
+ *             ia_params = get_ia_param_safe(self._part_types[0], self._part_types[1])
+ *             return {
+ *                 "epsilon": ia_params.LJGEN_eps,             # <<<<<<<<<<<<<<
+ *                 "sigma": ia_params.LJGEN_sig,
+ *                 "cutoff": ia_params.LJGEN_cut,
+ */
+  __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_ia_params->LJGEN_eps); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_epsilon, __pyx_t_4) < 0) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+  /* "espressomd/interactions.pyx":286
+ *             return {
+ *                 "epsilon": ia_params.LJGEN_eps,
+ *                 "sigma": ia_params.LJGEN_sig,             # <<<<<<<<<<<<<<
+ *                 "cutoff": ia_params.LJGEN_cut,
+ *                 "shift": ia_params.LJGEN_shift,
+ */
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_ia_params->LJGEN_sig); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 286, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_sigma, __pyx_t_4) < 0) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+  /* "espressomd/interactions.pyx":287
+ *                 "epsilon": ia_params.LJGEN_eps,
+ *                 "sigma": ia_params.LJGEN_sig,
+ *                 "cutoff": ia_params.LJGEN_cut,             # <<<<<<<<<<<<<<
+ *                 "shift": ia_params.LJGEN_shift,
+ *                 "offset": ia_params.LJGEN_offset,
+ */
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_ia_params->LJGEN_cut); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 287, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_cutoff, __pyx_t_4) < 0) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+  /* "espressomd/interactions.pyx":288
+ *                 "sigma": ia_params.LJGEN_sig,
+ *                 "cutoff": ia_params.LJGEN_cut,
+ *                 "shift": ia_params.LJGEN_shift,             # <<<<<<<<<<<<<<
+ *                 "offset": ia_params.LJGEN_offset,
+ *                 "e1": ia_params.LJGEN_a1,
+ */
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_ia_params->LJGEN_shift); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 288, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_shift, __pyx_t_4) < 0) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+  /* "espressomd/interactions.pyx":289
+ *                 "cutoff": ia_params.LJGEN_cut,
+ *                 "shift": ia_params.LJGEN_shift,
+ *                 "offset": ia_params.LJGEN_offset,             # <<<<<<<<<<<<<<
+ *                 "e1": ia_params.LJGEN_a1,
+ *                 "e2": ia_params.LJGEN_a2,
+ */
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_ia_params->LJGEN_offset); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 289, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_offset, __pyx_t_4) < 0) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+  /* "espressomd/interactions.pyx":290
+ *                 "shift": ia_params.LJGEN_shift,
+ *                 "offset": ia_params.LJGEN_offset,
+ *                 "e1": ia_params.LJGEN_a1,             # <<<<<<<<<<<<<<
+ *                 "e2": ia_params.LJGEN_a2,
+ *                 "b1": ia_params.LJGEN_b1,
+ */
+  __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_ia_params->LJGEN_a1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 290, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_e1, __pyx_t_4) < 0) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+  /* "espressomd/interactions.pyx":291
+ *                 "offset": ia_params.LJGEN_offset,
+ *                 "e1": ia_params.LJGEN_a1,
+ *                 "e2": ia_params.LJGEN_a2,             # <<<<<<<<<<<<<<
+ *                 "b1": ia_params.LJGEN_b1,
+ *                 "b2": ia_params.LJGEN_b2,
+ */
+  __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_ia_params->LJGEN_a2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 291, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_e2, __pyx_t_4) < 0) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+  /* "espressomd/interactions.pyx":292
+ *                 "e1": ia_params.LJGEN_a1,
+ *                 "e2": ia_params.LJGEN_a2,
+ *                 "b1": ia_params.LJGEN_b1,             # <<<<<<<<<<<<<<
+ *                 "b2": ia_params.LJGEN_b2,
+ *                 "lambda": ia_params.LJGEN_lambda,
+ */
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_ia_params->LJGEN_b1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 292, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_b1, __pyx_t_4) < 0) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+  /* "espressomd/interactions.pyx":293
+ *                 "e2": ia_params.LJGEN_a2,
+ *                 "b1": ia_params.LJGEN_b1,
+ *                 "b2": ia_params.LJGEN_b2,             # <<<<<<<<<<<<<<
+ *                 "lambda": ia_params.LJGEN_lambda,
+ *                 "delta": ia_params.LJGEN_softrad
+ */
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_ia_params->LJGEN_b2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 293, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_b2, __pyx_t_4) < 0) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+  /* "espressomd/interactions.pyx":294
+ *                 "b1": ia_params.LJGEN_b1,
+ *                 "b2": ia_params.LJGEN_b2,
+ *                 "lambda": ia_params.LJGEN_lambda,             # <<<<<<<<<<<<<<
+ *                 "delta": ia_params.LJGEN_softrad
+ *             }
+ */
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_ia_params->LJGEN_lambda); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 294, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_lambda, __pyx_t_4) < 0) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+  /* "espressomd/interactions.pyx":295
+ *                 "b2": ia_params.LJGEN_b2,
+ *                 "lambda": ia_params.LJGEN_lambda,
+ *                 "delta": ia_params.LJGEN_softrad             # <<<<<<<<<<<<<<
+ *             }
+ * 
+ */
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_ia_params->LJGEN_softrad); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 295, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_delta, __pyx_t_4) < 0) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "espressomd/interactions.pyx":281
+ *             return True
+ * 
+ *         def _get_params_from_es_core(self):             # <<<<<<<<<<<<<<
+ *             cdef ia_parameters * ia_params
+ *             ia_params = get_ia_param_safe(self._part_types[0], self._part_types[1])
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("espressomd.interactions.GenericLennardJonesInteraction._get_params_from_es_core", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "espressomd/interactions.pyx":298
+ *             }
+ * 
+ *         def is_active(self):             # <<<<<<<<<<<<<<
+ *             return (self._params["epsilon"] > 0)
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_5is_active(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_10espressomd_12interactions_30GenericLennardJonesInteraction_4is_active[] = "GenericLennardJonesInteraction.is_active(self)";
+static PyObject *__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_5is_active(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("is_active (wrapper)", 0);
+  __pyx_r = __pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_4is_active(((struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_4is_active(struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  __Pyx_RefNannySetupContext("is_active", 0);
+
+  /* "espressomd/interactions.pyx":299
+ * 
+ *         def is_active(self):
+ *             return (self._params["epsilon"] > 0)             # <<<<<<<<<<<<<<
+ * 
+ *         def _set_params_in_es_core(self):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_epsilon); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 299, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 299, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_r = __pyx_t_2;
+  __pyx_t_2 = 0;
+  goto __pyx_L0;
+
+  /* "espressomd/interactions.pyx":298
+ *             }
+ * 
+ *         def is_active(self):             # <<<<<<<<<<<<<<
+ *             return (self._params["epsilon"] > 0)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_AddTraceback("espressomd.interactions.GenericLennardJonesInteraction.is_active", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "espressomd/interactions.pyx":301
+ *             return (self._params["epsilon"] > 0)
+ * 
+ *         def _set_params_in_es_core(self):             # <<<<<<<<<<<<<<
+ *             # Handle the case of shift="auto"
+ *             if self._params["shift"] == "auto":
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_7_set_params_in_es_core(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_10espressomd_12interactions_30GenericLennardJonesInteraction_6_set_params_in_es_core[] = "GenericLennardJonesInteraction._set_params_in_es_core(self)";
+static PyObject *__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_7_set_params_in_es_core(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("_set_params_in_es_core (wrapper)", 0);
+  __pyx_r = __pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_6_set_params_in_es_core(((struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_6_set_params_in_es_core(struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_t_2;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  int __pyx_t_7;
+  int __pyx_t_8;
+  double __pyx_t_9;
+  double __pyx_t_10;
+  double __pyx_t_11;
+  double __pyx_t_12;
+  double __pyx_t_13;
+  int __pyx_t_14;
+  int __pyx_t_15;
+  double __pyx_t_16;
+  double __pyx_t_17;
+  __Pyx_RefNannySetupContext("_set_params_in_es_core", 0);
+
+  /* "espressomd/interactions.pyx":303
+ *         def _set_params_in_es_core(self):
+ *             # Handle the case of shift="auto"
+ *             if self._params["shift"] == "auto":             # <<<<<<<<<<<<<<
+ *                 # Calc shift
+ *                 self._params["shift"] = -(self._params["b1"] * (self._params["sigma"] / self._params["cutoff"])**self._params[
+ */
+  __pyx_t_1 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_shift); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 303, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_n_s_auto, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 303, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (__pyx_t_2) {
+
+    /* "espressomd/interactions.pyx":305
+ *             if self._params["shift"] == "auto":
+ *                 # Calc shift
+ *                 self._params["shift"] = -(self._params["b1"] * (self._params["sigma"] / self._params["cutoff"])**self._params[             # <<<<<<<<<<<<<<
+ *                                           "e1"] - self._params["b2"] * (self._params["sigma"] / self._params["cutoff"])**self._params["e2"])
+ *             IF LJGEN_SOFTCORE:
+ */
+    __pyx_t_1 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_b1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 305, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_3 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_sigma); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 305, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_4 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_cutoff); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 305, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_5 = __Pyx_PyNumber_Divide(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 305, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_4 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_e1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 305, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_3 = PyNumber_Power(__pyx_t_5, __pyx_t_4, Py_None); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 305, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_4 = PyNumber_Multiply(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 305, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+    /* "espressomd/interactions.pyx":306
+ *                 # Calc shift
+ *                 self._params["shift"] = -(self._params["b1"] * (self._params["sigma"] / self._params["cutoff"])**self._params[
+ *                                           "e1"] - self._params["b2"] * (self._params["sigma"] / self._params["cutoff"])**self._params["e2"])             # <<<<<<<<<<<<<<
+ *             IF LJGEN_SOFTCORE:
+ *                 if ljgen_set_params(self._part_types[0], self._part_types[1],
+ */
+    __pyx_t_3 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_b2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 306, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_1 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_sigma); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 306, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_5 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_cutoff); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 306, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_6 = __Pyx_PyNumber_Divide(__pyx_t_1, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 306, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_5 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_e2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 306, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_1 = PyNumber_Power(__pyx_t_6, __pyx_t_5, Py_None); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 306, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_5 = PyNumber_Multiply(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 306, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_1 = PyNumber_Subtract(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 306, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+    /* "espressomd/interactions.pyx":305
+ *             if self._params["shift"] == "auto":
+ *                 # Calc shift
+ *                 self._params["shift"] = -(self._params["b1"] * (self._params["sigma"] / self._params["cutoff"])**self._params[             # <<<<<<<<<<<<<<
+ *                                           "e1"] - self._params["b2"] * (self._params["sigma"] / self._params["cutoff"])**self._params["e2"])
+ *             IF LJGEN_SOFTCORE:
+ */
+    __pyx_t_5 = PyNumber_Negative(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 305, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (unlikely(PyObject_SetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_shift, __pyx_t_5) < 0)) __PYX_ERR(0, 305, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+    /* "espressomd/interactions.pyx":303
+ *         def _set_params_in_es_core(self):
+ *             # Handle the case of shift="auto"
+ *             if self._params["shift"] == "auto":             # <<<<<<<<<<<<<<
+ *                 # Calc shift
+ *                 self._params["shift"] = -(self._params["b1"] * (self._params["sigma"] / self._params["cutoff"])**self._params[
+ */
+  }
+
+  /* "espressomd/interactions.pyx":324
+ *                         "Could not set Generic Lennard Jones parameters")
+ *             ELSE:
+ *                 if ljgen_set_params(self._part_types[0], self._part_types[1],             # <<<<<<<<<<<<<<
+ *                                     self._params["epsilon"],
+ *                                     self._params["sigma"],
+ */
+  __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_self->__pyx_base._part_types, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 324, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_7 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 324, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_self->__pyx_base._part_types, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 324, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_8 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_8 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 324, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+  /* "espressomd/interactions.pyx":325
+ *             ELSE:
+ *                 if ljgen_set_params(self._part_types[0], self._part_types[1],
+ *                                     self._params["epsilon"],             # <<<<<<<<<<<<<<
+ *                                     self._params["sigma"],
+ *                                     self._params["cutoff"],
+ */
+  __pyx_t_5 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_epsilon); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 325, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_9 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_9 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 325, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+  /* "espressomd/interactions.pyx":326
+ *                 if ljgen_set_params(self._part_types[0], self._part_types[1],
+ *                                     self._params["epsilon"],
+ *                                     self._params["sigma"],             # <<<<<<<<<<<<<<
+ *                                     self._params["cutoff"],
+ *                                     self._params["shift"],
+ */
+  __pyx_t_5 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_sigma); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 326, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 326, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+  /* "espressomd/interactions.pyx":327
+ *                                     self._params["epsilon"],
+ *                                     self._params["sigma"],
+ *                                     self._params["cutoff"],             # <<<<<<<<<<<<<<
+ *                                     self._params["shift"],
+ *                                     self._params["offset"],
+ */
+  __pyx_t_5 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_cutoff); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 327, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_11 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_11 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 327, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+  /* "espressomd/interactions.pyx":328
+ *                                     self._params["sigma"],
+ *                                     self._params["cutoff"],
+ *                                     self._params["shift"],             # <<<<<<<<<<<<<<
+ *                                     self._params["offset"],
+ *                                     self._params["e1"],
+ */
+  __pyx_t_5 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_shift); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 328, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_12 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_12 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 328, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+  /* "espressomd/interactions.pyx":329
+ *                                     self._params["cutoff"],
+ *                                     self._params["shift"],
+ *                                     self._params["offset"],             # <<<<<<<<<<<<<<
+ *                                     self._params["e1"],
+ *                                     self._params["e2"],
+ */
+  __pyx_t_5 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_offset); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 329, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_13 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_13 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 329, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+  /* "espressomd/interactions.pyx":330
+ *                                     self._params["shift"],
+ *                                     self._params["offset"],
+ *                                     self._params["e1"],             # <<<<<<<<<<<<<<
+ *                                     self._params["e2"],
+ *                                     self._params["b1"],
+ */
+  __pyx_t_5 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_e1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 330, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_14 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_14 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 330, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+  /* "espressomd/interactions.pyx":331
+ *                                     self._params["offset"],
+ *                                     self._params["e1"],
+ *                                     self._params["e2"],             # <<<<<<<<<<<<<<
+ *                                     self._params["b1"],
+ *                                     self._params["b2"],
+ */
+  __pyx_t_5 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_e2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 331, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_15 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_15 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 331, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+  /* "espressomd/interactions.pyx":332
+ *                                     self._params["e1"],
+ *                                     self._params["e2"],
+ *                                     self._params["b1"],             # <<<<<<<<<<<<<<
+ *                                     self._params["b2"],
+ *                                     0.0):
+ */
+  __pyx_t_5 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_b1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_16 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_16 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 332, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+  /* "espressomd/interactions.pyx":333
+ *                                     self._params["e2"],
+ *                                     self._params["b1"],
+ *                                     self._params["b2"],             # <<<<<<<<<<<<<<
+ *                                     0.0):
+ *                     raise Exception(
+ */
+  __pyx_t_5 = PyObject_GetItem(__pyx_v_self->__pyx_base._params, __pyx_n_s_b2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 333, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_17 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_17 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 333, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+  /* "espressomd/interactions.pyx":324
+ *                         "Could not set Generic Lennard Jones parameters")
+ *             ELSE:
+ *                 if ljgen_set_params(self._part_types[0], self._part_types[1],             # <<<<<<<<<<<<<<
+ *                                     self._params["epsilon"],
+ *                                     self._params["sigma"],
+ */
+  __pyx_t_2 = (ljgen_set_params(__pyx_t_7, __pyx_t_8, __pyx_t_9, __pyx_t_10, __pyx_t_11, __pyx_t_12, __pyx_t_13, __pyx_t_14, __pyx_t_15, __pyx_t_16, __pyx_t_17, 0.0) != 0);
+  if (__pyx_t_2) {
+
+    /* "espressomd/interactions.pyx":335
+ *                                     self._params["b2"],
+ *                                     0.0):
+ *                     raise Exception(             # <<<<<<<<<<<<<<
+ *                         "Could not set Generic Lennard Jones parameters")
+ * 
+ */
+    __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 335, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_Raise(__pyx_t_5, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __PYX_ERR(0, 335, __pyx_L1_error)
+
+    /* "espressomd/interactions.pyx":324
+ *                         "Could not set Generic Lennard Jones parameters")
+ *             ELSE:
+ *                 if ljgen_set_params(self._part_types[0], self._part_types[1],             # <<<<<<<<<<<<<<
+ *                                     self._params["epsilon"],
+ *                                     self._params["sigma"],
+ */
+  }
+
+  /* "espressomd/interactions.pyx":301
+ *             return (self._params["epsilon"] > 0)
+ * 
+ *         def _set_params_in_es_core(self):             # <<<<<<<<<<<<<<
+ *             # Handle the case of shift="auto"
+ *             if self._params["shift"] == "auto":
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_AddTraceback("espressomd.interactions.GenericLennardJonesInteraction._set_params_in_es_core", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "espressomd/interactions.pyx":338
+ *                         "Could not set Generic Lennard Jones parameters")
+ * 
+ *         def default_params(self):             # <<<<<<<<<<<<<<
+ *             return {
+ *                 "epsilon": 0.,
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_9default_params(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_10espressomd_12interactions_30GenericLennardJonesInteraction_8default_params[] = "GenericLennardJonesInteraction.default_params(self)";
+static PyObject *__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_9default_params(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("default_params (wrapper)", 0);
+  __pyx_r = __pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_8default_params(((struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_8default_params(CYTHON_UNUSED struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("default_params", 0);
+
+  /* "espressomd/interactions.pyx":339
+ * 
+ *         def default_params(self):
+ *             return {             # <<<<<<<<<<<<<<
+ *                 "epsilon": 0.,
+ *                 "sigma": 0.,
+ */
+  __Pyx_XDECREF(__pyx_r);
+
+  /* "espressomd/interactions.pyx":340
+ *         def default_params(self):
+ *             return {
+ *                 "epsilon": 0.,             # <<<<<<<<<<<<<<
+ *                 "sigma": 0.,
+ *                 "cutoff": 0.,
+ */
+  __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 340, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_epsilon, __pyx_float_0_) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_sigma, __pyx_float_0_) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_cutoff, __pyx_float_0_) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_shift, __pyx_float_0_) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_offset, __pyx_float_0_) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_e1, __pyx_int_0) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_e2, __pyx_int_0) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_b1, __pyx_float_0_) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_b2, __pyx_float_0_) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_delta, __pyx_float_0_) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_lambda, __pyx_float_0_) < 0) __PYX_ERR(0, 340, __pyx_L1_error)
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "espressomd/interactions.pyx":338
+ *                         "Could not set Generic Lennard Jones parameters")
+ * 
+ *         def default_params(self):             # <<<<<<<<<<<<<<
+ *             return {
+ *                 "epsilon": 0.,
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("espressomd.interactions.GenericLennardJonesInteraction.default_params", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "espressomd/interactions.pyx":352
+ *                 "lambda": 0.}
+ * 
+ *         def type_name(self):             # <<<<<<<<<<<<<<
+ *             return "GenericLennardJones"
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_11type_name(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_10espressomd_12interactions_30GenericLennardJonesInteraction_10type_name[] = "GenericLennardJonesInteraction.type_name(self)";
+static PyObject *__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_11type_name(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("type_name (wrapper)", 0);
+  __pyx_r = __pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_10type_name(((struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_10type_name(CYTHON_UNUSED struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("type_name", 0);
+
+  /* "espressomd/interactions.pyx":353
+ * 
+ *         def type_name(self):
+ *             return "GenericLennardJones"             # <<<<<<<<<<<<<<
+ * 
+ *         def set_params(self, **kwargs):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_n_s_GenericLennardJones);
+  __pyx_r = __pyx_n_s_GenericLennardJones;
+  goto __pyx_L0;
+
+  /* "espressomd/interactions.pyx":352
+ *                 "lambda": 0.}
+ * 
+ *         def type_name(self):             # <<<<<<<<<<<<<<
+ *             return "GenericLennardJones"
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "espressomd/interactions.pyx":355
+ *             return "GenericLennardJones"
+ * 
+ *         def set_params(self, **kwargs):             # <<<<<<<<<<<<<<
+ *             """
+ *             Set parameters for the generic Lennard-Jones interaction.
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_13set_params(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_10espressomd_12interactions_30GenericLennardJonesInteraction_12set_params[] = "GenericLennardJonesInteraction.set_params(self, **kwargs)\n\n            Set parameters for the generic Lennard-Jones interaction.\n\n            Parameters\n            ----------\n            epsilon : float\n                      The magnitude of the interaction.\n            sigma : float\n                    Determines the interaction length scale.\n            cutoff : float\n                     Cutoff distance of the interaction.\n            shift : float, string\n                    Constant shift of the potential.\n            offset : float\n                     Offset distance of the interaction.\n            e1 : int\n                 Exponent of the repulsion term.\n            e2 : int\n                 Exponent of the attraction term.\n            b1 : float\n                 Prefactor of the repulsion term.\n            b2 : float\n                 Prefactor of the attraction term.\n            delta : float, optional\n                    LJGEN_SOFTCORE parameter. Allows control over how smoothly\n                    the potential drops to zero as lambda approaches zero.\n            lambda : float, optional\n                     LJGEN_SOFTCORE parameter. Tune the strength of the \n                     interaction.\n            ";
+static PyObject *__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_13set_params(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_kwargs = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("set_params (wrapper)", 0);
+  if (unlikely(PyTuple_GET_SIZE(__pyx_args) > 0)) {
+    __Pyx_RaiseArgtupleInvalid("set_params", 1, 0, 0, PyTuple_GET_SIZE(__pyx_args)); return NULL;}
+  if (__pyx_kwds && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "set_params", 1))) return NULL;
+  if (__pyx_kwds) {
+    __pyx_v_kwargs = PyDict_Copy(__pyx_kwds); if (unlikely(!__pyx_v_kwargs)) return NULL;
+    __Pyx_GOTREF(__pyx_v_kwargs);
+  } else {
+    __pyx_v_kwargs = NULL;
+  }
+  __pyx_r = __pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_12set_params(((struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *)__pyx_v_self), __pyx_v_kwargs);
+
+  /* function exit code */
+  __Pyx_XDECREF(__pyx_v_kwargs);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_12set_params(struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *__pyx_v_self, PyObject *__pyx_v_kwargs) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  __Pyx_RefNannySetupContext("set_params", 0);
+
+  /* "espressomd/interactions.pyx":386
+ *                      interaction.
+ *             """
+ *             super(GenericLennardJonesInteraction, self).set_params(**kwargs)             # <<<<<<<<<<<<<<
+ * 
+ *         def valid_keys(self):
+ */
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 386, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_INCREF(((PyObject *)__pyx_ptype_10espressomd_12interactions_GenericLennardJonesInteraction));
+  __Pyx_GIVEREF(((PyObject *)__pyx_ptype_10espressomd_12interactions_GenericLennardJonesInteraction));
+  PyTuple_SET_ITEM(__pyx_t_1, 0, ((PyObject *)__pyx_ptype_10espressomd_12interactions_GenericLennardJonesInteraction));
+  __Pyx_INCREF(((PyObject *)__pyx_v_self));
+  __Pyx_GIVEREF(((PyObject *)__pyx_v_self));
+  PyTuple_SET_ITEM(__pyx_t_1, 1, ((PyObject *)__pyx_v_self));
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 386, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_set_params); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 386, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_empty_tuple, __pyx_v_kwargs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 386, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "espressomd/interactions.pyx":355
+ *             return "GenericLennardJones"
+ * 
+ *         def set_params(self, **kwargs):             # <<<<<<<<<<<<<<
+ *             """
+ *             Set parameters for the generic Lennard-Jones interaction.
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_AddTraceback("espressomd.interactions.GenericLennardJonesInteraction.set_params", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "espressomd/interactions.pyx":388
+ *             super(GenericLennardJonesInteraction, self).set_params(**kwargs)
+ * 
+ *         def valid_keys(self):             # <<<<<<<<<<<<<<
+ *             return "epsilon", "sigma", "cutoff", "shift", "offset", "e1", "e2", "b1", "b2", "delta", "lambda"
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_15valid_keys(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_10espressomd_12interactions_30GenericLennardJonesInteraction_14valid_keys[] = "GenericLennardJonesInteraction.valid_keys(self)";
+static PyObject *__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_15valid_keys(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("valid_keys (wrapper)", 0);
+  __pyx_r = __pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_14valid_keys(((struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_14valid_keys(CYTHON_UNUSED struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("valid_keys", 0);
+
+  /* "espressomd/interactions.pyx":389
+ * 
+ *         def valid_keys(self):
+ *             return "epsilon", "sigma", "cutoff", "shift", "offset", "e1", "e2", "b1", "b2", "delta", "lambda"             # <<<<<<<<<<<<<<
+ * 
+ *         def required_keys(self):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_tuple__23);
+  __pyx_r = __pyx_tuple__23;
+  goto __pyx_L0;
+
+  /* "espressomd/interactions.pyx":388
+ *             super(GenericLennardJonesInteraction, self).set_params(**kwargs)
+ * 
+ *         def valid_keys(self):             # <<<<<<<<<<<<<<
+ *             return "epsilon", "sigma", "cutoff", "shift", "offset", "e1", "e2", "b1", "b2", "delta", "lambda"
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "espressomd/interactions.pyx":391
+ *             return "epsilon", "sigma", "cutoff", "shift", "offset", "e1", "e2", "b1", "b2", "delta", "lambda"
+ * 
+ *         def required_keys(self):             # <<<<<<<<<<<<<<
+ *             return "epsilon", "sigma", "cutoff", "shift", "offset", "e1", "e2", "b1", "b2"
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_17required_keys(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static char __pyx_doc_10espressomd_12interactions_30GenericLennardJonesInteraction_16required_keys[] = "GenericLennardJonesInteraction.required_keys(self)";
+static PyObject *__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_17required_keys(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("required_keys (wrapper)", 0);
+  __pyx_r = __pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_16required_keys(((struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_10espressomd_12interactions_30GenericLennardJonesInteraction_16required_keys(CYTHON_UNUSED struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("required_keys", 0);
+
+  /* "espressomd/interactions.pyx":392
+ * 
+ *         def required_keys(self):
+ *             return "epsilon", "sigma", "cutoff", "shift", "offset", "e1", "e2", "b1", "b2"             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_tuple__24);
+  __pyx_r = __pyx_tuple__24;
+  goto __pyx_L0;
+
+  /* "espressomd/interactions.pyx":391
+ *             return "epsilon", "sigma", "cutoff", "shift", "offset", "e1", "e2", "b1", "b2", "delta", "lambda"
+ * 
+ *         def required_keys(self):             # <<<<<<<<<<<<<<
+ *             return "epsilon", "sigma", "cutoff", "shift", "offset", "e1", "e2", "b1", "b2"
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
 /* "espressomd/interactions.pyx":408
  *     tabulated = None
  * 
@@ -6622,7 +7777,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_26NonBondedInteractionHand
  *         self.type1 = _type1
  *         self.type2 = _type2
  */
-    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__19, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 411, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__25, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 411, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_Raise(__pyx_t_4, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -6675,6 +7830,27 @@ static PyObject *__pyx_pf_10espressomd_12interactions_26NonBondedInteractionHand
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_lennard_jones, __pyx_t_5) < 0) __PYX_ERR(0, 417, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+  /* "espressomd/interactions.pyx":419
+ *             self.lennard_jones = LennardJonesInteraction(_type1, _type2)
+ *         IF LENNARD_JONES_GENERIC:
+ *             self.generic_lennard_jones = GenericLennardJonesInteraction(             # <<<<<<<<<<<<<<
+ *                 _type1, _type2)
+ *         IF TABULATED == 1:
+ */
+  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 419, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_INCREF(__pyx_v__type1);
+  __Pyx_GIVEREF(__pyx_v__type1);
+  PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_v__type1);
+  __Pyx_INCREF(__pyx_v__type2);
+  __Pyx_GIVEREF(__pyx_v__type2);
+  PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_v__type2);
+  __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_10espressomd_12interactions_GenericLennardJonesInteraction), __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 419, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_generic_lennard_jones, __pyx_t_4) < 0) __PYX_ERR(0, 419, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
   /* "espressomd/interactions.pyx":408
  *     tabulated = None
@@ -6753,7 +7929,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_21NonBondedInteractions___
  *                 "NonBondedInteractions[] expects two particle types as indices.")
  *         if len(key) != 2 or (not isinstance(key[0], int)) or (not isinstance(key[1], int)):
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__20, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 434, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__26, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 434, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -6808,7 +7984,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_21NonBondedInteractions___
  *                 "NonBondedInteractions[] expects two particle types as indices.")
  *         return NonBondedInteractionHandle(key[0], key[1])
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__21, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 437, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 437, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -6962,7 +8138,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_21NonBondedInteractions_2s
  * 
  *     def get_force_cap(self):
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 443, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 443, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -7099,7 +8275,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_21NonBondedInteractions_6_
  */
   __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_NonBondedInteractionHandle); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 450, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 450, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 450, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
@@ -8277,7 +9453,7 @@ static int __pyx_pf_10espressomd_12interactions_17BondedInteraction___init__(str
  * 
  */
   /*else*/ {
-    __pyx_t_6 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__24, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 517, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 517, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_Raise(__pyx_t_6, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -9267,7 +10443,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_17BondedInteraction_6__get
  *                 result = attr(*args, **kwargs)
  *                 self._params.update(self._get_params_from_es_core())
  */
-    __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_17BondedInteraction_16__getattribute___1sync_params, 0, __pyx_n_s_getattribute___locals_sync_par, ((PyObject*)__pyx_cur_scope), __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__26)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 559, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_17BondedInteraction_16__getattribute___1sync_params, 0, __pyx_n_s_getattribute___locals_sync_par, ((PyObject*)__pyx_cur_scope), __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__32)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 559, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_v_sync_params = __pyx_t_1;
     __pyx_t_1 = 0;
@@ -9366,7 +10542,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_17BondedInteraction_8_get_
  *             "Subclasses of BondedInteraction must define the _get_params_from_es_core() method.")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 569, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__33, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 569, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -9425,7 +10601,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_17BondedInteraction_10_set
  *             "Subclasses of BondedInteraction must define the _set_params_in_es_core() method.")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 573, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__34, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 573, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -9571,7 +10747,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_17BondedInteraction_14set_
  *             "Subclasses of BondedInteraction must define the set_default_params() method.")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 580, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__35, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 580, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -9630,7 +10806,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_17BondedInteraction_16type
  *             "Subclasses of BondedInteraction must define the type_number() method.")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 584, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__36, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 584, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -9689,7 +10865,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_17BondedInteraction_18type
  *             "Subclasses of BondedInteraction must define the type_name() method.")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__31, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 588, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__37, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 588, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -9748,7 +10924,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_17BondedInteraction_20vali
  *             "Subclasses of BondedInteraction must define the valid_keys() method.")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__32, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 592, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__38, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 592, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -9807,7 +10983,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_17BondedInteraction_22requ
  *             "Subclasses of BondedInteraction must define the required_keys() method.")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__33, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 596, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__39, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 596, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -9941,7 +11117,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_17BondedInteraction_24__re
   __pyx_t_1 = PyNumber_Add(__pyx_t_2, __pyx_v_id_str); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 605, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyNumber_Add(__pyx_t_1, __pyx_kp_s__34); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 605, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Add(__pyx_t_1, __pyx_kp_s__40); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 605, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_params); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 605, __pyx_L1_error)
@@ -10057,7 +11233,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_17BondedInteraction_26__ri
  *         if self.__class__ != other.__class__:
  *             return False
  */
-    __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__35, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 609, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__41, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 609, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11130,8 +12306,8 @@ static PyObject *__pyx_pf_10espressomd_12interactions_8FeneBond_6valid_keys(CYTH
  *     def required_keys(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_tuple__36);
-  __pyx_r = __pyx_tuple__36;
+  __Pyx_INCREF(__pyx_tuple__42);
+  __pyx_r = __pyx_tuple__42;
   goto __pyx_L0;
 
   /* "espressomd/interactions.pyx":670
@@ -11185,8 +12361,8 @@ static PyObject *__pyx_pf_10espressomd_12interactions_8FeneBond_8required_keys(C
  *     def set_default_params(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_tuple__37);
-  __pyx_r = __pyx_tuple__37;
+  __Pyx_INCREF(__pyx_tuple__43);
+  __pyx_r = __pyx_tuple__43;
   goto __pyx_L0;
 
   /* "espressomd/interactions.pyx":673
@@ -11767,8 +12943,8 @@ static PyObject *__pyx_pf_10espressomd_12interactions_12HarmonicBond_6valid_keys
  *     def required_keys(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_tuple__38);
-  __pyx_r = __pyx_tuple__38;
+  __Pyx_INCREF(__pyx_tuple__44);
+  __pyx_r = __pyx_tuple__44;
   goto __pyx_L0;
 
   /* "espressomd/interactions.pyx":717
@@ -11822,8 +12998,8 @@ static PyObject *__pyx_pf_10espressomd_12interactions_12HarmonicBond_8required_k
  *     def set_default_params(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_tuple__39);
-  __pyx_r = __pyx_tuple__39;
+  __Pyx_INCREF(__pyx_tuple__45);
+  __pyx_r = __pyx_tuple__45;
   goto __pyx_L0;
 
   /* "espressomd/interactions.pyx":720
@@ -12209,7 +13385,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_20HarmonicDumbbellBond___i
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__40, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 808, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__46, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 808, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -12269,7 +13445,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_20HarmonicDumbbellBond_2ty
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__41, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 813, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__47, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 813, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -12329,7 +13505,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_20HarmonicDumbbellBond_4ty
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__42, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 817, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__48, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 817, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -12389,7 +13565,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_20HarmonicDumbbellBond_6va
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__43, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 821, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__49, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 821, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -12449,7 +13625,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_20HarmonicDumbbellBond_8re
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__44, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 825, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__50, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 825, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -12509,7 +13685,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_20HarmonicDumbbellBond_10s
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__45, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 829, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__51, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 829, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -12569,7 +13745,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_20HarmonicDumbbellBond_12_
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__46, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 833, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__52, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 833, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -12629,7 +13805,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_20HarmonicDumbbellBond_14_
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__47, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 837, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__53, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 837, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -12806,8 +13982,8 @@ static PyObject *__pyx_pf_10espressomd_12interactions_8Dihedral_4valid_keys(CYTH
  *     def required_keys(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_tuple__48);
-  __pyx_r = __pyx_tuple__48;
+  __Pyx_INCREF(__pyx_tuple__54);
+  __pyx_r = __pyx_tuple__54;
   goto __pyx_L0;
 
   /* "espressomd/interactions.pyx":898
@@ -12861,8 +14037,8 @@ static PyObject *__pyx_pf_10espressomd_12interactions_8Dihedral_6required_keys(C
  *     def set_default_params(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_tuple__49);
-  __pyx_r = __pyx_tuple__49;
+  __Pyx_INCREF(__pyx_tuple__55);
+  __pyx_r = __pyx_tuple__55;
   goto __pyx_L0;
 
   /* "espressomd/interactions.pyx":901
@@ -13192,7 +14368,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_9Tabulated_type_number(CYT
  * 
  *         def type_name(self):
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__50, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1041, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__56, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1041, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -13252,7 +14428,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_9Tabulated_2type_name(CYTH
  * 
  *         def valid_keys(self):
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__51, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1044, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__57, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1044, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -13312,7 +14488,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_9Tabulated_4valid_keys(CYT
  * 
  *         def required_keys(self):
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__52, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1047, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__58, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1047, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -13372,7 +14548,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_9Tabulated_6required_keys(
  * 
  *         def set_default_params(self):
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__53, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1050, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__59, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1050, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -13432,7 +14608,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_9Tabulated_8set_default_pa
  * 
  *         def _get_params_from_es_core(self):
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__54, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1053, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__60, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1053, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -13492,7 +14668,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_9Tabulated_10_get_params_f
  * 
  *         def _set_params_in_es_core(self):
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__55, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1056, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__61, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1056, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -13552,7 +14728,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_9Tabulated_12_set_params_i
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__56, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1059, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__62, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1059, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -13729,8 +14905,8 @@ static PyObject *__pyx_pf_10espressomd_12interactions_7Subt_Lj_4valid_keys(CYTHO
  *         def required_keys(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_tuple__57);
-  __pyx_r = __pyx_tuple__57;
+  __Pyx_INCREF(__pyx_tuple__63);
+  __pyx_r = __pyx_tuple__63;
   goto __pyx_L0;
 
   /* "espressomd/interactions.pyx":1071
@@ -13784,8 +14960,8 @@ static PyObject *__pyx_pf_10espressomd_12interactions_7Subt_Lj_6required_keys(CY
  *         def set_default_params(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_tuple__58);
-  __pyx_r = __pyx_tuple__58;
+  __Pyx_INCREF(__pyx_tuple__64);
+  __pyx_r = __pyx_tuple__64;
   goto __pyx_L0;
 
   /* "espressomd/interactions.pyx":1074
@@ -14207,8 +15383,8 @@ static PyObject *__pyx_pf_10espressomd_12interactions_17Oif_Global_Forces_4valid
  *     def required_keys(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_tuple__59);
-  __pyx_r = __pyx_tuple__59;
+  __Pyx_INCREF(__pyx_tuple__65);
+  __pyx_r = __pyx_tuple__65;
   goto __pyx_L0;
 
   /* "espressomd/interactions.pyx":1287
@@ -14262,8 +15438,8 @@ static PyObject *__pyx_pf_10espressomd_12interactions_17Oif_Global_Forces_6requi
  *     def set_default_params(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_tuple__60);
-  __pyx_r = __pyx_tuple__60;
+  __Pyx_INCREF(__pyx_tuple__66);
+  __pyx_r = __pyx_tuple__66;
   goto __pyx_L0;
 
   /* "espressomd/interactions.pyx":1290
@@ -14735,8 +15911,8 @@ static PyObject *__pyx_pf_10espressomd_12interactions_16Oif_Local_Forces_4valid_
  *     def required_keys(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_tuple__61);
-  __pyx_r = __pyx_tuple__61;
+  __Pyx_INCREF(__pyx_tuple__67);
+  __pyx_r = __pyx_tuple__67;
   goto __pyx_L0;
 
   /* "espressomd/interactions.pyx":1316
@@ -14790,8 +15966,8 @@ static PyObject *__pyx_pf_10espressomd_12interactions_16Oif_Local_Forces_6requir
  *     def set_default_params(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_tuple__62);
-  __pyx_r = __pyx_tuple__62;
+  __Pyx_INCREF(__pyx_tuple__68);
+  __pyx_r = __pyx_tuple__68;
   goto __pyx_L0;
 
   /* "espressomd/interactions.pyx":1319
@@ -15310,7 +16486,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_18BondedInteractions___get
  *                 "Index to BondedInteractions[] hast to be an integer referring to a bond id")
  * 
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__63, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1370, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__69, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1370, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -15601,7 +16777,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_18BondedInteractions_2__se
  *                 "Index to BondedInteractions[] has to ba an integer referring to a bond id")
  * 
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__64, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1393, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__70, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1393, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -15634,7 +16810,7 @@ static PyObject *__pyx_pf_10espressomd_12interactions_18BondedInteractions_2__se
  *                 "Only subclasses of BondedInteraction can be assigned.")
  * 
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__65, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1398, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__71, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1398, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -16621,7 +17797,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__66, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 218, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__72, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 218, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -16677,7 +17853,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  * 
  *             info.buf = PyArray_DATA(self)
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__67, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 222, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__73, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 222, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -16986,7 +18162,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"
  */
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__68, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 259, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__74, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 259, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17801,7 +18977,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  * 
  *         if ((child.byteorder == c'>' and little_endian) or
  */
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__69, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 799, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__75, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 799, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17869,7 +19045,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  *             # One could encode it in the format string and have Cython
  *             # complain instead, BUT: < and > in format strings also imply
  */
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__70, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 803, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__76, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 803, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17978,7 +19154,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  * 
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  */
-        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__71, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 823, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_RuntimeError, __pyx_tuple__77, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 823, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_Raise(__pyx_t_4, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -18659,7 +19835,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
  * 
  * cdef inline int import_umath() except -1:
  */
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__72, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 989, __pyx_L5_except_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__78, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 989, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_Raise(__pyx_t_8, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -18790,7 +19966,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
  * 
  * cdef inline int import_ufunc() except -1:
  */
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__73, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 995, __pyx_L5_except_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__79, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 995, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_Raise(__pyx_t_8, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -18918,7 +20094,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
  */
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__74, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 1001, __pyx_L5_except_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_ImportError, __pyx_tuple__80, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 1001, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_Raise(__pyx_t_8, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -19185,6 +20361,91 @@ static PyTypeObject __pyx_type_10espressomd_12interactions_LennardJonesInteracti
   #endif
   0, /*tp_alloc*/
   __pyx_tp_new_10espressomd_12interactions_LennardJonesInteraction, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+};
+
+static PyObject *__pyx_tp_new_10espressomd_12interactions_GenericLennardJonesInteraction(PyTypeObject *t, PyObject *a, PyObject *k) {
+  PyObject *o = __pyx_tp_new_10espressomd_12interactions_NonBondedInteraction(t, a, k);
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static PyMethodDef __pyx_methods_10espressomd_12interactions_GenericLennardJonesInteraction[] = {
+  {"validate_params", (PyCFunction)__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_1validate_params, METH_NOARGS, __pyx_doc_10espressomd_12interactions_30GenericLennardJonesInteraction_validate_params},
+  {"_get_params_from_es_core", (PyCFunction)__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_3_get_params_from_es_core, METH_NOARGS, __pyx_doc_10espressomd_12interactions_30GenericLennardJonesInteraction_2_get_params_from_es_core},
+  {"is_active", (PyCFunction)__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_5is_active, METH_NOARGS, __pyx_doc_10espressomd_12interactions_30GenericLennardJonesInteraction_4is_active},
+  {"_set_params_in_es_core", (PyCFunction)__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_7_set_params_in_es_core, METH_NOARGS, __pyx_doc_10espressomd_12interactions_30GenericLennardJonesInteraction_6_set_params_in_es_core},
+  {"default_params", (PyCFunction)__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_9default_params, METH_NOARGS, __pyx_doc_10espressomd_12interactions_30GenericLennardJonesInteraction_8default_params},
+  {"type_name", (PyCFunction)__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_11type_name, METH_NOARGS, __pyx_doc_10espressomd_12interactions_30GenericLennardJonesInteraction_10type_name},
+  {"set_params", (PyCFunction)__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_13set_params, METH_VARARGS|METH_KEYWORDS, __pyx_doc_10espressomd_12interactions_30GenericLennardJonesInteraction_12set_params},
+  {"valid_keys", (PyCFunction)__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_15valid_keys, METH_NOARGS, __pyx_doc_10espressomd_12interactions_30GenericLennardJonesInteraction_14valid_keys},
+  {"required_keys", (PyCFunction)__pyx_pw_10espressomd_12interactions_30GenericLennardJonesInteraction_17required_keys, METH_NOARGS, __pyx_doc_10espressomd_12interactions_30GenericLennardJonesInteraction_16required_keys},
+  {0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_10espressomd_12interactions_GenericLennardJonesInteraction = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "espressomd.interactions.GenericLennardJonesInteraction", /*tp_name*/
+  sizeof(struct __pyx_obj_10espressomd_12interactions_GenericLennardJonesInteraction), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_10espressomd_12interactions_NonBondedInteraction, /*tp_dealloc*/
+  0, /*tp_print*/
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  #if CYTHON_COMPILING_IN_PYPY
+  __pyx_pw_10espressomd_12interactions_20NonBondedInteraction_7__str__, /*tp_str*/
+  #else
+  0, /*tp_str*/
+  #endif
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
+  0, /*tp_doc*/
+  __pyx_tp_traverse_10espressomd_12interactions_NonBondedInteraction, /*tp_traverse*/
+  __pyx_tp_clear_10espressomd_12interactions_NonBondedInteraction, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_10espressomd_12interactions_GenericLennardJonesInteraction, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  #if CYTHON_COMPILING_IN_PYPY
+  __pyx_pw_10espressomd_12interactions_20NonBondedInteraction_1__init__, /*tp_init*/
+  #else
+  0, /*tp_init*/
+  #endif
+  0, /*tp_alloc*/
+  __pyx_tp_new_10espressomd_12interactions_GenericLennardJonesInteraction, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -19801,6 +21062,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_BondedInteractions___setitem, __pyx_k_BondedInteractions___setitem, sizeof(__pyx_k_BondedInteractions___setitem), 0, 0, 1, 1},
   {&__pyx_n_s_BondedInteractions___setstate, __pyx_k_BondedInteractions___setstate, sizeof(__pyx_k_BondedInteractions___setstate), 0, 0, 1, 1},
   {&__pyx_n_s_BondedInteractions_add, __pyx_k_BondedInteractions_add, sizeof(__pyx_k_BondedInteractions_add), 0, 0, 1, 1},
+  {&__pyx_kp_s_Could_not_set_Generic_Lennard_Jo, __pyx_k_Could_not_set_Generic_Lennard_Jo, sizeof(__pyx_k_Could_not_set_Generic_Lennard_Jo), 0, 0, 1, 0},
   {&__pyx_kp_s_Could_not_set_Lennard_Jones_para, __pyx_k_Could_not_set_Lennard_Jones_para, sizeof(__pyx_k_Could_not_set_Lennard_Jones_para), 0, 0, 1, 0},
   {&__pyx_kp_s_Could_not_set_forcecap, __pyx_k_Could_not_set_forcecap, sizeof(__pyx_k_Could_not_set_forcecap), 0, 0, 1, 0},
   {&__pyx_n_s_DIHEDRAL, __pyx_k_DIHEDRAL, sizeof(__pyx_k_DIHEDRAL), 0, 0, 1, 1},
@@ -19825,6 +21087,10 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_FeneBond_valid_keys, __pyx_k_FeneBond_valid_keys, sizeof(__pyx_k_FeneBond_valid_keys), 0, 0, 1, 1},
   {&__pyx_kp_u_Format_string_allocated_too_shor, __pyx_k_Format_string_allocated_too_shor, sizeof(__pyx_k_Format_string_allocated_too_shor), 0, 1, 0, 0},
   {&__pyx_kp_u_Format_string_allocated_too_shor_2, __pyx_k_Format_string_allocated_too_shor_2, sizeof(__pyx_k_Format_string_allocated_too_shor_2), 0, 1, 0, 0},
+  {&__pyx_n_s_GenericLennardJones, __pyx_k_GenericLennardJones, sizeof(__pyx_k_GenericLennardJones), 0, 0, 1, 1},
+  {&__pyx_kp_s_Generic_Lennard_Jones_cutoff_has, __pyx_k_Generic_Lennard_Jones_cutoff_has, sizeof(__pyx_k_Generic_Lennard_Jones_cutoff_has), 0, 0, 1, 0},
+  {&__pyx_kp_s_Generic_Lennard_Jones_eps_has_to, __pyx_k_Generic_Lennard_Jones_eps_has_to, sizeof(__pyx_k_Generic_Lennard_Jones_eps_has_to), 0, 0, 1, 0},
+  {&__pyx_kp_s_Generic_Lennard_Jones_sigma_has, __pyx_k_Generic_Lennard_Jones_sigma_has, sizeof(__pyx_k_Generic_Lennard_Jones_sigma_has), 0, 0, 1, 0},
   {&__pyx_n_s_HARMONIC, __pyx_k_HARMONIC, sizeof(__pyx_k_HARMONIC), 0, 0, 1, 1},
   {&__pyx_n_s_HarmonicBond, __pyx_k_HarmonicBond, sizeof(__pyx_k_HarmonicBond), 0, 0, 1, 1},
   {&__pyx_n_s_HarmonicBond___init, __pyx_k_HarmonicBond___init, sizeof(__pyx_k_HarmonicBond___init), 0, 0, 1, 1},
@@ -19927,11 +21193,13 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_Virtual, __pyx_k_Virtual, sizeof(__pyx_k_Virtual), 0, 0, 1, 1},
   {&__pyx_kp_s__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 0, 1, 0},
   {&__pyx_kp_s__3, __pyx_k__3, sizeof(__pyx_k__3), 0, 0, 1, 0},
-  {&__pyx_kp_s__34, __pyx_k__34, sizeof(__pyx_k__34), 0, 0, 1, 0},
-  {&__pyx_n_s__75, __pyx_k__75, sizeof(__pyx_k__75), 0, 0, 1, 1},
+  {&__pyx_kp_s__40, __pyx_k__40, sizeof(__pyx_k__40), 0, 0, 1, 0},
+  {&__pyx_n_s__81, __pyx_k__81, sizeof(__pyx_k__81), 0, 0, 1, 1},
   {&__pyx_n_s_add, __pyx_k_add, sizeof(__pyx_k_add), 0, 0, 1, 1},
   {&__pyx_n_s_args, __pyx_k_args, sizeof(__pyx_k_args), 0, 0, 1, 1},
   {&__pyx_n_s_auto, __pyx_k_auto, sizeof(__pyx_k_auto), 0, 0, 1, 1},
+  {&__pyx_n_s_b1, __pyx_k_b1, sizeof(__pyx_k_b1), 0, 0, 1, 1},
+  {&__pyx_n_s_b2, __pyx_k_b2, sizeof(__pyx_k_b2), 0, 0, 1, 1},
   {&__pyx_n_s_bend, __pyx_k_bend, sizeof(__pyx_k_bend), 0, 0, 1, 1},
   {&__pyx_n_s_bond_class, __pyx_k_bond_class, sizeof(__pyx_k_bond_class), 0, 0, 1, 1},
   {&__pyx_n_s_bond_id, __pyx_k_bond_id, sizeof(__pyx_k_bond_id), 0, 0, 1, 1},
@@ -19947,7 +21215,10 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_cutoff, __pyx_k_cutoff, sizeof(__pyx_k_cutoff), 0, 0, 1, 1},
   {&__pyx_n_s_d_r_max, __pyx_k_d_r_max, sizeof(__pyx_k_d_r_max), 0, 0, 1, 1},
   {&__pyx_n_s_default_params, __pyx_k_default_params, sizeof(__pyx_k_default_params), 0, 0, 1, 1},
+  {&__pyx_n_s_delta, __pyx_k_delta, sizeof(__pyx_k_delta), 0, 0, 1, 1},
   {&__pyx_n_s_doc, __pyx_k_doc, sizeof(__pyx_k_doc), 0, 0, 1, 1},
+  {&__pyx_n_s_e1, __pyx_k_e1, sizeof(__pyx_k_e1), 0, 0, 1, 1},
+  {&__pyx_n_s_e2, __pyx_k_e2, sizeof(__pyx_k_e2), 0, 0, 1, 1},
   {&__pyx_n_s_enumerate, __pyx_k_enumerate, sizeof(__pyx_k_enumerate), 0, 0, 1, 1},
   {&__pyx_n_s_epsilon, __pyx_k_epsilon, sizeof(__pyx_k_epsilon), 0, 0, 1, 1},
   {&__pyx_n_s_espressomd_interactions, __pyx_k_espressomd_interactions, sizeof(__pyx_k_espressomd_interactions), 0, 0, 1, 1},
@@ -19978,6 +21249,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_kslin, __pyx_k_kslin, sizeof(__pyx_k_kslin), 0, 0, 1, 1},
   {&__pyx_n_s_kv, __pyx_k_kv, sizeof(__pyx_k_kv), 0, 0, 1, 1},
   {&__pyx_n_s_kwargs, __pyx_k_kwargs, sizeof(__pyx_k_kwargs), 0, 0, 1, 1},
+  {&__pyx_n_s_lambda, __pyx_k_lambda, sizeof(__pyx_k_lambda), 0, 0, 1, 1},
   {&__pyx_n_s_lennard_jones, __pyx_k_lennard_jones, sizeof(__pyx_k_lennard_jones), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_metaclass, __pyx_k_metaclass, sizeof(__pyx_k_metaclass), 0, 0, 1, 1},
@@ -20224,6 +21496,72 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__18);
   __Pyx_GIVEREF(__pyx_tuple__18);
 
+  /* "espressomd/interactions.pyx":274
+ *         def validate_params(self):
+ *             if self._params["epsilon"] < 0:
+ *                 raise ValueError("Generic Lennard-Jones eps has to be >=0")             # <<<<<<<<<<<<<<
+ *             if self._params["sigma"] < 0:
+ *                 raise ValueError("Generic Lennard-Jones sigma has to be >=0")
+ */
+  __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_s_Generic_Lennard_Jones_eps_has_to); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 274, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__19);
+  __Pyx_GIVEREF(__pyx_tuple__19);
+
+  /* "espressomd/interactions.pyx":276
+ *                 raise ValueError("Generic Lennard-Jones eps has to be >=0")
+ *             if self._params["sigma"] < 0:
+ *                 raise ValueError("Generic Lennard-Jones sigma has to be >=0")             # <<<<<<<<<<<<<<
+ *             if self._params["cutoff"] < 0:
+ *                 raise ValueError("Generic Lennard-Jones cutoff has to be >=0")
+ */
+  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_s_Generic_Lennard_Jones_sigma_has); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 276, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__20);
+  __Pyx_GIVEREF(__pyx_tuple__20);
+
+  /* "espressomd/interactions.pyx":278
+ *                 raise ValueError("Generic Lennard-Jones sigma has to be >=0")
+ *             if self._params["cutoff"] < 0:
+ *                 raise ValueError("Generic Lennard-Jones cutoff has to be >=0")             # <<<<<<<<<<<<<<
+ *             return True
+ * 
+ */
+  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_kp_s_Generic_Lennard_Jones_cutoff_has); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 278, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__21);
+  __Pyx_GIVEREF(__pyx_tuple__21);
+
+  /* "espressomd/interactions.pyx":335
+ *                                     self._params["b2"],
+ *                                     0.0):
+ *                     raise Exception(             # <<<<<<<<<<<<<<
+ *                         "Could not set Generic Lennard Jones parameters")
+ * 
+ */
+  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_kp_s_Could_not_set_Generic_Lennard_Jo); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__22);
+  __Pyx_GIVEREF(__pyx_tuple__22);
+
+  /* "espressomd/interactions.pyx":389
+ * 
+ *         def valid_keys(self):
+ *             return "epsilon", "sigma", "cutoff", "shift", "offset", "e1", "e2", "b1", "b2", "delta", "lambda"             # <<<<<<<<<<<<<<
+ * 
+ *         def required_keys(self):
+ */
+  __pyx_tuple__23 = PyTuple_Pack(11, __pyx_n_s_epsilon, __pyx_n_s_sigma, __pyx_n_s_cutoff, __pyx_n_s_shift, __pyx_n_s_offset, __pyx_n_s_e1, __pyx_n_s_e2, __pyx_n_s_b1, __pyx_n_s_b2, __pyx_n_s_delta, __pyx_n_s_lambda); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 389, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__23);
+  __Pyx_GIVEREF(__pyx_tuple__23);
+
+  /* "espressomd/interactions.pyx":392
+ * 
+ *         def required_keys(self):
+ *             return "epsilon", "sigma", "cutoff", "shift", "offset", "e1", "e2", "b1", "b2"             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __pyx_tuple__24 = PyTuple_Pack(9, __pyx_n_s_epsilon, __pyx_n_s_sigma, __pyx_n_s_cutoff, __pyx_n_s_shift, __pyx_n_s_offset, __pyx_n_s_e1, __pyx_n_s_e2, __pyx_n_s_b1, __pyx_n_s_b2); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 392, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__24);
+  __Pyx_GIVEREF(__pyx_tuple__24);
+
   /* "espressomd/interactions.pyx":411
  *         """Takes two particle types as argument"""
  *         if not (isinstance(_type1, int) and isinstance(_type2, int)):
@@ -20231,9 +21569,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         self.type1 = _type1
  *         self.type2 = _type2
  */
-  __pyx_tuple__19 = PyTuple_Pack(1, __pyx_kp_s_The_particle_types_have_to_be_of); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 411, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__19);
-  __Pyx_GIVEREF(__pyx_tuple__19);
+  __pyx_tuple__25 = PyTuple_Pack(1, __pyx_kp_s_The_particle_types_have_to_be_of); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 411, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__25);
+  __Pyx_GIVEREF(__pyx_tuple__25);
 
   /* "espressomd/interactions.pyx":434
  *     def __getitem__(self, key):
@@ -20242,9 +21580,9 @@ static int __Pyx_InitCachedConstants(void) {
  *                 "NonBondedInteractions[] expects two particle types as indices.")
  *         if len(key) != 2 or (not isinstance(key[0], int)) or (not isinstance(key[1], int)):
  */
-  __pyx_tuple__20 = PyTuple_Pack(1, __pyx_kp_s_NonBondedInteractions_expects_tw); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 434, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__20);
-  __Pyx_GIVEREF(__pyx_tuple__20);
+  __pyx_tuple__26 = PyTuple_Pack(1, __pyx_kp_s_NonBondedInteractions_expects_tw); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(0, 434, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__26);
+  __Pyx_GIVEREF(__pyx_tuple__26);
 
   /* "espressomd/interactions.pyx":437
  *                 "NonBondedInteractions[] expects two particle types as indices.")
@@ -20253,9 +21591,9 @@ static int __Pyx_InitCachedConstants(void) {
  *                 "NonBondedInteractions[] expects two particle types as indices.")
  *         return NonBondedInteractionHandle(key[0], key[1])
  */
-  __pyx_tuple__21 = PyTuple_Pack(1, __pyx_kp_s_NonBondedInteractions_expects_tw); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 437, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__21);
-  __Pyx_GIVEREF(__pyx_tuple__21);
+  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_NonBondedInteractions_expects_tw); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(0, 437, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__27);
+  __Pyx_GIVEREF(__pyx_tuple__27);
 
   /* "espressomd/interactions.pyx":443
  *     def set_force_cap(self, cap):
@@ -20264,9 +21602,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *     def get_force_cap(self):
  */
-  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_kp_s_Could_not_set_forcecap); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 443, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__22);
-  __Pyx_GIVEREF(__pyx_tuple__22);
+  __pyx_tuple__28 = PyTuple_Pack(1, __pyx_kp_s_Could_not_set_forcecap); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__28);
+  __Pyx_GIVEREF(__pyx_tuple__28);
 
   /* "espressomd/interactions.pyx":450
  *     def __getstate__(self):
@@ -20275,9 +21613,9 @@ static int __Pyx_InitCachedConstants(void) {
  *                                            1).lennard_jones.user_interactions
  *         odict['force_cap'] = self.get_force_cap()
  */
-  __pyx_tuple__23 = PyTuple_Pack(2, __pyx_int_neg_1, __pyx_int_neg_1); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 450, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__23);
-  __Pyx_GIVEREF(__pyx_tuple__23);
+  __pyx_tuple__29 = PyTuple_Pack(2, __pyx_int_neg_1, __pyx_int_neg_1); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(0, 450, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__29);
+  __Pyx_GIVEREF(__pyx_tuple__29);
 
   /* "espressomd/interactions.pyx":517
  * 
@@ -20286,9 +21624,9 @@ static int __Pyx_InitCachedConstants(void) {
  *                 "The constructor has to be called either with a bond id (as interger), or with a set of keyword arguments describing a new interaction")
  * 
  */
-  __pyx_tuple__24 = PyTuple_Pack(1, __pyx_kp_s_The_constructor_has_to_be_called_2); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 517, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__24);
-  __Pyx_GIVEREF(__pyx_tuple__24);
+  __pyx_tuple__30 = PyTuple_Pack(1, __pyx_kp_s_The_constructor_has_to_be_called_2); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(0, 517, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__30);
+  __Pyx_GIVEREF(__pyx_tuple__30);
 
   /* "espressomd/interactions.pyx":559
  *         attr = object.__getattribute__(self, name)
@@ -20297,10 +21635,10 @@ static int __Pyx_InitCachedConstants(void) {
  *                 result = attr(*args, **kwargs)
  *                 self._params.update(self._get_params_from_es_core())
  */
-  __pyx_tuple__25 = PyTuple_Pack(3, __pyx_n_s_args, __pyx_n_s_kwargs, __pyx_n_s_result); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 559, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__25);
-  __Pyx_GIVEREF(__pyx_tuple__25);
-  __pyx_codeobj__26 = (PyObject*)__Pyx_PyCode_New(0, 0, 3, 0, CO_VARARGS|CO_VARKEYWORDS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_sync_params, 559, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__26)) __PYX_ERR(0, 559, __pyx_L1_error)
+  __pyx_tuple__31 = PyTuple_Pack(3, __pyx_n_s_args, __pyx_n_s_kwargs, __pyx_n_s_result); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(0, 559, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__31);
+  __Pyx_GIVEREF(__pyx_tuple__31);
+  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(0, 0, 3, 0, CO_VARARGS|CO_VARKEYWORDS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__31, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_sync_params, 559, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(0, 559, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":569
  * 
@@ -20309,9 +21647,9 @@ static int __Pyx_InitCachedConstants(void) {
  *             "Subclasses of BondedInteraction must define the _get_params_from_es_core() method.")
  * 
  */
-  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_Subclasses_of_BondedInteraction); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(0, 569, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__27);
-  __Pyx_GIVEREF(__pyx_tuple__27);
+  __pyx_tuple__33 = PyTuple_Pack(1, __pyx_kp_s_Subclasses_of_BondedInteraction); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(0, 569, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__33);
+  __Pyx_GIVEREF(__pyx_tuple__33);
 
   /* "espressomd/interactions.pyx":573
  * 
@@ -20320,9 +21658,9 @@ static int __Pyx_InitCachedConstants(void) {
  *             "Subclasses of BondedInteraction must define the _set_params_in_es_core() method.")
  * 
  */
-  __pyx_tuple__28 = PyTuple_Pack(1, __pyx_kp_s_Subclasses_of_BondedInteraction_2); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(0, 573, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__28);
-  __Pyx_GIVEREF(__pyx_tuple__28);
+  __pyx_tuple__34 = PyTuple_Pack(1, __pyx_kp_s_Subclasses_of_BondedInteraction_2); if (unlikely(!__pyx_tuple__34)) __PYX_ERR(0, 573, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__34);
+  __Pyx_GIVEREF(__pyx_tuple__34);
 
   /* "espressomd/interactions.pyx":580
  * 
@@ -20331,9 +21669,9 @@ static int __Pyx_InitCachedConstants(void) {
  *             "Subclasses of BondedInteraction must define the set_default_params() method.")
  * 
  */
-  __pyx_tuple__29 = PyTuple_Pack(1, __pyx_kp_s_Subclasses_of_BondedInteraction_3); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(0, 580, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__29);
-  __Pyx_GIVEREF(__pyx_tuple__29);
+  __pyx_tuple__35 = PyTuple_Pack(1, __pyx_kp_s_Subclasses_of_BondedInteraction_3); if (unlikely(!__pyx_tuple__35)) __PYX_ERR(0, 580, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__35);
+  __Pyx_GIVEREF(__pyx_tuple__35);
 
   /* "espressomd/interactions.pyx":584
  * 
@@ -20342,9 +21680,9 @@ static int __Pyx_InitCachedConstants(void) {
  *             "Subclasses of BondedInteraction must define the type_number() method.")
  * 
  */
-  __pyx_tuple__30 = PyTuple_Pack(1, __pyx_kp_s_Subclasses_of_BondedInteraction_4); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(0, 584, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__30);
-  __Pyx_GIVEREF(__pyx_tuple__30);
+  __pyx_tuple__36 = PyTuple_Pack(1, __pyx_kp_s_Subclasses_of_BondedInteraction_4); if (unlikely(!__pyx_tuple__36)) __PYX_ERR(0, 584, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__36);
+  __Pyx_GIVEREF(__pyx_tuple__36);
 
   /* "espressomd/interactions.pyx":588
  * 
@@ -20353,9 +21691,9 @@ static int __Pyx_InitCachedConstants(void) {
  *             "Subclasses of BondedInteraction must define the type_name() method.")
  * 
  */
-  __pyx_tuple__31 = PyTuple_Pack(1, __pyx_kp_s_Subclasses_of_BondedInteraction_5); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(0, 588, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__31);
-  __Pyx_GIVEREF(__pyx_tuple__31);
+  __pyx_tuple__37 = PyTuple_Pack(1, __pyx_kp_s_Subclasses_of_BondedInteraction_5); if (unlikely(!__pyx_tuple__37)) __PYX_ERR(0, 588, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__37);
+  __Pyx_GIVEREF(__pyx_tuple__37);
 
   /* "espressomd/interactions.pyx":592
  * 
@@ -20364,9 +21702,9 @@ static int __Pyx_InitCachedConstants(void) {
  *             "Subclasses of BondedInteraction must define the valid_keys() method.")
  * 
  */
-  __pyx_tuple__32 = PyTuple_Pack(1, __pyx_kp_s_Subclasses_of_BondedInteraction_6); if (unlikely(!__pyx_tuple__32)) __PYX_ERR(0, 592, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__32);
-  __Pyx_GIVEREF(__pyx_tuple__32);
+  __pyx_tuple__38 = PyTuple_Pack(1, __pyx_kp_s_Subclasses_of_BondedInteraction_6); if (unlikely(!__pyx_tuple__38)) __PYX_ERR(0, 592, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__38);
+  __Pyx_GIVEREF(__pyx_tuple__38);
 
   /* "espressomd/interactions.pyx":596
  * 
@@ -20375,9 +21713,9 @@ static int __Pyx_InitCachedConstants(void) {
  *             "Subclasses of BondedInteraction must define the required_keys() method.")
  * 
  */
-  __pyx_tuple__33 = PyTuple_Pack(1, __pyx_kp_s_Subclasses_of_BondedInteraction_7); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(0, 596, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__33);
-  __Pyx_GIVEREF(__pyx_tuple__33);
+  __pyx_tuple__39 = PyTuple_Pack(1, __pyx_kp_s_Subclasses_of_BondedInteraction_7); if (unlikely(!__pyx_tuple__39)) __PYX_ERR(0, 596, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__39);
+  __Pyx_GIVEREF(__pyx_tuple__39);
 
   /* "espressomd/interactions.pyx":609
  *     def __richcmp__(self, other, i):
@@ -20386,9 +21724,9 @@ static int __Pyx_InitCachedConstants(void) {
  *         if self.__class__ != other.__class__:
  *             return False
  */
-  __pyx_tuple__35 = PyTuple_Pack(1, __pyx_kp_s_only_supported); if (unlikely(!__pyx_tuple__35)) __PYX_ERR(0, 609, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__35);
-  __Pyx_GIVEREF(__pyx_tuple__35);
+  __pyx_tuple__41 = PyTuple_Pack(1, __pyx_kp_s_only_supported); if (unlikely(!__pyx_tuple__41)) __PYX_ERR(0, 609, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__41);
+  __Pyx_GIVEREF(__pyx_tuple__41);
 
   /* "espressomd/interactions.pyx":671
  * 
@@ -20397,9 +21735,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *     def required_keys(self):
  */
-  __pyx_tuple__36 = PyTuple_Pack(3, __pyx_n_s_k, __pyx_n_s_d_r_max, __pyx_n_s_r_0); if (unlikely(!__pyx_tuple__36)) __PYX_ERR(0, 671, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__36);
-  __Pyx_GIVEREF(__pyx_tuple__36);
+  __pyx_tuple__42 = PyTuple_Pack(3, __pyx_n_s_k, __pyx_n_s_d_r_max, __pyx_n_s_r_0); if (unlikely(!__pyx_tuple__42)) __PYX_ERR(0, 671, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__42);
+  __Pyx_GIVEREF(__pyx_tuple__42);
 
   /* "espressomd/interactions.pyx":674
  * 
@@ -20408,9 +21746,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *     def set_default_params(self):
  */
-  __pyx_tuple__37 = PyTuple_Pack(2, __pyx_n_s_k, __pyx_n_s_d_r_max); if (unlikely(!__pyx_tuple__37)) __PYX_ERR(0, 674, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__37);
-  __Pyx_GIVEREF(__pyx_tuple__37);
+  __pyx_tuple__43 = PyTuple_Pack(2, __pyx_n_s_k, __pyx_n_s_d_r_max); if (unlikely(!__pyx_tuple__43)) __PYX_ERR(0, 674, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__43);
+  __Pyx_GIVEREF(__pyx_tuple__43);
 
   /* "espressomd/interactions.pyx":718
  * 
@@ -20419,9 +21757,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *     def required_keys(self):
  */
-  __pyx_tuple__38 = PyTuple_Pack(3, __pyx_n_s_k, __pyx_n_s_r_0, __pyx_n_s_r_cut); if (unlikely(!__pyx_tuple__38)) __PYX_ERR(0, 718, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__38);
-  __Pyx_GIVEREF(__pyx_tuple__38);
+  __pyx_tuple__44 = PyTuple_Pack(3, __pyx_n_s_k, __pyx_n_s_r_0, __pyx_n_s_r_cut); if (unlikely(!__pyx_tuple__44)) __PYX_ERR(0, 718, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__44);
+  __Pyx_GIVEREF(__pyx_tuple__44);
 
   /* "espressomd/interactions.pyx":721
  * 
@@ -20430,9 +21768,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *     def set_default_params(self):
  */
-  __pyx_tuple__39 = PyTuple_Pack(2, __pyx_n_s_k, __pyx_n_s_r_0); if (unlikely(!__pyx_tuple__39)) __PYX_ERR(0, 721, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__39);
-  __Pyx_GIVEREF(__pyx_tuple__39);
+  __pyx_tuple__45 = PyTuple_Pack(2, __pyx_n_s_k, __pyx_n_s_r_0); if (unlikely(!__pyx_tuple__45)) __PYX_ERR(0, 721, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__45);
+  __Pyx_GIVEREF(__pyx_tuple__45);
 
   /* "espressomd/interactions.pyx":808
  *                     broken.
@@ -20441,9 +21779,9 @@ static int __Pyx_InitCachedConstants(void) {
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_tuple__40 = PyTuple_Pack(1, __pyx_kp_s_HarmonicDumbbellBond_ROTATION_ha); if (unlikely(!__pyx_tuple__40)) __PYX_ERR(0, 808, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__40);
-  __Pyx_GIVEREF(__pyx_tuple__40);
+  __pyx_tuple__46 = PyTuple_Pack(1, __pyx_kp_s_HarmonicDumbbellBond_ROTATION_ha); if (unlikely(!__pyx_tuple__46)) __PYX_ERR(0, 808, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__46);
+  __Pyx_GIVEREF(__pyx_tuple__46);
 
   /* "espressomd/interactions.pyx":813
  * 
@@ -20452,9 +21790,9 @@ static int __Pyx_InitCachedConstants(void) {
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_tuple__41 = PyTuple_Pack(1, __pyx_kp_s_HarmonicDumbbellBond_ROTATION_ha); if (unlikely(!__pyx_tuple__41)) __PYX_ERR(0, 813, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__41);
-  __Pyx_GIVEREF(__pyx_tuple__41);
+  __pyx_tuple__47 = PyTuple_Pack(1, __pyx_kp_s_HarmonicDumbbellBond_ROTATION_ha); if (unlikely(!__pyx_tuple__47)) __PYX_ERR(0, 813, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__47);
+  __Pyx_GIVEREF(__pyx_tuple__47);
 
   /* "espressomd/interactions.pyx":817
  * 
@@ -20463,9 +21801,9 @@ static int __Pyx_InitCachedConstants(void) {
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_tuple__42 = PyTuple_Pack(1, __pyx_kp_s_HarmonicDumbbellBond_ROTATION_ha); if (unlikely(!__pyx_tuple__42)) __PYX_ERR(0, 817, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__42);
-  __Pyx_GIVEREF(__pyx_tuple__42);
+  __pyx_tuple__48 = PyTuple_Pack(1, __pyx_kp_s_HarmonicDumbbellBond_ROTATION_ha); if (unlikely(!__pyx_tuple__48)) __PYX_ERR(0, 817, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__48);
+  __Pyx_GIVEREF(__pyx_tuple__48);
 
   /* "espressomd/interactions.pyx":821
  * 
@@ -20474,9 +21812,9 @@ static int __Pyx_InitCachedConstants(void) {
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_tuple__43 = PyTuple_Pack(1, __pyx_kp_s_HarmonicDumbbellBond_ROTATION_ha); if (unlikely(!__pyx_tuple__43)) __PYX_ERR(0, 821, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__43);
-  __Pyx_GIVEREF(__pyx_tuple__43);
+  __pyx_tuple__49 = PyTuple_Pack(1, __pyx_kp_s_HarmonicDumbbellBond_ROTATION_ha); if (unlikely(!__pyx_tuple__49)) __PYX_ERR(0, 821, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__49);
+  __Pyx_GIVEREF(__pyx_tuple__49);
 
   /* "espressomd/interactions.pyx":825
  * 
@@ -20485,9 +21823,9 @@ static int __Pyx_InitCachedConstants(void) {
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_tuple__44 = PyTuple_Pack(1, __pyx_kp_s_HarmonicDumbbellBond_ROTATION_ha); if (unlikely(!__pyx_tuple__44)) __PYX_ERR(0, 825, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__44);
-  __Pyx_GIVEREF(__pyx_tuple__44);
+  __pyx_tuple__50 = PyTuple_Pack(1, __pyx_kp_s_HarmonicDumbbellBond_ROTATION_ha); if (unlikely(!__pyx_tuple__50)) __PYX_ERR(0, 825, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__50);
+  __Pyx_GIVEREF(__pyx_tuple__50);
 
   /* "espressomd/interactions.pyx":829
  * 
@@ -20496,9 +21834,9 @@ static int __Pyx_InitCachedConstants(void) {
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_tuple__45 = PyTuple_Pack(1, __pyx_kp_s_HarmonicDumbbellBond_ROTATION_ha); if (unlikely(!__pyx_tuple__45)) __PYX_ERR(0, 829, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__45);
-  __Pyx_GIVEREF(__pyx_tuple__45);
+  __pyx_tuple__51 = PyTuple_Pack(1, __pyx_kp_s_HarmonicDumbbellBond_ROTATION_ha); if (unlikely(!__pyx_tuple__51)) __PYX_ERR(0, 829, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__51);
+  __Pyx_GIVEREF(__pyx_tuple__51);
 
   /* "espressomd/interactions.pyx":833
  * 
@@ -20507,9 +21845,9 @@ static int __Pyx_InitCachedConstants(void) {
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_tuple__46 = PyTuple_Pack(1, __pyx_kp_s_HarmonicDumbbellBond_ROTATION_ha); if (unlikely(!__pyx_tuple__46)) __PYX_ERR(0, 833, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__46);
-  __Pyx_GIVEREF(__pyx_tuple__46);
+  __pyx_tuple__52 = PyTuple_Pack(1, __pyx_kp_s_HarmonicDumbbellBond_ROTATION_ha); if (unlikely(!__pyx_tuple__52)) __PYX_ERR(0, 833, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__52);
+  __Pyx_GIVEREF(__pyx_tuple__52);
 
   /* "espressomd/interactions.pyx":837
  * 
@@ -20518,9 +21856,9 @@ static int __Pyx_InitCachedConstants(void) {
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_tuple__47 = PyTuple_Pack(1, __pyx_kp_s_HarmonicDumbbellBond_ROTATION_ha); if (unlikely(!__pyx_tuple__47)) __PYX_ERR(0, 837, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__47);
-  __Pyx_GIVEREF(__pyx_tuple__47);
+  __pyx_tuple__53 = PyTuple_Pack(1, __pyx_kp_s_HarmonicDumbbellBond_ROTATION_ha); if (unlikely(!__pyx_tuple__53)) __PYX_ERR(0, 837, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__53);
+  __Pyx_GIVEREF(__pyx_tuple__53);
 
   /* "espressomd/interactions.pyx":899
  * 
@@ -20529,9 +21867,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *     def required_keys(self):
  */
-  __pyx_tuple__48 = PyTuple_Pack(3, __pyx_n_s_mult, __pyx_n_s_bend, __pyx_n_s_phase); if (unlikely(!__pyx_tuple__48)) __PYX_ERR(0, 899, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__48);
-  __Pyx_GIVEREF(__pyx_tuple__48);
+  __pyx_tuple__54 = PyTuple_Pack(3, __pyx_n_s_mult, __pyx_n_s_bend, __pyx_n_s_phase); if (unlikely(!__pyx_tuple__54)) __PYX_ERR(0, 899, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__54);
+  __Pyx_GIVEREF(__pyx_tuple__54);
 
   /* "espressomd/interactions.pyx":902
  * 
@@ -20540,9 +21878,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *     def set_default_params(self):
  */
-  __pyx_tuple__49 = PyTuple_Pack(3, __pyx_n_s_mult, __pyx_n_s_bend, __pyx_n_s_phase); if (unlikely(!__pyx_tuple__49)) __PYX_ERR(0, 902, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__49);
-  __Pyx_GIVEREF(__pyx_tuple__49);
+  __pyx_tuple__55 = PyTuple_Pack(3, __pyx_n_s_mult, __pyx_n_s_bend, __pyx_n_s_phase); if (unlikely(!__pyx_tuple__55)) __PYX_ERR(0, 902, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__55);
+  __Pyx_GIVEREF(__pyx_tuple__55);
 
   /* "espressomd/interactions.pyx":1041
  * 
@@ -20551,9 +21889,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *         def type_name(self):
  */
-  __pyx_tuple__50 = PyTuple_Pack(1, __pyx_kp_s_TABULATED_has_to_be_defined_in_m); if (unlikely(!__pyx_tuple__50)) __PYX_ERR(0, 1041, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__50);
-  __Pyx_GIVEREF(__pyx_tuple__50);
+  __pyx_tuple__56 = PyTuple_Pack(1, __pyx_kp_s_TABULATED_has_to_be_defined_in_m); if (unlikely(!__pyx_tuple__56)) __PYX_ERR(0, 1041, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__56);
+  __Pyx_GIVEREF(__pyx_tuple__56);
 
   /* "espressomd/interactions.pyx":1044
  * 
@@ -20562,9 +21900,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *         def valid_keys(self):
  */
-  __pyx_tuple__51 = PyTuple_Pack(1, __pyx_kp_s_TABULATED_has_to_be_defined_in_m); if (unlikely(!__pyx_tuple__51)) __PYX_ERR(0, 1044, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__51);
-  __Pyx_GIVEREF(__pyx_tuple__51);
+  __pyx_tuple__57 = PyTuple_Pack(1, __pyx_kp_s_TABULATED_has_to_be_defined_in_m); if (unlikely(!__pyx_tuple__57)) __PYX_ERR(0, 1044, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__57);
+  __Pyx_GIVEREF(__pyx_tuple__57);
 
   /* "espressomd/interactions.pyx":1047
  * 
@@ -20573,9 +21911,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *         def required_keys(self):
  */
-  __pyx_tuple__52 = PyTuple_Pack(1, __pyx_kp_s_TABULATED_has_to_be_defined_in_m); if (unlikely(!__pyx_tuple__52)) __PYX_ERR(0, 1047, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__52);
-  __Pyx_GIVEREF(__pyx_tuple__52);
+  __pyx_tuple__58 = PyTuple_Pack(1, __pyx_kp_s_TABULATED_has_to_be_defined_in_m); if (unlikely(!__pyx_tuple__58)) __PYX_ERR(0, 1047, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__58);
+  __Pyx_GIVEREF(__pyx_tuple__58);
 
   /* "espressomd/interactions.pyx":1050
  * 
@@ -20584,9 +21922,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *         def set_default_params(self):
  */
-  __pyx_tuple__53 = PyTuple_Pack(1, __pyx_kp_s_TABULATED_has_to_be_defined_in_m); if (unlikely(!__pyx_tuple__53)) __PYX_ERR(0, 1050, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__53);
-  __Pyx_GIVEREF(__pyx_tuple__53);
+  __pyx_tuple__59 = PyTuple_Pack(1, __pyx_kp_s_TABULATED_has_to_be_defined_in_m); if (unlikely(!__pyx_tuple__59)) __PYX_ERR(0, 1050, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__59);
+  __Pyx_GIVEREF(__pyx_tuple__59);
 
   /* "espressomd/interactions.pyx":1053
  * 
@@ -20595,9 +21933,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *         def _get_params_from_es_core(self):
  */
-  __pyx_tuple__54 = PyTuple_Pack(1, __pyx_kp_s_TABULATED_has_to_be_defined_in_m); if (unlikely(!__pyx_tuple__54)) __PYX_ERR(0, 1053, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__54);
-  __Pyx_GIVEREF(__pyx_tuple__54);
+  __pyx_tuple__60 = PyTuple_Pack(1, __pyx_kp_s_TABULATED_has_to_be_defined_in_m); if (unlikely(!__pyx_tuple__60)) __PYX_ERR(0, 1053, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__60);
+  __Pyx_GIVEREF(__pyx_tuple__60);
 
   /* "espressomd/interactions.pyx":1056
  * 
@@ -20606,9 +21944,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *         def _set_params_in_es_core(self):
  */
-  __pyx_tuple__55 = PyTuple_Pack(1, __pyx_kp_s_TABULATED_has_to_be_defined_in_m); if (unlikely(!__pyx_tuple__55)) __PYX_ERR(0, 1056, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__55);
-  __Pyx_GIVEREF(__pyx_tuple__55);
+  __pyx_tuple__61 = PyTuple_Pack(1, __pyx_kp_s_TABULATED_has_to_be_defined_in_m); if (unlikely(!__pyx_tuple__61)) __PYX_ERR(0, 1056, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__61);
+  __Pyx_GIVEREF(__pyx_tuple__61);
 
   /* "espressomd/interactions.pyx":1059
  * 
@@ -20617,9 +21955,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__56 = PyTuple_Pack(1, __pyx_kp_s_TABULATED_has_to_be_defined_in_m); if (unlikely(!__pyx_tuple__56)) __PYX_ERR(0, 1059, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__56);
-  __Pyx_GIVEREF(__pyx_tuple__56);
+  __pyx_tuple__62 = PyTuple_Pack(1, __pyx_kp_s_TABULATED_has_to_be_defined_in_m); if (unlikely(!__pyx_tuple__62)) __PYX_ERR(0, 1059, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__62);
+  __Pyx_GIVEREF(__pyx_tuple__62);
 
   /* "espressomd/interactions.pyx":1072
  * 
@@ -20628,9 +21966,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *         def required_keys(self):
  */
-  __pyx_tuple__57 = PyTuple_Pack(2, __pyx_n_s_r, __pyx_n_s_k); if (unlikely(!__pyx_tuple__57)) __PYX_ERR(0, 1072, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__57);
-  __Pyx_GIVEREF(__pyx_tuple__57);
+  __pyx_tuple__63 = PyTuple_Pack(2, __pyx_n_s_r, __pyx_n_s_k); if (unlikely(!__pyx_tuple__63)) __PYX_ERR(0, 1072, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__63);
+  __Pyx_GIVEREF(__pyx_tuple__63);
 
   /* "espressomd/interactions.pyx":1075
  * 
@@ -20639,9 +21977,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *         def set_default_params(self):
  */
-  __pyx_tuple__58 = PyTuple_Pack(2, __pyx_n_s_r, __pyx_n_s_k); if (unlikely(!__pyx_tuple__58)) __PYX_ERR(0, 1075, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__58);
-  __Pyx_GIVEREF(__pyx_tuple__58);
+  __pyx_tuple__64 = PyTuple_Pack(2, __pyx_n_s_r, __pyx_n_s_k); if (unlikely(!__pyx_tuple__64)) __PYX_ERR(0, 1075, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__64);
+  __Pyx_GIVEREF(__pyx_tuple__64);
 
   /* "espressomd/interactions.pyx":1288
  * 
@@ -20650,9 +21988,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *     def required_keys(self):
  */
-  __pyx_tuple__59 = PyTuple_Pack(4, __pyx_n_s_A0_g, __pyx_n_s_ka_g, __pyx_n_s_V0, __pyx_n_s_kv); if (unlikely(!__pyx_tuple__59)) __PYX_ERR(0, 1288, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__59);
-  __Pyx_GIVEREF(__pyx_tuple__59);
+  __pyx_tuple__65 = PyTuple_Pack(4, __pyx_n_s_A0_g, __pyx_n_s_ka_g, __pyx_n_s_V0, __pyx_n_s_kv); if (unlikely(!__pyx_tuple__65)) __PYX_ERR(0, 1288, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__65);
+  __Pyx_GIVEREF(__pyx_tuple__65);
 
   /* "espressomd/interactions.pyx":1291
  * 
@@ -20661,9 +21999,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *     def set_default_params(self):
  */
-  __pyx_tuple__60 = PyTuple_Pack(4, __pyx_n_s_A0_g, __pyx_n_s_ka_g, __pyx_n_s_V0, __pyx_n_s_kv); if (unlikely(!__pyx_tuple__60)) __PYX_ERR(0, 1291, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__60);
-  __Pyx_GIVEREF(__pyx_tuple__60);
+  __pyx_tuple__66 = PyTuple_Pack(4, __pyx_n_s_A0_g, __pyx_n_s_ka_g, __pyx_n_s_V0, __pyx_n_s_kv); if (unlikely(!__pyx_tuple__66)) __PYX_ERR(0, 1291, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__66);
+  __Pyx_GIVEREF(__pyx_tuple__66);
 
   /* "espressomd/interactions.pyx":1317
  * 
@@ -20672,9 +22010,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *     def required_keys(self):
  */
-  __pyx_tuple__61 = PyTuple_Pack(8, __pyx_n_s_r0, __pyx_n_s_ks, __pyx_n_s_kslin, __pyx_n_s_phi0, __pyx_n_s_kb, __pyx_n_s_A01, __pyx_n_s_A02, __pyx_n_s_kal); if (unlikely(!__pyx_tuple__61)) __PYX_ERR(0, 1317, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__61);
-  __Pyx_GIVEREF(__pyx_tuple__61);
+  __pyx_tuple__67 = PyTuple_Pack(8, __pyx_n_s_r0, __pyx_n_s_ks, __pyx_n_s_kslin, __pyx_n_s_phi0, __pyx_n_s_kb, __pyx_n_s_A01, __pyx_n_s_A02, __pyx_n_s_kal); if (unlikely(!__pyx_tuple__67)) __PYX_ERR(0, 1317, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__67);
+  __Pyx_GIVEREF(__pyx_tuple__67);
 
   /* "espressomd/interactions.pyx":1320
  * 
@@ -20683,9 +22021,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *     def set_default_params(self):
  */
-  __pyx_tuple__62 = PyTuple_Pack(8, __pyx_n_s_r0, __pyx_n_s_ks, __pyx_n_s_kslin, __pyx_n_s_phi0, __pyx_n_s_kb, __pyx_n_s_A01, __pyx_n_s_A02, __pyx_n_s_kal); if (unlikely(!__pyx_tuple__62)) __PYX_ERR(0, 1320, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__62);
-  __Pyx_GIVEREF(__pyx_tuple__62);
+  __pyx_tuple__68 = PyTuple_Pack(8, __pyx_n_s_r0, __pyx_n_s_ks, __pyx_n_s_kslin, __pyx_n_s_phi0, __pyx_n_s_kb, __pyx_n_s_A01, __pyx_n_s_A02, __pyx_n_s_kal); if (unlikely(!__pyx_tuple__68)) __PYX_ERR(0, 1320, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__68);
+  __Pyx_GIVEREF(__pyx_tuple__68);
 
   /* "espressomd/interactions.pyx":1370
  *     def __getitem__(self, key):
@@ -20694,9 +22032,9 @@ static int __Pyx_InitCachedConstants(void) {
  *                 "Index to BondedInteractions[] hast to be an integer referring to a bond id")
  * 
  */
-  __pyx_tuple__63 = PyTuple_Pack(1, __pyx_kp_s_Index_to_BondedInteractions_hast); if (unlikely(!__pyx_tuple__63)) __PYX_ERR(0, 1370, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__63);
-  __Pyx_GIVEREF(__pyx_tuple__63);
+  __pyx_tuple__69 = PyTuple_Pack(1, __pyx_kp_s_Index_to_BondedInteractions_hast); if (unlikely(!__pyx_tuple__69)) __PYX_ERR(0, 1370, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__69);
+  __Pyx_GIVEREF(__pyx_tuple__69);
 
   /* "espressomd/interactions.pyx":1393
  *         # type of key must be int
@@ -20705,9 +22043,9 @@ static int __Pyx_InitCachedConstants(void) {
  *                 "Index to BondedInteractions[] has to ba an integer referring to a bond id")
  * 
  */
-  __pyx_tuple__64 = PyTuple_Pack(1, __pyx_kp_s_Index_to_BondedInteractions_has); if (unlikely(!__pyx_tuple__64)) __PYX_ERR(0, 1393, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__64);
-  __Pyx_GIVEREF(__pyx_tuple__64);
+  __pyx_tuple__70 = PyTuple_Pack(1, __pyx_kp_s_Index_to_BondedInteractions_has); if (unlikely(!__pyx_tuple__70)) __PYX_ERR(0, 1393, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__70);
+  __Pyx_GIVEREF(__pyx_tuple__70);
 
   /* "espressomd/interactions.pyx":1398
  *         # Value must be subclass off BondedInteraction
@@ -20716,9 +22054,9 @@ static int __Pyx_InitCachedConstants(void) {
  *                 "Only subclasses of BondedInteraction can be assigned.")
  * 
  */
-  __pyx_tuple__65 = PyTuple_Pack(1, __pyx_kp_s_Only_subclasses_of_BondedInterac); if (unlikely(!__pyx_tuple__65)) __PYX_ERR(0, 1398, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__65);
-  __Pyx_GIVEREF(__pyx_tuple__65);
+  __pyx_tuple__71 = PyTuple_Pack(1, __pyx_kp_s_Only_subclasses_of_BondedInterac); if (unlikely(!__pyx_tuple__71)) __PYX_ERR(0, 1398, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__71);
+  __Pyx_GIVEREF(__pyx_tuple__71);
 
   /* "../../../../../../../../opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":218
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)
@@ -20727,9 +22065,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  */
-  __pyx_tuple__66 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_C_contiguous); if (unlikely(!__pyx_tuple__66)) __PYX_ERR(1, 218, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__66);
-  __Pyx_GIVEREF(__pyx_tuple__66);
+  __pyx_tuple__72 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_C_contiguous); if (unlikely(!__pyx_tuple__72)) __PYX_ERR(1, 218, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__72);
+  __Pyx_GIVEREF(__pyx_tuple__72);
 
   /* "../../../../../../../../opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":222
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
@@ -20738,9 +22076,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *             info.buf = PyArray_DATA(self)
  */
-  __pyx_tuple__67 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_Fortran_contiguou); if (unlikely(!__pyx_tuple__67)) __PYX_ERR(1, 222, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__67);
-  __Pyx_GIVEREF(__pyx_tuple__67);
+  __pyx_tuple__73 = PyTuple_Pack(1, __pyx_kp_u_ndarray_is_not_Fortran_contiguou); if (unlikely(!__pyx_tuple__73)) __PYX_ERR(1, 222, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__73);
+  __Pyx_GIVEREF(__pyx_tuple__73);
 
   /* "../../../../../../../../opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":259
  *                 if ((descr.byteorder == c'>' and little_endian) or
@@ -20749,9 +22087,9 @@ static int __Pyx_InitCachedConstants(void) {
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"
  */
-  __pyx_tuple__68 = PyTuple_Pack(1, __pyx_kp_u_Non_native_byte_order_not_suppor); if (unlikely(!__pyx_tuple__68)) __PYX_ERR(1, 259, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__68);
-  __Pyx_GIVEREF(__pyx_tuple__68);
+  __pyx_tuple__74 = PyTuple_Pack(1, __pyx_kp_u_Non_native_byte_order_not_suppor); if (unlikely(!__pyx_tuple__74)) __PYX_ERR(1, 259, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__74);
+  __Pyx_GIVEREF(__pyx_tuple__74);
 
   /* "../../../../../../../../opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":799
  * 
@@ -20760,9 +22098,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *         if ((child.byteorder == c'>' and little_endian) or
  */
-  __pyx_tuple__69 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor); if (unlikely(!__pyx_tuple__69)) __PYX_ERR(1, 799, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__69);
-  __Pyx_GIVEREF(__pyx_tuple__69);
+  __pyx_tuple__75 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor); if (unlikely(!__pyx_tuple__75)) __PYX_ERR(1, 799, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__75);
+  __Pyx_GIVEREF(__pyx_tuple__75);
 
   /* "../../../../../../../../opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":803
  *         if ((child.byteorder == c'>' and little_endian) or
@@ -20771,9 +22109,9 @@ static int __Pyx_InitCachedConstants(void) {
  *             # One could encode it in the format string and have Cython
  *             # complain instead, BUT: < and > in format strings also imply
  */
-  __pyx_tuple__70 = PyTuple_Pack(1, __pyx_kp_u_Non_native_byte_order_not_suppor); if (unlikely(!__pyx_tuple__70)) __PYX_ERR(1, 803, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__70);
-  __Pyx_GIVEREF(__pyx_tuple__70);
+  __pyx_tuple__76 = PyTuple_Pack(1, __pyx_kp_u_Non_native_byte_order_not_suppor); if (unlikely(!__pyx_tuple__76)) __PYX_ERR(1, 803, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__76);
+  __Pyx_GIVEREF(__pyx_tuple__76);
 
   /* "../../../../../../../../opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":823
  *             t = child.type_num
@@ -20782,9 +22120,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  */
-  __pyx_tuple__71 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor_2); if (unlikely(!__pyx_tuple__71)) __PYX_ERR(1, 823, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__71);
-  __Pyx_GIVEREF(__pyx_tuple__71);
+  __pyx_tuple__77 = PyTuple_Pack(1, __pyx_kp_u_Format_string_allocated_too_shor_2); if (unlikely(!__pyx_tuple__77)) __PYX_ERR(1, 823, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__77);
+  __Pyx_GIVEREF(__pyx_tuple__77);
 
   /* "../../../../../../../../opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":989
  *         _import_array()
@@ -20793,9 +22131,9 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  * cdef inline int import_umath() except -1:
  */
-  __pyx_tuple__72 = PyTuple_Pack(1, __pyx_kp_s_numpy_core_multiarray_failed_to); if (unlikely(!__pyx_tuple__72)) __PYX_ERR(1, 989, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__72);
-  __Pyx_GIVEREF(__pyx_tuple__72);
+  __pyx_tuple__78 = PyTuple_Pack(1, __pyx_kp_s_numpy_core_multiarray_failed_to); if (unlikely(!__pyx_tuple__78)) __PYX_ERR(1, 989, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__78);
+  __Pyx_GIVEREF(__pyx_tuple__78);
 
   /* "../../../../../../../../opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":995
  *         _import_umath()
@@ -20804,18 +22142,18 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  * cdef inline int import_ufunc() except -1:
  */
-  __pyx_tuple__73 = PyTuple_Pack(1, __pyx_kp_s_numpy_core_umath_failed_to_impor); if (unlikely(!__pyx_tuple__73)) __PYX_ERR(1, 995, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__73);
-  __Pyx_GIVEREF(__pyx_tuple__73);
+  __pyx_tuple__79 = PyTuple_Pack(1, __pyx_kp_s_numpy_core_umath_failed_to_impor); if (unlikely(!__pyx_tuple__79)) __PYX_ERR(1, 995, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__79);
+  __Pyx_GIVEREF(__pyx_tuple__79);
 
   /* "../../../../../../../../opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":1001
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__74 = PyTuple_Pack(1, __pyx_kp_s_numpy_core_umath_failed_to_impor); if (unlikely(!__pyx_tuple__74)) __PYX_ERR(1, 1001, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__74);
-  __Pyx_GIVEREF(__pyx_tuple__74);
+  __pyx_tuple__80 = PyTuple_Pack(1, __pyx_kp_s_numpy_core_umath_failed_to_impor); if (unlikely(!__pyx_tuple__80)) __PYX_ERR(1, 1001, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__80);
+  __Pyx_GIVEREF(__pyx_tuple__80);
 
   /* "espressomd/interactions.pyx":408
  *     tabulated = None
@@ -20824,10 +22162,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         """Takes two particle types as argument"""
  *         if not (isinstance(_type1, int) and isinstance(_type2, int)):
  */
-  __pyx_tuple__76 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_type1, __pyx_n_s_type2); if (unlikely(!__pyx_tuple__76)) __PYX_ERR(0, 408, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__76);
-  __Pyx_GIVEREF(__pyx_tuple__76);
-  __pyx_codeobj__77 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__76, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_init, 408, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__77)) __PYX_ERR(0, 408, __pyx_L1_error)
+  __pyx_tuple__82 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_type1, __pyx_n_s_type2); if (unlikely(!__pyx_tuple__82)) __PYX_ERR(0, 408, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__82);
+  __Pyx_GIVEREF(__pyx_tuple__82);
+  __pyx_codeobj__83 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__82, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_init, 408, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__83)) __PYX_ERR(0, 408, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":619
  * class BondedInteractionNotDefined(object):
@@ -20836,10 +22174,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         raise Exception(
  *             self.__class__.__name__ + " not compiled into Espresso core")
  */
-  __pyx_tuple__78 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_args, __pyx_n_s_kwargs); if (unlikely(!__pyx_tuple__78)) __PYX_ERR(0, 619, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__78);
-  __Pyx_GIVEREF(__pyx_tuple__78);
-  __pyx_codeobj__79 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_VARARGS|CO_VARKEYWORDS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__78, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_init, 619, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__79)) __PYX_ERR(0, 619, __pyx_L1_error)
+  __pyx_tuple__84 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_args, __pyx_n_s_kwargs); if (unlikely(!__pyx_tuple__84)) __PYX_ERR(0, 619, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__84);
+  __Pyx_GIVEREF(__pyx_tuple__84);
+  __pyx_codeobj__85 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_VARARGS|CO_VARKEYWORDS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__84, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_init, 619, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__85)) __PYX_ERR(0, 619, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":623
  *             self.__class__.__name__ + " not compiled into Espresso core")
@@ -20848,10 +22186,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
  * 
  */
-  __pyx_tuple__80 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__80)) __PYX_ERR(0, 623, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__80);
-  __Pyx_GIVEREF(__pyx_tuple__80);
-  __pyx_codeobj__81 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__80, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_number, 623, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__81)) __PYX_ERR(0, 623, __pyx_L1_error)
+  __pyx_tuple__86 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__86)) __PYX_ERR(0, 623, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__86);
+  __Pyx_GIVEREF(__pyx_tuple__86);
+  __pyx_codeobj__87 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__86, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_number, 623, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__87)) __PYX_ERR(0, 623, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":626
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
@@ -20860,10 +22198,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
  * 
  */
-  __pyx_tuple__82 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__82)) __PYX_ERR(0, 626, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__82);
-  __Pyx_GIVEREF(__pyx_tuple__82);
-  __pyx_codeobj__83 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__82, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_name, 626, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__83)) __PYX_ERR(0, 626, __pyx_L1_error)
+  __pyx_tuple__88 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__88)) __PYX_ERR(0, 626, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__88);
+  __Pyx_GIVEREF(__pyx_tuple__88);
+  __pyx_codeobj__89 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__88, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_name, 626, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__89)) __PYX_ERR(0, 626, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":629
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
@@ -20872,10 +22210,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
  * 
  */
-  __pyx_tuple__84 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__84)) __PYX_ERR(0, 629, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__84);
-  __Pyx_GIVEREF(__pyx_tuple__84);
-  __pyx_codeobj__85 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__84, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_valid_keys, 629, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__85)) __PYX_ERR(0, 629, __pyx_L1_error)
+  __pyx_tuple__90 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__90)) __PYX_ERR(0, 629, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__90);
+  __Pyx_GIVEREF(__pyx_tuple__90);
+  __pyx_codeobj__91 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__90, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_valid_keys, 629, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__91)) __PYX_ERR(0, 629, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":632
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
@@ -20884,10 +22222,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
  * 
  */
-  __pyx_tuple__86 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__86)) __PYX_ERR(0, 632, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__86);
-  __Pyx_GIVEREF(__pyx_tuple__86);
-  __pyx_codeobj__87 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__86, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_required_keys, 632, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__87)) __PYX_ERR(0, 632, __pyx_L1_error)
+  __pyx_tuple__92 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__92)) __PYX_ERR(0, 632, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__92);
+  __Pyx_GIVEREF(__pyx_tuple__92);
+  __pyx_codeobj__93 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__92, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_required_keys, 632, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__93)) __PYX_ERR(0, 632, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":635
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
@@ -20896,10 +22234,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
  * 
  */
-  __pyx_tuple__88 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__88)) __PYX_ERR(0, 635, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__88);
-  __Pyx_GIVEREF(__pyx_tuple__88);
-  __pyx_codeobj__89 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__88, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_default_params, 635, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__89)) __PYX_ERR(0, 635, __pyx_L1_error)
+  __pyx_tuple__94 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__94)) __PYX_ERR(0, 635, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__94);
+  __Pyx_GIVEREF(__pyx_tuple__94);
+  __pyx_codeobj__95 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__94, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_default_params, 635, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__95)) __PYX_ERR(0, 635, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":638
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
@@ -20908,10 +22246,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
  * 
  */
-  __pyx_tuple__90 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__90)) __PYX_ERR(0, 638, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__90);
-  __Pyx_GIVEREF(__pyx_tuple__90);
-  __pyx_codeobj__91 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__90, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_get_params_from_es_core, 638, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__91)) __PYX_ERR(0, 638, __pyx_L1_error)
+  __pyx_tuple__96 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__96)) __PYX_ERR(0, 638, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__96);
+  __Pyx_GIVEREF(__pyx_tuple__96);
+  __pyx_codeobj__97 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__96, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_get_params_from_es_core, 638, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__97)) __PYX_ERR(0, 638, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":641
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
@@ -20920,10 +22258,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
  * 
  */
-  __pyx_tuple__92 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__92)) __PYX_ERR(0, 641, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__92);
-  __Pyx_GIVEREF(__pyx_tuple__92);
-  __pyx_codeobj__93 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__92, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_params_in_es_core, 641, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__93)) __PYX_ERR(0, 641, __pyx_L1_error)
+  __pyx_tuple__98 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__98)) __PYX_ERR(0, 641, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__98);
+  __Pyx_GIVEREF(__pyx_tuple__98);
+  __pyx_codeobj__99 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__98, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_params_in_es_core, 641, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__99)) __PYX_ERR(0, 641, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":647
  * class FeneBond(BondedInteraction):
@@ -20932,10 +22270,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         """
  *         FeneBond initialiser. Used to instatiate a FeneBond identifier
  */
-  __pyx_tuple__94 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_args, __pyx_n_s_kwargs); if (unlikely(!__pyx_tuple__94)) __PYX_ERR(0, 647, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__94);
-  __Pyx_GIVEREF(__pyx_tuple__94);
-  __pyx_codeobj__95 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_VARARGS|CO_VARKEYWORDS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__94, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_init, 647, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__95)) __PYX_ERR(0, 647, __pyx_L1_error)
+  __pyx_tuple__100 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_args, __pyx_n_s_kwargs); if (unlikely(!__pyx_tuple__100)) __PYX_ERR(0, 647, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__100);
+  __Pyx_GIVEREF(__pyx_tuple__100);
+  __pyx_codeobj__101 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_VARARGS|CO_VARKEYWORDS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__100, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_init, 647, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__101)) __PYX_ERR(0, 647, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":664
  *         super(FeneBond, self).__init__(*args, **kwargs)
@@ -20944,10 +22282,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return BONDED_IA_FENE
  * 
  */
-  __pyx_tuple__96 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__96)) __PYX_ERR(0, 664, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__96);
-  __Pyx_GIVEREF(__pyx_tuple__96);
-  __pyx_codeobj__97 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__96, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_number, 664, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__97)) __PYX_ERR(0, 664, __pyx_L1_error)
+  __pyx_tuple__102 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__102)) __PYX_ERR(0, 664, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__102);
+  __Pyx_GIVEREF(__pyx_tuple__102);
+  __pyx_codeobj__103 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__102, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_number, 664, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__103)) __PYX_ERR(0, 664, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":667
  *         return BONDED_IA_FENE
@@ -20956,10 +22294,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return "FENE"
  * 
  */
-  __pyx_tuple__98 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__98)) __PYX_ERR(0, 667, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__98);
-  __Pyx_GIVEREF(__pyx_tuple__98);
-  __pyx_codeobj__99 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__98, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_name, 667, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__99)) __PYX_ERR(0, 667, __pyx_L1_error)
+  __pyx_tuple__104 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__104)) __PYX_ERR(0, 667, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__104);
+  __Pyx_GIVEREF(__pyx_tuple__104);
+  __pyx_codeobj__105 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__104, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_name, 667, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__105)) __PYX_ERR(0, 667, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":670
  *         return "FENE"
@@ -20968,10 +22306,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return "k", "d_r_max", "r_0"
  * 
  */
-  __pyx_tuple__100 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__100)) __PYX_ERR(0, 670, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__100);
-  __Pyx_GIVEREF(__pyx_tuple__100);
-  __pyx_codeobj__101 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__100, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_valid_keys, 670, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__101)) __PYX_ERR(0, 670, __pyx_L1_error)
+  __pyx_tuple__106 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__106)) __PYX_ERR(0, 670, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__106);
+  __Pyx_GIVEREF(__pyx_tuple__106);
+  __pyx_codeobj__107 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__106, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_valid_keys, 670, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__107)) __PYX_ERR(0, 670, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":673
  *         return "k", "d_r_max", "r_0"
@@ -20980,10 +22318,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return "k", "d_r_max"
  * 
  */
-  __pyx_tuple__102 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__102)) __PYX_ERR(0, 673, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__102);
-  __Pyx_GIVEREF(__pyx_tuple__102);
-  __pyx_codeobj__103 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__102, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_required_keys, 673, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__103)) __PYX_ERR(0, 673, __pyx_L1_error)
+  __pyx_tuple__108 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__108)) __PYX_ERR(0, 673, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__108);
+  __Pyx_GIVEREF(__pyx_tuple__108);
+  __pyx_codeobj__109 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__108, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_required_keys, 673, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__109)) __PYX_ERR(0, 673, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":676
  *         return "k", "d_r_max"
@@ -20992,10 +22330,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         self._params = {"r_0": 0.}
  *         # Everything else has to be supplied by the user, anyway
  */
-  __pyx_tuple__104 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__104)) __PYX_ERR(0, 676, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__104);
-  __Pyx_GIVEREF(__pyx_tuple__104);
-  __pyx_codeobj__105 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__104, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_default_params, 676, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__105)) __PYX_ERR(0, 676, __pyx_L1_error)
+  __pyx_tuple__110 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__110)) __PYX_ERR(0, 676, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__110);
+  __Pyx_GIVEREF(__pyx_tuple__110);
+  __pyx_codeobj__111 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__110, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_default_params, 676, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__111)) __PYX_ERR(0, 676, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":680
  *         # Everything else has to be supplied by the user, anyway
@@ -21004,10 +22342,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return \
  *             {"k": bonded_ia_params[self._bond_id].p.fene.k,
  */
-  __pyx_tuple__106 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__106)) __PYX_ERR(0, 680, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__106);
-  __Pyx_GIVEREF(__pyx_tuple__106);
-  __pyx_codeobj__107 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__106, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_get_params_from_es_core, 680, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__107)) __PYX_ERR(0, 680, __pyx_L1_error)
+  __pyx_tuple__112 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__112)) __PYX_ERR(0, 680, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__112);
+  __Pyx_GIVEREF(__pyx_tuple__112);
+  __pyx_codeobj__113 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__112, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_get_params_from_es_core, 680, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__113)) __PYX_ERR(0, 680, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":686
  *              "r_0": bonded_ia_params[self._bond_id].p.fene.r0}
@@ -21016,10 +22354,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         fene_set_params(
  *             self._bond_id, self._params["k"], self._params["d_r_max"], self._params["r_0"])
  */
-  __pyx_tuple__108 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__108)) __PYX_ERR(0, 686, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__108);
-  __Pyx_GIVEREF(__pyx_tuple__108);
-  __pyx_codeobj__109 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__108, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_params_in_es_core, 686, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__109)) __PYX_ERR(0, 686, __pyx_L1_error)
+  __pyx_tuple__114 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__114)) __PYX_ERR(0, 686, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__114);
+  __Pyx_GIVEREF(__pyx_tuple__114);
+  __pyx_codeobj__115 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__114, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_params_in_es_core, 686, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__115)) __PYX_ERR(0, 686, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":693
  * class HarmonicBond(BondedInteraction):
@@ -21028,10 +22366,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         """
  *         HarmonicBond initialiser. Used to instatiate a HarmonicBond identifier
  */
-  __pyx_tuple__110 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_args, __pyx_n_s_kwargs); if (unlikely(!__pyx_tuple__110)) __PYX_ERR(0, 693, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__110);
-  __Pyx_GIVEREF(__pyx_tuple__110);
-  __pyx_codeobj__111 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_VARARGS|CO_VARKEYWORDS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__110, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_init, 693, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__111)) __PYX_ERR(0, 693, __pyx_L1_error)
+  __pyx_tuple__116 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_args, __pyx_n_s_kwargs); if (unlikely(!__pyx_tuple__116)) __PYX_ERR(0, 693, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__116);
+  __Pyx_GIVEREF(__pyx_tuple__116);
+  __pyx_codeobj__117 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_VARARGS|CO_VARKEYWORDS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__116, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_init, 693, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__117)) __PYX_ERR(0, 693, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":711
  * 
@@ -21040,10 +22378,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return BONDED_IA_HARMONIC
  * 
  */
-  __pyx_tuple__112 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__112)) __PYX_ERR(0, 711, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__112);
-  __Pyx_GIVEREF(__pyx_tuple__112);
-  __pyx_codeobj__113 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__112, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_number, 711, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__113)) __PYX_ERR(0, 711, __pyx_L1_error)
+  __pyx_tuple__118 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__118)) __PYX_ERR(0, 711, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__118);
+  __Pyx_GIVEREF(__pyx_tuple__118);
+  __pyx_codeobj__119 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__118, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_number, 711, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__119)) __PYX_ERR(0, 711, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":714
  *         return BONDED_IA_HARMONIC
@@ -21052,10 +22390,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return "HARMONIC"
  * 
  */
-  __pyx_tuple__114 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__114)) __PYX_ERR(0, 714, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__114);
-  __Pyx_GIVEREF(__pyx_tuple__114);
-  __pyx_codeobj__115 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__114, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_name, 714, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__115)) __PYX_ERR(0, 714, __pyx_L1_error)
+  __pyx_tuple__120 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__120)) __PYX_ERR(0, 714, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__120);
+  __Pyx_GIVEREF(__pyx_tuple__120);
+  __pyx_codeobj__121 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__120, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_name, 714, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__121)) __PYX_ERR(0, 714, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":717
  *         return "HARMONIC"
@@ -21064,10 +22402,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return "k", "r_0", "r_cut"
  * 
  */
-  __pyx_tuple__116 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__116)) __PYX_ERR(0, 717, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__116);
-  __Pyx_GIVEREF(__pyx_tuple__116);
-  __pyx_codeobj__117 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__116, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_valid_keys, 717, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__117)) __PYX_ERR(0, 717, __pyx_L1_error)
+  __pyx_tuple__122 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__122)) __PYX_ERR(0, 717, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__122);
+  __Pyx_GIVEREF(__pyx_tuple__122);
+  __pyx_codeobj__123 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__122, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_valid_keys, 717, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__123)) __PYX_ERR(0, 717, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":720
  *         return "k", "r_0", "r_cut"
@@ -21076,10 +22414,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return "k", "r_0"
  * 
  */
-  __pyx_tuple__118 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__118)) __PYX_ERR(0, 720, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__118);
-  __Pyx_GIVEREF(__pyx_tuple__118);
-  __pyx_codeobj__119 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__118, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_required_keys, 720, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__119)) __PYX_ERR(0, 720, __pyx_L1_error)
+  __pyx_tuple__124 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__124)) __PYX_ERR(0, 720, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__124);
+  __Pyx_GIVEREF(__pyx_tuple__124);
+  __pyx_codeobj__125 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__124, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_required_keys, 720, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__125)) __PYX_ERR(0, 720, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":723
  *         return "k", "r_0"
@@ -21088,10 +22426,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         self._params = {"k'": 0., "r_0": 0., "r_cut": 0.}
  * 
  */
-  __pyx_tuple__120 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__120)) __PYX_ERR(0, 723, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__120);
-  __Pyx_GIVEREF(__pyx_tuple__120);
-  __pyx_codeobj__121 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__120, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_default_params, 723, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__121)) __PYX_ERR(0, 723, __pyx_L1_error)
+  __pyx_tuple__126 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__126)) __PYX_ERR(0, 723, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__126);
+  __Pyx_GIVEREF(__pyx_tuple__126);
+  __pyx_codeobj__127 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__126, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_default_params, 723, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__127)) __PYX_ERR(0, 723, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":726
  *         self._params = {"k'": 0., "r_0": 0., "r_cut": 0.}
@@ -21100,10 +22438,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return \
  *             {"k": bonded_ia_params[self._bond_id].p.harmonic.k,
  */
-  __pyx_tuple__122 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__122)) __PYX_ERR(0, 726, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__122);
-  __Pyx_GIVEREF(__pyx_tuple__122);
-  __pyx_codeobj__123 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__122, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_get_params_from_es_core, 726, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__123)) __PYX_ERR(0, 726, __pyx_L1_error)
+  __pyx_tuple__128 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__128)) __PYX_ERR(0, 726, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__128);
+  __Pyx_GIVEREF(__pyx_tuple__128);
+  __pyx_codeobj__129 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__128, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_get_params_from_es_core, 726, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__129)) __PYX_ERR(0, 726, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":732
  *              "r_cut": bonded_ia_params[self._bond_id].p.harmonic.r_cut}
@@ -21112,10 +22450,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         harmonic_set_params(
  *             self._bond_id, self._params["k"], self._params["r_0"], self._params["r_cut"])
  */
-  __pyx_tuple__124 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__124)) __PYX_ERR(0, 732, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__124);
-  __Pyx_GIVEREF(__pyx_tuple__124);
-  __pyx_codeobj__125 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__124, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_params_in_es_core, 732, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__125)) __PYX_ERR(0, 732, __pyx_L1_error)
+  __pyx_tuple__130 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__130)) __PYX_ERR(0, 732, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__130);
+  __Pyx_GIVEREF(__pyx_tuple__130);
+  __pyx_codeobj__131 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__130, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_params_in_es_core, 732, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__131)) __PYX_ERR(0, 732, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":791
  *     class HarmonicDumbbellBond(BondedInteraction):
@@ -21124,10 +22462,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             """
  *             HarmonicDumbbellBond initialiser. Used to instatiate a
  */
-  __pyx_tuple__126 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_args, __pyx_n_s_kwargs); if (unlikely(!__pyx_tuple__126)) __PYX_ERR(0, 791, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__126);
-  __Pyx_GIVEREF(__pyx_tuple__126);
-  __pyx_codeobj__127 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_VARARGS|CO_VARKEYWORDS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__126, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_init, 791, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__127)) __PYX_ERR(0, 791, __pyx_L1_error)
+  __pyx_tuple__132 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_args, __pyx_n_s_kwargs); if (unlikely(!__pyx_tuple__132)) __PYX_ERR(0, 791, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__132);
+  __Pyx_GIVEREF(__pyx_tuple__132);
+  __pyx_codeobj__133 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_VARARGS|CO_VARKEYWORDS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__132, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_init, 791, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__133)) __PYX_ERR(0, 791, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":812
  * 
@@ -21136,10 +22474,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             raise Exception(
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  */
-  __pyx_tuple__128 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__128)) __PYX_ERR(0, 812, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__128);
-  __Pyx_GIVEREF(__pyx_tuple__128);
-  __pyx_codeobj__129 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__128, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_number, 812, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__129)) __PYX_ERR(0, 812, __pyx_L1_error)
+  __pyx_tuple__134 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__134)) __PYX_ERR(0, 812, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__134);
+  __Pyx_GIVEREF(__pyx_tuple__134);
+  __pyx_codeobj__135 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__134, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_number, 812, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__135)) __PYX_ERR(0, 812, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":816
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
@@ -21148,10 +22486,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             raise Exception(
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  */
-  __pyx_tuple__130 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__130)) __PYX_ERR(0, 816, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__130);
-  __Pyx_GIVEREF(__pyx_tuple__130);
-  __pyx_codeobj__131 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__130, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_name, 816, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__131)) __PYX_ERR(0, 816, __pyx_L1_error)
+  __pyx_tuple__136 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__136)) __PYX_ERR(0, 816, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__136);
+  __Pyx_GIVEREF(__pyx_tuple__136);
+  __pyx_codeobj__137 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__136, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_name, 816, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__137)) __PYX_ERR(0, 816, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":820
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
@@ -21160,10 +22498,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             raise Exception(
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  */
-  __pyx_tuple__132 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__132)) __PYX_ERR(0, 820, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__132);
-  __Pyx_GIVEREF(__pyx_tuple__132);
-  __pyx_codeobj__133 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__132, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_valid_keys, 820, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__133)) __PYX_ERR(0, 820, __pyx_L1_error)
+  __pyx_tuple__138 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__138)) __PYX_ERR(0, 820, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__138);
+  __Pyx_GIVEREF(__pyx_tuple__138);
+  __pyx_codeobj__139 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__138, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_valid_keys, 820, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__139)) __PYX_ERR(0, 820, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":824
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
@@ -21172,10 +22510,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             raise Exception(
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  */
-  __pyx_tuple__134 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__134)) __PYX_ERR(0, 824, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__134);
-  __Pyx_GIVEREF(__pyx_tuple__134);
-  __pyx_codeobj__135 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__134, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_required_keys, 824, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__135)) __PYX_ERR(0, 824, __pyx_L1_error)
+  __pyx_tuple__140 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__140)) __PYX_ERR(0, 824, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__140);
+  __Pyx_GIVEREF(__pyx_tuple__140);
+  __pyx_codeobj__141 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__140, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_required_keys, 824, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__141)) __PYX_ERR(0, 824, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":828
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
@@ -21184,10 +22522,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             raise Exception(
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  */
-  __pyx_tuple__136 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__136)) __PYX_ERR(0, 828, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__136);
-  __Pyx_GIVEREF(__pyx_tuple__136);
-  __pyx_codeobj__137 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__136, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_default_params, 828, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__137)) __PYX_ERR(0, 828, __pyx_L1_error)
+  __pyx_tuple__142 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__142)) __PYX_ERR(0, 828, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__142);
+  __Pyx_GIVEREF(__pyx_tuple__142);
+  __pyx_codeobj__143 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__142, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_default_params, 828, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__143)) __PYX_ERR(0, 828, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":832
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
@@ -21196,10 +22534,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             raise Exception(
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  */
-  __pyx_tuple__138 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__138)) __PYX_ERR(0, 832, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__138);
-  __Pyx_GIVEREF(__pyx_tuple__138);
-  __pyx_codeobj__139 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__138, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_get_params_from_es_core, 832, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__139)) __PYX_ERR(0, 832, __pyx_L1_error)
+  __pyx_tuple__144 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__144)) __PYX_ERR(0, 832, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__144);
+  __Pyx_GIVEREF(__pyx_tuple__144);
+  __pyx_codeobj__145 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__144, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_get_params_from_es_core, 832, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__145)) __PYX_ERR(0, 832, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":836
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
@@ -21208,10 +22546,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             raise Exception(
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  */
-  __pyx_tuple__140 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__140)) __PYX_ERR(0, 836, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__140);
-  __Pyx_GIVEREF(__pyx_tuple__140);
-  __pyx_codeobj__141 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__140, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_params_in_es_core, 836, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__141)) __PYX_ERR(0, 836, __pyx_L1_error)
+  __pyx_tuple__146 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__146)) __PYX_ERR(0, 836, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__146);
+  __Pyx_GIVEREF(__pyx_tuple__146);
+  __pyx_codeobj__147 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__146, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_params_in_es_core, 836, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__147)) __PYX_ERR(0, 836, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":892
  * class Dihedral(BondedInteraction):
@@ -21220,10 +22558,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return BONDED_IA_DIHEDRAL
  * 
  */
-  __pyx_tuple__142 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__142)) __PYX_ERR(0, 892, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__142);
-  __Pyx_GIVEREF(__pyx_tuple__142);
-  __pyx_codeobj__143 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__142, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_number, 892, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__143)) __PYX_ERR(0, 892, __pyx_L1_error)
+  __pyx_tuple__148 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__148)) __PYX_ERR(0, 892, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__148);
+  __Pyx_GIVEREF(__pyx_tuple__148);
+  __pyx_codeobj__149 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__148, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_number, 892, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__149)) __PYX_ERR(0, 892, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":895
  *         return BONDED_IA_DIHEDRAL
@@ -21232,10 +22570,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return "DIHEDRAL"
  * 
  */
-  __pyx_tuple__144 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__144)) __PYX_ERR(0, 895, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__144);
-  __Pyx_GIVEREF(__pyx_tuple__144);
-  __pyx_codeobj__145 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__144, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_name, 895, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__145)) __PYX_ERR(0, 895, __pyx_L1_error)
+  __pyx_tuple__150 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__150)) __PYX_ERR(0, 895, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__150);
+  __Pyx_GIVEREF(__pyx_tuple__150);
+  __pyx_codeobj__151 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__150, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_name, 895, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__151)) __PYX_ERR(0, 895, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":898
  *         return "DIHEDRAL"
@@ -21244,10 +22582,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return "mult", "bend", "phase"
  * 
  */
-  __pyx_tuple__146 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__146)) __PYX_ERR(0, 898, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__146);
-  __Pyx_GIVEREF(__pyx_tuple__146);
-  __pyx_codeobj__147 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__146, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_valid_keys, 898, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__147)) __PYX_ERR(0, 898, __pyx_L1_error)
+  __pyx_tuple__152 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__152)) __PYX_ERR(0, 898, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__152);
+  __Pyx_GIVEREF(__pyx_tuple__152);
+  __pyx_codeobj__153 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__152, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_valid_keys, 898, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__153)) __PYX_ERR(0, 898, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":901
  *         return "mult", "bend", "phase"
@@ -21256,10 +22594,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return "mult", "bend", "phase"
  * 
  */
-  __pyx_tuple__148 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__148)) __PYX_ERR(0, 901, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__148);
-  __Pyx_GIVEREF(__pyx_tuple__148);
-  __pyx_codeobj__149 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__148, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_required_keys, 901, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__149)) __PYX_ERR(0, 901, __pyx_L1_error)
+  __pyx_tuple__154 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__154)) __PYX_ERR(0, 901, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__154);
+  __Pyx_GIVEREF(__pyx_tuple__154);
+  __pyx_codeobj__155 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__154, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_required_keys, 901, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__155)) __PYX_ERR(0, 901, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":904
  *         return "mult", "bend", "phase"
@@ -21268,10 +22606,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         self._params = {"mult'": 1., "bend": 0., "phase": 0.}
  * 
  */
-  __pyx_tuple__150 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__150)) __PYX_ERR(0, 904, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__150);
-  __Pyx_GIVEREF(__pyx_tuple__150);
-  __pyx_codeobj__151 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__150, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_default_params, 904, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__151)) __PYX_ERR(0, 904, __pyx_L1_error)
+  __pyx_tuple__156 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__156)) __PYX_ERR(0, 904, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__156);
+  __Pyx_GIVEREF(__pyx_tuple__156);
+  __pyx_codeobj__157 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__156, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_default_params, 904, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__157)) __PYX_ERR(0, 904, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":907
  *         self._params = {"mult'": 1., "bend": 0., "phase": 0.}
@@ -21280,10 +22618,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return \
  *             {"mult": bonded_ia_params[self._bond_id].p.dihedral.mult,
  */
-  __pyx_tuple__152 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__152)) __PYX_ERR(0, 907, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__152);
-  __Pyx_GIVEREF(__pyx_tuple__152);
-  __pyx_codeobj__153 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__152, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_get_params_from_es_core, 907, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__153)) __PYX_ERR(0, 907, __pyx_L1_error)
+  __pyx_tuple__158 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__158)) __PYX_ERR(0, 907, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__158);
+  __Pyx_GIVEREF(__pyx_tuple__158);
+  __pyx_codeobj__159 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__158, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_get_params_from_es_core, 907, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__159)) __PYX_ERR(0, 907, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":913
  *              "phase": bonded_ia_params[self._bond_id].p.dihedral.phase}
@@ -21292,10 +22630,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         dihedral_set_params(
  *             self._bond_id, self._params["mult"], self._params["bend"], self._params["phase"])
  */
-  __pyx_tuple__154 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__154)) __PYX_ERR(0, 913, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__154);
-  __Pyx_GIVEREF(__pyx_tuple__154);
-  __pyx_codeobj__155 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__154, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_params_in_es_core, 913, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__155)) __PYX_ERR(0, 913, __pyx_L1_error)
+  __pyx_tuple__160 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__160)) __PYX_ERR(0, 913, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__160);
+  __Pyx_GIVEREF(__pyx_tuple__160);
+  __pyx_codeobj__161 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__160, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_params_in_es_core, 913, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__161)) __PYX_ERR(0, 913, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1040
  *     class Tabulated(BondedInteraction):
@@ -21304,10 +22642,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_tuple__156 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__156)) __PYX_ERR(0, 1040, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__156);
-  __Pyx_GIVEREF(__pyx_tuple__156);
-  __pyx_codeobj__157 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__156, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_number, 1040, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__157)) __PYX_ERR(0, 1040, __pyx_L1_error)
+  __pyx_tuple__162 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__162)) __PYX_ERR(0, 1040, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__162);
+  __Pyx_GIVEREF(__pyx_tuple__162);
+  __pyx_codeobj__163 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__162, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_number, 1040, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__163)) __PYX_ERR(0, 1040, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1043
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
@@ -21316,10 +22654,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_tuple__158 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__158)) __PYX_ERR(0, 1043, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__158);
-  __Pyx_GIVEREF(__pyx_tuple__158);
-  __pyx_codeobj__159 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__158, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_name, 1043, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__159)) __PYX_ERR(0, 1043, __pyx_L1_error)
+  __pyx_tuple__164 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__164)) __PYX_ERR(0, 1043, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__164);
+  __Pyx_GIVEREF(__pyx_tuple__164);
+  __pyx_codeobj__165 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__164, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_name, 1043, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__165)) __PYX_ERR(0, 1043, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1046
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
@@ -21328,10 +22666,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_tuple__160 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__160)) __PYX_ERR(0, 1046, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__160);
-  __Pyx_GIVEREF(__pyx_tuple__160);
-  __pyx_codeobj__161 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__160, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_valid_keys, 1046, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__161)) __PYX_ERR(0, 1046, __pyx_L1_error)
+  __pyx_tuple__166 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__166)) __PYX_ERR(0, 1046, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__166);
+  __Pyx_GIVEREF(__pyx_tuple__166);
+  __pyx_codeobj__167 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__166, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_valid_keys, 1046, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__167)) __PYX_ERR(0, 1046, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1049
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
@@ -21340,10 +22678,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_tuple__162 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__162)) __PYX_ERR(0, 1049, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__162);
-  __Pyx_GIVEREF(__pyx_tuple__162);
-  __pyx_codeobj__163 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__162, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_required_keys, 1049, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__163)) __PYX_ERR(0, 1049, __pyx_L1_error)
+  __pyx_tuple__168 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__168)) __PYX_ERR(0, 1049, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__168);
+  __Pyx_GIVEREF(__pyx_tuple__168);
+  __pyx_codeobj__169 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__168, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_required_keys, 1049, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__169)) __PYX_ERR(0, 1049, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1052
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
@@ -21352,10 +22690,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_tuple__164 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__164)) __PYX_ERR(0, 1052, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__164);
-  __Pyx_GIVEREF(__pyx_tuple__164);
-  __pyx_codeobj__165 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__164, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_default_params, 1052, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__165)) __PYX_ERR(0, 1052, __pyx_L1_error)
+  __pyx_tuple__170 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__170)) __PYX_ERR(0, 1052, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__170);
+  __Pyx_GIVEREF(__pyx_tuple__170);
+  __pyx_codeobj__171 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__170, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_default_params, 1052, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__171)) __PYX_ERR(0, 1052, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1055
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
@@ -21364,10 +22702,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_tuple__166 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__166)) __PYX_ERR(0, 1055, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__166);
-  __Pyx_GIVEREF(__pyx_tuple__166);
-  __pyx_codeobj__167 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__166, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_get_params_from_es_core, 1055, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__167)) __PYX_ERR(0, 1055, __pyx_L1_error)
+  __pyx_tuple__172 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__172)) __PYX_ERR(0, 1055, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__172);
+  __Pyx_GIVEREF(__pyx_tuple__172);
+  __pyx_codeobj__173 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__172, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_get_params_from_es_core, 1055, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__173)) __PYX_ERR(0, 1055, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1058
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
@@ -21376,10 +22714,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_tuple__168 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__168)) __PYX_ERR(0, 1058, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__168);
-  __Pyx_GIVEREF(__pyx_tuple__168);
-  __pyx_codeobj__169 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__168, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_params_in_es_core, 1058, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__169)) __PYX_ERR(0, 1058, __pyx_L1_error)
+  __pyx_tuple__174 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__174)) __PYX_ERR(0, 1058, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__174);
+  __Pyx_GIVEREF(__pyx_tuple__174);
+  __pyx_codeobj__175 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__174, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_params_in_es_core, 1058, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__175)) __PYX_ERR(0, 1058, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1065
  *     class Subt_Lj(BondedInteraction):
@@ -21388,10 +22726,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             return BONDED_IA_SUBT_LJ
  * 
  */
-  __pyx_tuple__170 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__170)) __PYX_ERR(0, 1065, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__170);
-  __Pyx_GIVEREF(__pyx_tuple__170);
-  __pyx_codeobj__171 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__170, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_number, 1065, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__171)) __PYX_ERR(0, 1065, __pyx_L1_error)
+  __pyx_tuple__176 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__176)) __PYX_ERR(0, 1065, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__176);
+  __Pyx_GIVEREF(__pyx_tuple__176);
+  __pyx_codeobj__177 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__176, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_number, 1065, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__177)) __PYX_ERR(0, 1065, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1068
  *             return BONDED_IA_SUBT_LJ
@@ -21400,10 +22738,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             return "SUBT_LJ"
  * 
  */
-  __pyx_tuple__172 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__172)) __PYX_ERR(0, 1068, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__172);
-  __Pyx_GIVEREF(__pyx_tuple__172);
-  __pyx_codeobj__173 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__172, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_name, 1068, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__173)) __PYX_ERR(0, 1068, __pyx_L1_error)
+  __pyx_tuple__178 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__178)) __PYX_ERR(0, 1068, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__178);
+  __Pyx_GIVEREF(__pyx_tuple__178);
+  __pyx_codeobj__179 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__178, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_name, 1068, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__179)) __PYX_ERR(0, 1068, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1071
  *             return "SUBT_LJ"
@@ -21412,10 +22750,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             return "r", "k"
  * 
  */
-  __pyx_tuple__174 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__174)) __PYX_ERR(0, 1071, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__174);
-  __Pyx_GIVEREF(__pyx_tuple__174);
-  __pyx_codeobj__175 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__174, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_valid_keys, 1071, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__175)) __PYX_ERR(0, 1071, __pyx_L1_error)
+  __pyx_tuple__180 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__180)) __PYX_ERR(0, 1071, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__180);
+  __Pyx_GIVEREF(__pyx_tuple__180);
+  __pyx_codeobj__181 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__180, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_valid_keys, 1071, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__181)) __PYX_ERR(0, 1071, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1074
  *             return "r", "k"
@@ -21424,10 +22762,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             return "r", "k"
  * 
  */
-  __pyx_tuple__176 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__176)) __PYX_ERR(0, 1074, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__176);
-  __Pyx_GIVEREF(__pyx_tuple__176);
-  __pyx_codeobj__177 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__176, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_required_keys, 1074, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__177)) __PYX_ERR(0, 1074, __pyx_L1_error)
+  __pyx_tuple__182 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__182)) __PYX_ERR(0, 1074, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__182);
+  __Pyx_GIVEREF(__pyx_tuple__182);
+  __pyx_codeobj__183 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__182, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_required_keys, 1074, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__183)) __PYX_ERR(0, 1074, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1077
  *             return "r", "k"
@@ -21436,10 +22774,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             self._params = {"k": 0, "r": 0}
  * 
  */
-  __pyx_tuple__178 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__178)) __PYX_ERR(0, 1077, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__178);
-  __Pyx_GIVEREF(__pyx_tuple__178);
-  __pyx_codeobj__179 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__178, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_default_params, 1077, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__179)) __PYX_ERR(0, 1077, __pyx_L1_error)
+  __pyx_tuple__184 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__184)) __PYX_ERR(0, 1077, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__184);
+  __Pyx_GIVEREF(__pyx_tuple__184);
+  __pyx_codeobj__185 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__184, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_default_params, 1077, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__185)) __PYX_ERR(0, 1077, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1080
  *             self._params = {"k": 0, "r": 0}
@@ -21448,10 +22786,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             return \
  *                 {"k": bonded_ia_params[self._bond_id].p.subt_lj.k,
  */
-  __pyx_tuple__180 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__180)) __PYX_ERR(0, 1080, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__180);
-  __Pyx_GIVEREF(__pyx_tuple__180);
-  __pyx_codeobj__181 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__180, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_get_params_from_es_core, 1080, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__181)) __PYX_ERR(0, 1080, __pyx_L1_error)
+  __pyx_tuple__186 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__186)) __PYX_ERR(0, 1080, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__186);
+  __Pyx_GIVEREF(__pyx_tuple__186);
+  __pyx_codeobj__187 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__186, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_get_params_from_es_core, 1080, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__187)) __PYX_ERR(0, 1080, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1085
  *                  "r": bonded_ia_params[self._bond_id].p.subt_lj.r}
@@ -21460,10 +22798,10 @@ static int __Pyx_InitCachedConstants(void) {
  *             subt_lj_set_params(
  *                 self._bond_id, self._params["k"], self._params["r"])
  */
-  __pyx_tuple__182 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__182)) __PYX_ERR(0, 1085, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__182);
-  __Pyx_GIVEREF(__pyx_tuple__182);
-  __pyx_codeobj__183 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__182, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_params_in_es_core, 1085, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__183)) __PYX_ERR(0, 1085, __pyx_L1_error)
+  __pyx_tuple__188 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__188)) __PYX_ERR(0, 1085, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__188);
+  __Pyx_GIVEREF(__pyx_tuple__188);
+  __pyx_codeobj__189 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__188, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_params_in_es_core, 1085, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__189)) __PYX_ERR(0, 1085, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1281
  * class Oif_Global_Forces(BondedInteraction):
@@ -21472,10 +22810,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return BONDED_IA_OIF_GLOBAL_FORCES
  * 
  */
-  __pyx_tuple__184 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__184)) __PYX_ERR(0, 1281, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__184);
-  __Pyx_GIVEREF(__pyx_tuple__184);
-  __pyx_codeobj__185 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__184, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_number, 1281, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__185)) __PYX_ERR(0, 1281, __pyx_L1_error)
+  __pyx_tuple__190 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__190)) __PYX_ERR(0, 1281, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__190);
+  __Pyx_GIVEREF(__pyx_tuple__190);
+  __pyx_codeobj__191 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__190, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_number, 1281, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__191)) __PYX_ERR(0, 1281, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1284
  *         return BONDED_IA_OIF_GLOBAL_FORCES
@@ -21484,10 +22822,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return "OIF_GLOBAL_FORCES"
  * 
  */
-  __pyx_tuple__186 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__186)) __PYX_ERR(0, 1284, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__186);
-  __Pyx_GIVEREF(__pyx_tuple__186);
-  __pyx_codeobj__187 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__186, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_name, 1284, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__187)) __PYX_ERR(0, 1284, __pyx_L1_error)
+  __pyx_tuple__192 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__192)) __PYX_ERR(0, 1284, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__192);
+  __Pyx_GIVEREF(__pyx_tuple__192);
+  __pyx_codeobj__193 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__192, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_name, 1284, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__193)) __PYX_ERR(0, 1284, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1287
  *         return "OIF_GLOBAL_FORCES"
@@ -21496,10 +22834,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return "A0_g", "ka_g", "V0", "kv"
  * 
  */
-  __pyx_tuple__188 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__188)) __PYX_ERR(0, 1287, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__188);
-  __Pyx_GIVEREF(__pyx_tuple__188);
-  __pyx_codeobj__189 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__188, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_valid_keys, 1287, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__189)) __PYX_ERR(0, 1287, __pyx_L1_error)
+  __pyx_tuple__194 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__194)) __PYX_ERR(0, 1287, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__194);
+  __Pyx_GIVEREF(__pyx_tuple__194);
+  __pyx_codeobj__195 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__194, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_valid_keys, 1287, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__195)) __PYX_ERR(0, 1287, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1290
  *         return "A0_g", "ka_g", "V0", "kv"
@@ -21508,10 +22846,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return "A0_g", "ka_g", "V0", "kv"
  * 
  */
-  __pyx_tuple__190 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__190)) __PYX_ERR(0, 1290, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__190);
-  __Pyx_GIVEREF(__pyx_tuple__190);
-  __pyx_codeobj__191 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__190, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_required_keys, 1290, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__191)) __PYX_ERR(0, 1290, __pyx_L1_error)
+  __pyx_tuple__196 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__196)) __PYX_ERR(0, 1290, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__196);
+  __Pyx_GIVEREF(__pyx_tuple__196);
+  __pyx_codeobj__197 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__196, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_required_keys, 1290, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__197)) __PYX_ERR(0, 1290, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1293
  *         return "A0_g", "ka_g", "V0", "kv"
@@ -21520,10 +22858,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         self._params = {"A0_g": 1., "ka_g": 0., "V0": 1., "kv": 0.}
  * 
  */
-  __pyx_tuple__192 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__192)) __PYX_ERR(0, 1293, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__192);
-  __Pyx_GIVEREF(__pyx_tuple__192);
-  __pyx_codeobj__193 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__192, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_default_params, 1293, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__193)) __PYX_ERR(0, 1293, __pyx_L1_error)
+  __pyx_tuple__198 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__198)) __PYX_ERR(0, 1293, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__198);
+  __Pyx_GIVEREF(__pyx_tuple__198);
+  __pyx_codeobj__199 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__198, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_default_params, 1293, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__199)) __PYX_ERR(0, 1293, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1296
  *         self._params = {"A0_g": 1., "ka_g": 0., "V0": 1., "kv": 0.}
@@ -21532,10 +22870,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return \
  *             {"A0_g": bonded_ia_params[self._bond_id].p.oif_global_forces.A0_g,
  */
-  __pyx_tuple__194 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__194)) __PYX_ERR(0, 1296, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__194);
-  __Pyx_GIVEREF(__pyx_tuple__194);
-  __pyx_codeobj__195 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__194, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_get_params_from_es_core, 1296, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__195)) __PYX_ERR(0, 1296, __pyx_L1_error)
+  __pyx_tuple__200 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__200)) __PYX_ERR(0, 1296, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__200);
+  __Pyx_GIVEREF(__pyx_tuple__200);
+  __pyx_codeobj__201 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__200, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_get_params_from_es_core, 1296, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__201)) __PYX_ERR(0, 1296, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1303
  *              "kv": bonded_ia_params[self._bond_id].p.oif_global_forces.kv}
@@ -21544,10 +22882,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         oif_global_forces_set_params(
  *             self._bond_id, self._params["A0_g"], self._params["ka_g"], self._params["V0"], self._params["kv"])
  */
-  __pyx_tuple__196 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__196)) __PYX_ERR(0, 1303, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__196);
-  __Pyx_GIVEREF(__pyx_tuple__196);
-  __pyx_codeobj__197 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__196, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_params_in_es_core, 1303, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__197)) __PYX_ERR(0, 1303, __pyx_L1_error)
+  __pyx_tuple__202 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__202)) __PYX_ERR(0, 1303, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__202);
+  __Pyx_GIVEREF(__pyx_tuple__202);
+  __pyx_codeobj__203 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__202, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_params_in_es_core, 1303, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__203)) __PYX_ERR(0, 1303, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1310
  * class Oif_Local_Forces(BondedInteraction):
@@ -21556,10 +22894,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return BONDED_IA_OIF_LOCAL_FORCES
  * 
  */
-  __pyx_tuple__198 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__198)) __PYX_ERR(0, 1310, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__198);
-  __Pyx_GIVEREF(__pyx_tuple__198);
-  __pyx_codeobj__199 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__198, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_number, 1310, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__199)) __PYX_ERR(0, 1310, __pyx_L1_error)
+  __pyx_tuple__204 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__204)) __PYX_ERR(0, 1310, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__204);
+  __Pyx_GIVEREF(__pyx_tuple__204);
+  __pyx_codeobj__205 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__204, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_number, 1310, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__205)) __PYX_ERR(0, 1310, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1313
  *         return BONDED_IA_OIF_LOCAL_FORCES
@@ -21568,10 +22906,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return "OIF_LOCAL_FORCES"
  * 
  */
-  __pyx_tuple__200 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__200)) __PYX_ERR(0, 1313, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__200);
-  __Pyx_GIVEREF(__pyx_tuple__200);
-  __pyx_codeobj__201 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__200, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_name, 1313, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__201)) __PYX_ERR(0, 1313, __pyx_L1_error)
+  __pyx_tuple__206 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__206)) __PYX_ERR(0, 1313, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__206);
+  __Pyx_GIVEREF(__pyx_tuple__206);
+  __pyx_codeobj__207 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__206, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_type_name, 1313, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__207)) __PYX_ERR(0, 1313, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1316
  *         return "OIF_LOCAL_FORCES"
@@ -21580,10 +22918,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return "r0", "ks", "kslin", "phi0", "kb", "A01", "A02", "kal"
  * 
  */
-  __pyx_tuple__202 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__202)) __PYX_ERR(0, 1316, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__202);
-  __Pyx_GIVEREF(__pyx_tuple__202);
-  __pyx_codeobj__203 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__202, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_valid_keys, 1316, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__203)) __PYX_ERR(0, 1316, __pyx_L1_error)
+  __pyx_tuple__208 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__208)) __PYX_ERR(0, 1316, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__208);
+  __Pyx_GIVEREF(__pyx_tuple__208);
+  __pyx_codeobj__209 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__208, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_valid_keys, 1316, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__209)) __PYX_ERR(0, 1316, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1319
  *         return "r0", "ks", "kslin", "phi0", "kb", "A01", "A02", "kal"
@@ -21592,10 +22930,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return "r0", "ks", "kslin", "phi0", "kb", "A01", "A02", "kal"
  * 
  */
-  __pyx_tuple__204 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__204)) __PYX_ERR(0, 1319, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__204);
-  __Pyx_GIVEREF(__pyx_tuple__204);
-  __pyx_codeobj__205 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__204, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_required_keys, 1319, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__205)) __PYX_ERR(0, 1319, __pyx_L1_error)
+  __pyx_tuple__210 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__210)) __PYX_ERR(0, 1319, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__210);
+  __Pyx_GIVEREF(__pyx_tuple__210);
+  __pyx_codeobj__211 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__210, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_required_keys, 1319, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__211)) __PYX_ERR(0, 1319, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1322
  *         return "r0", "ks", "kslin", "phi0", "kb", "A01", "A02", "kal"
@@ -21604,10 +22942,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         self._params = {"r0": 1., "ks": 0., "kslin": 0.,
  *                         "phi0": 0., "kb": 0., "A01": 0., "A02": 0., "kal": 0.}
  */
-  __pyx_tuple__206 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__206)) __PYX_ERR(0, 1322, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__206);
-  __Pyx_GIVEREF(__pyx_tuple__206);
-  __pyx_codeobj__207 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__206, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_default_params, 1322, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__207)) __PYX_ERR(0, 1322, __pyx_L1_error)
+  __pyx_tuple__212 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__212)) __PYX_ERR(0, 1322, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__212);
+  __Pyx_GIVEREF(__pyx_tuple__212);
+  __pyx_codeobj__213 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__212, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_default_params, 1322, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__213)) __PYX_ERR(0, 1322, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1326
  *                         "phi0": 0., "kb": 0., "A01": 0., "A02": 0., "kal": 0.}
@@ -21616,10 +22954,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         return \
  *             {"r0": bonded_ia_params[self._bond_id].p.oif_local_forces.r0,
  */
-  __pyx_tuple__208 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__208)) __PYX_ERR(0, 1326, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__208);
-  __Pyx_GIVEREF(__pyx_tuple__208);
-  __pyx_codeobj__209 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__208, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_get_params_from_es_core, 1326, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__209)) __PYX_ERR(0, 1326, __pyx_L1_error)
+  __pyx_tuple__214 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__214)) __PYX_ERR(0, 1326, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__214);
+  __Pyx_GIVEREF(__pyx_tuple__214);
+  __pyx_codeobj__215 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__214, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_get_params_from_es_core, 1326, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__215)) __PYX_ERR(0, 1326, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1337
  *              "kal": bonded_ia_params[self._bond_id].p.oif_local_forces.kal}
@@ -21628,10 +22966,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         oif_local_forces_set_params(
  *             self._bond_id, self._params["r0"], self._params["ks"], self._params["kslin"], self._params["phi0"], self._params["kb"], self._params["A01"], self._params["A02"], self._params["kal"])
  */
-  __pyx_tuple__210 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__210)) __PYX_ERR(0, 1337, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__210);
-  __Pyx_GIVEREF(__pyx_tuple__210);
-  __pyx_codeobj__211 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__210, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_params_in_es_core, 1337, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__211)) __PYX_ERR(0, 1337, __pyx_L1_error)
+  __pyx_tuple__216 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__216)) __PYX_ERR(0, 1337, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__216);
+  __Pyx_GIVEREF(__pyx_tuple__216);
+  __pyx_codeobj__217 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__216, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_set_params_in_es_core, 1337, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__217)) __PYX_ERR(0, 1337, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1368
  *     from bonded_interaction_classes"""
@@ -21640,10 +22978,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         if not isinstance(key, int):
  *             raise ValueError(
  */
-  __pyx_tuple__212 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_key, __pyx_n_s_bond_type, __pyx_n_s_bond_class); if (unlikely(!__pyx_tuple__212)) __PYX_ERR(0, 1368, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__212);
-  __Pyx_GIVEREF(__pyx_tuple__212);
-  __pyx_codeobj__213 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__212, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_getitem, 1368, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__213)) __PYX_ERR(0, 1368, __pyx_L1_error)
+  __pyx_tuple__218 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_key, __pyx_n_s_bond_type, __pyx_n_s_bond_class); if (unlikely(!__pyx_tuple__218)) __PYX_ERR(0, 1368, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__218);
+  __Pyx_GIVEREF(__pyx_tuple__218);
+  __pyx_codeobj__219 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__218, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_getitem, 1368, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__219)) __PYX_ERR(0, 1368, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1388
  *         return bond_class(key)
@@ -21652,10 +22990,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         # Validate arguments
  * 
  */
-  __pyx_tuple__214 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_key, __pyx_n_s_value); if (unlikely(!__pyx_tuple__214)) __PYX_ERR(0, 1388, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__214);
-  __Pyx_GIVEREF(__pyx_tuple__214);
-  __pyx_codeobj__215 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__214, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_setitem, 1388, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__215)) __PYX_ERR(0, 1388, __pyx_L1_error)
+  __pyx_tuple__220 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_key, __pyx_n_s_value); if (unlikely(!__pyx_tuple__220)) __PYX_ERR(0, 1388, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__220);
+  __Pyx_GIVEREF(__pyx_tuple__220);
+  __pyx_codeobj__221 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__220, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_setitem, 1388, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__221)) __PYX_ERR(0, 1388, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1408
  * 
@@ -21664,10 +23002,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         for i in range(n_bonded_ia):
  *             if bonded_ia_params[i].type != -1:
  */
-  __pyx_tuple__216 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_i); if (unlikely(!__pyx_tuple__216)) __PYX_ERR(0, 1408, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__216);
-  __Pyx_GIVEREF(__pyx_tuple__216);
-  __pyx_codeobj__217 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__216, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_iter, 1408, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__217)) __PYX_ERR(0, 1408, __pyx_L1_error)
+  __pyx_tuple__222 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_i); if (unlikely(!__pyx_tuple__222)) __PYX_ERR(0, 1408, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__222);
+  __Pyx_GIVEREF(__pyx_tuple__222);
+  __pyx_codeobj__223 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__222, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_iter, 1408, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__223)) __PYX_ERR(0, 1408, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1413
  *                 yield self[i]
@@ -21676,10 +23014,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         """Add a bonded ia to the simulation>"""
  *         self[n_bonded_ia] = bonded_ia
  */
-  __pyx_tuple__218 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_bonded_ia); if (unlikely(!__pyx_tuple__218)) __PYX_ERR(0, 1413, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__218);
-  __Pyx_GIVEREF(__pyx_tuple__218);
-  __pyx_codeobj__219 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__218, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_add, 1413, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__219)) __PYX_ERR(0, 1413, __pyx_L1_error)
+  __pyx_tuple__224 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_bonded_ia); if (unlikely(!__pyx_tuple__224)) __PYX_ERR(0, 1413, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__224);
+  __Pyx_GIVEREF(__pyx_tuple__224);
+  __pyx_codeobj__225 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__224, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_add, 1413, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__225)) __PYX_ERR(0, 1413, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1417
  *         self[n_bonded_ia] = bonded_ia
@@ -21688,10 +23026,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         params = {}
  *         for i,bonded_instance in enumerate(self):
  */
-  __pyx_tuple__220 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_params_2, __pyx_n_s_i, __pyx_n_s_bonded_instance); if (unlikely(!__pyx_tuple__220)) __PYX_ERR(0, 1417, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__220);
-  __Pyx_GIVEREF(__pyx_tuple__220);
-  __pyx_codeobj__221 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__220, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_getstate, 1417, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__221)) __PYX_ERR(0, 1417, __pyx_L1_error)
+  __pyx_tuple__226 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_params_2, __pyx_n_s_i, __pyx_n_s_bonded_instance); if (unlikely(!__pyx_tuple__226)) __PYX_ERR(0, 1417, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__226);
+  __Pyx_GIVEREF(__pyx_tuple__226);
+  __pyx_codeobj__227 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__226, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_getstate, 1417, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__227)) __PYX_ERR(0, 1417, __pyx_L1_error)
 
   /* "espressomd/interactions.pyx":1427
  *         return params
@@ -21700,10 +23038,10 @@ static int __Pyx_InitCachedConstants(void) {
  *         for i in params:
  *             if params[i] != None:
  */
-  __pyx_tuple__222 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_params_2, __pyx_n_s_i, __pyx_n_s_bond_type); if (unlikely(!__pyx_tuple__222)) __PYX_ERR(0, 1427, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__222);
-  __Pyx_GIVEREF(__pyx_tuple__222);
-  __pyx_codeobj__223 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__222, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_setstate, 1427, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__223)) __PYX_ERR(0, 1427, __pyx_L1_error)
+  __pyx_tuple__228 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_params_2, __pyx_n_s_i, __pyx_n_s_bond_type); if (unlikely(!__pyx_tuple__228)) __PYX_ERR(0, 1427, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__228);
+  __Pyx_GIVEREF(__pyx_tuple__228);
+  __pyx_codeobj__229 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__228, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_bindgens2_Documents_espre, __pyx_n_s_setstate, 1427, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__229)) __PYX_ERR(0, 1427, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -21834,6 +23172,11 @@ PyMODINIT_FUNC PyInit_interactions(void)
   __pyx_type_10espressomd_12interactions_LennardJonesInteraction.tp_print = 0;
   if (PyObject_SetAttrString(__pyx_m, "LennardJonesInteraction", (PyObject *)&__pyx_type_10espressomd_12interactions_LennardJonesInteraction) < 0) __PYX_ERR(0, 181, __pyx_L1_error)
   __pyx_ptype_10espressomd_12interactions_LennardJonesInteraction = &__pyx_type_10espressomd_12interactions_LennardJonesInteraction;
+  __pyx_type_10espressomd_12interactions_GenericLennardJonesInteraction.tp_base = __pyx_ptype_10espressomd_12interactions_NonBondedInteraction;
+  if (PyType_Ready(&__pyx_type_10espressomd_12interactions_GenericLennardJonesInteraction) < 0) __PYX_ERR(0, 270, __pyx_L1_error)
+  __pyx_type_10espressomd_12interactions_GenericLennardJonesInteraction.tp_print = 0;
+  if (PyObject_SetAttrString(__pyx_m, "GenericLennardJonesInteraction", (PyObject *)&__pyx_type_10espressomd_12interactions_GenericLennardJonesInteraction) < 0) __PYX_ERR(0, 270, __pyx_L1_error)
+  __pyx_ptype_10espressomd_12interactions_GenericLennardJonesInteraction = &__pyx_type_10espressomd_12interactions_GenericLennardJonesInteraction;
   if (PyType_Ready(&__pyx_type_10espressomd_12interactions_NonBondedInteractions) < 0) __PYX_ERR(0, 425, __pyx_L1_error)
   __pyx_type_10espressomd_12interactions_NonBondedInteractions.tp_print = 0;
   if (PyObject_SetAttrString(__pyx_m, "NonBondedInteractions", (PyObject *)&__pyx_type_10espressomd_12interactions_NonBondedInteractions) < 0) __PYX_ERR(0, 425, __pyx_L1_error)
@@ -21896,7 +23239,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
   __Pyx_INCREF(__pyx_n_s_utils);
   __Pyx_GIVEREF(__pyx_n_s_utils);
   PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_utils);
-  __pyx_t_3 = __Pyx_Import(__pyx_n_s__75, __pyx_t_2, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Import(__pyx_n_s__81, __pyx_t_2, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_utils); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 21, __pyx_L1_error)
@@ -21987,7 +23330,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         """Takes two particle types as argument"""
  *         if not (isinstance(_type1, int) and isinstance(_type2, int)):
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_26NonBondedInteractionHandle_1__init__, 0, __pyx_n_s_NonBondedInteractionHandle___ini, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__77)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 408, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_26NonBondedInteractionHandle_1__init__, 0, __pyx_n_s_NonBondedInteractionHandle___ini, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__83)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 408, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_init, __pyx_t_5) < 0) __PYX_ERR(0, 408, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22041,7 +23384,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         raise Exception(
  *             self.__class__.__name__ + " not compiled into Espresso core")
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_27BondedInteractionNotDefined_1__init__, 0, __pyx_n_s_BondedInteractionNotDefined___in, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__79)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 619, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_27BondedInteractionNotDefined_1__init__, 0, __pyx_n_s_BondedInteractionNotDefined___in, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__85)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 619, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_init, __pyx_t_5) < 0) __PYX_ERR(0, 619, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22053,7 +23396,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_27BondedInteractionNotDefined_3type_number, 0, __pyx_n_s_BondedInteractionNotDefined_type, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__81)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 623, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_27BondedInteractionNotDefined_3type_number, 0, __pyx_n_s_BondedInteractionNotDefined_type, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__87)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 623, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_type_number, __pyx_t_5) < 0) __PYX_ERR(0, 623, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22065,7 +23408,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_27BondedInteractionNotDefined_5type_name, 0, __pyx_n_s_BondedInteractionNotDefined_type_2, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__83)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 626, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_27BondedInteractionNotDefined_5type_name, 0, __pyx_n_s_BondedInteractionNotDefined_type_2, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__89)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 626, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_type_name, __pyx_t_5) < 0) __PYX_ERR(0, 626, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22077,7 +23420,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_27BondedInteractionNotDefined_7valid_keys, 0, __pyx_n_s_BondedInteractionNotDefined_vali, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__85)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 629, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_27BondedInteractionNotDefined_7valid_keys, 0, __pyx_n_s_BondedInteractionNotDefined_vali, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__91)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 629, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_valid_keys, __pyx_t_5) < 0) __PYX_ERR(0, 629, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22089,7 +23432,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_27BondedInteractionNotDefined_9required_keys, 0, __pyx_n_s_BondedInteractionNotDefined_requ, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__87)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 632, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_27BondedInteractionNotDefined_9required_keys, 0, __pyx_n_s_BondedInteractionNotDefined_requ, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__93)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 632, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_required_keys, __pyx_t_5) < 0) __PYX_ERR(0, 632, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22101,7 +23444,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_27BondedInteractionNotDefined_11set_default_params, 0, __pyx_n_s_BondedInteractionNotDefined_set, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__89)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 635, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_27BondedInteractionNotDefined_11set_default_params, 0, __pyx_n_s_BondedInteractionNotDefined_set, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__95)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 635, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_set_default_params, __pyx_t_5) < 0) __PYX_ERR(0, 635, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22113,7 +23456,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_27BondedInteractionNotDefined_13_get_params_from_es_core, 0, __pyx_n_s_BondedInteractionNotDefined__get, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__91)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 638, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_27BondedInteractionNotDefined_13_get_params_from_es_core, 0, __pyx_n_s_BondedInteractionNotDefined__get, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__97)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 638, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_get_params_from_es_core, __pyx_t_5) < 0) __PYX_ERR(0, 638, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22125,7 +23468,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         raise Exception(("%s has to be defined in myconfig.hpp.") % self.name)
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_27BondedInteractionNotDefined_15_set_params_in_es_core, 0, __pyx_n_s_BondedInteractionNotDefined__set, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__93)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 641, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_27BondedInteractionNotDefined_15_set_params_in_es_core, 0, __pyx_n_s_BondedInteractionNotDefined__set, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__99)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 641, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_set_params_in_es_core, __pyx_t_5) < 0) __PYX_ERR(0, 641, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22169,7 +23512,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         """
  *         FeneBond initialiser. Used to instatiate a FeneBond identifier
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8FeneBond_1__init__, 0, __pyx_n_s_FeneBond___init, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__95)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 647, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8FeneBond_1__init__, 0, __pyx_n_s_FeneBond___init, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__101)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 647, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_init, __pyx_t_5) < 0) __PYX_ERR(0, 647, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22181,7 +23524,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return BONDED_IA_FENE
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8FeneBond_3type_number, 0, __pyx_n_s_FeneBond_type_number, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__97)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 664, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8FeneBond_3type_number, 0, __pyx_n_s_FeneBond_type_number, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__103)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 664, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_type_number, __pyx_t_5) < 0) __PYX_ERR(0, 664, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22193,7 +23536,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return "FENE"
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8FeneBond_5type_name, 0, __pyx_n_s_FeneBond_type_name, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__99)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 667, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8FeneBond_5type_name, 0, __pyx_n_s_FeneBond_type_name, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__105)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 667, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_type_name, __pyx_t_5) < 0) __PYX_ERR(0, 667, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22205,7 +23548,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return "k", "d_r_max", "r_0"
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8FeneBond_7valid_keys, 0, __pyx_n_s_FeneBond_valid_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__101)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 670, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8FeneBond_7valid_keys, 0, __pyx_n_s_FeneBond_valid_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__107)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 670, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_valid_keys, __pyx_t_5) < 0) __PYX_ERR(0, 670, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22217,7 +23560,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return "k", "d_r_max"
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8FeneBond_9required_keys, 0, __pyx_n_s_FeneBond_required_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__103)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 673, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8FeneBond_9required_keys, 0, __pyx_n_s_FeneBond_required_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__109)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 673, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_required_keys, __pyx_t_5) < 0) __PYX_ERR(0, 673, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22229,7 +23572,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         self._params = {"r_0": 0.}
  *         # Everything else has to be supplied by the user, anyway
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8FeneBond_11set_default_params, 0, __pyx_n_s_FeneBond_set_default_params, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__105)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 676, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8FeneBond_11set_default_params, 0, __pyx_n_s_FeneBond_set_default_params, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__111)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 676, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_set_default_params, __pyx_t_5) < 0) __PYX_ERR(0, 676, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22241,7 +23584,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return \
  *             {"k": bonded_ia_params[self._bond_id].p.fene.k,
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8FeneBond_13_get_params_from_es_core, 0, __pyx_n_s_FeneBond__get_params_from_es_cor, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__107)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 680, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8FeneBond_13_get_params_from_es_core, 0, __pyx_n_s_FeneBond__get_params_from_es_cor, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__113)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 680, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_get_params_from_es_core, __pyx_t_5) < 0) __PYX_ERR(0, 680, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22253,7 +23596,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         fene_set_params(
  *             self._bond_id, self._params["k"], self._params["d_r_max"], self._params["r_0"])
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8FeneBond_15_set_params_in_es_core, 0, __pyx_n_s_FeneBond__set_params_in_es_core, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__109)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 686, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8FeneBond_15_set_params_in_es_core, 0, __pyx_n_s_FeneBond__set_params_in_es_core, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__115)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 686, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_set_params_in_es_core, __pyx_t_5) < 0) __PYX_ERR(0, 686, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22297,7 +23640,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         """
  *         HarmonicBond initialiser. Used to instatiate a HarmonicBond identifier
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_12HarmonicBond_1__init__, 0, __pyx_n_s_HarmonicBond___init, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__111)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 693, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_12HarmonicBond_1__init__, 0, __pyx_n_s_HarmonicBond___init, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__117)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 693, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_init, __pyx_t_5) < 0) __PYX_ERR(0, 693, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22309,7 +23652,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return BONDED_IA_HARMONIC
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_12HarmonicBond_3type_number, 0, __pyx_n_s_HarmonicBond_type_number, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__113)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 711, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_12HarmonicBond_3type_number, 0, __pyx_n_s_HarmonicBond_type_number, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__119)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 711, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_type_number, __pyx_t_5) < 0) __PYX_ERR(0, 711, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22321,7 +23664,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return "HARMONIC"
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_12HarmonicBond_5type_name, 0, __pyx_n_s_HarmonicBond_type_name, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__115)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 714, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_12HarmonicBond_5type_name, 0, __pyx_n_s_HarmonicBond_type_name, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__121)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 714, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_type_name, __pyx_t_5) < 0) __PYX_ERR(0, 714, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22333,7 +23676,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return "k", "r_0", "r_cut"
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_12HarmonicBond_7valid_keys, 0, __pyx_n_s_HarmonicBond_valid_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__117)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 717, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_12HarmonicBond_7valid_keys, 0, __pyx_n_s_HarmonicBond_valid_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__123)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 717, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_valid_keys, __pyx_t_5) < 0) __PYX_ERR(0, 717, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22345,7 +23688,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return "k", "r_0"
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_12HarmonicBond_9required_keys, 0, __pyx_n_s_HarmonicBond_required_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__119)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 720, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_12HarmonicBond_9required_keys, 0, __pyx_n_s_HarmonicBond_required_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__125)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 720, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_required_keys, __pyx_t_5) < 0) __PYX_ERR(0, 720, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22357,7 +23700,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         self._params = {"k'": 0., "r_0": 0., "r_cut": 0.}
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_12HarmonicBond_11set_default_params, 0, __pyx_n_s_HarmonicBond_set_default_params, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__121)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 723, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_12HarmonicBond_11set_default_params, 0, __pyx_n_s_HarmonicBond_set_default_params, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__127)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 723, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_set_default_params, __pyx_t_5) < 0) __PYX_ERR(0, 723, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22369,7 +23712,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return \
  *             {"k": bonded_ia_params[self._bond_id].p.harmonic.k,
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_12HarmonicBond_13_get_params_from_es_core, 0, __pyx_n_s_HarmonicBond__get_params_from_es, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__123)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 726, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_12HarmonicBond_13_get_params_from_es_core, 0, __pyx_n_s_HarmonicBond__get_params_from_es, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__129)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 726, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_get_params_from_es_core, __pyx_t_5) < 0) __PYX_ERR(0, 726, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22381,7 +23724,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         harmonic_set_params(
  *             self._bond_id, self._params["k"], self._params["r_0"], self._params["r_cut"])
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_12HarmonicBond_15_set_params_in_es_core, 0, __pyx_n_s_HarmonicBond__set_params_in_es_c, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__125)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 732, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_12HarmonicBond_15_set_params_in_es_core, 0, __pyx_n_s_HarmonicBond__set_params_in_es_c, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__131)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 732, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_set_params_in_es_core, __pyx_t_5) < 0) __PYX_ERR(0, 732, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22425,7 +23768,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             """
  *             HarmonicDumbbellBond initialiser. Used to instatiate a
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_20HarmonicDumbbellBond_1__init__, 0, __pyx_n_s_HarmonicDumbbellBond___init, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__127)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 791, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_20HarmonicDumbbellBond_1__init__, 0, __pyx_n_s_HarmonicDumbbellBond___init, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__133)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 791, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_init, __pyx_t_5) < 0) __PYX_ERR(0, 791, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22437,7 +23780,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             raise Exception(
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_20HarmonicDumbbellBond_3type_number, 0, __pyx_n_s_HarmonicDumbbellBond_type_number, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__129)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 812, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_20HarmonicDumbbellBond_3type_number, 0, __pyx_n_s_HarmonicDumbbellBond_type_number, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__135)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 812, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_type_number, __pyx_t_5) < 0) __PYX_ERR(0, 812, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22449,7 +23792,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             raise Exception(
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_20HarmonicDumbbellBond_5type_name, 0, __pyx_n_s_HarmonicDumbbellBond_type_name, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__131)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 816, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_20HarmonicDumbbellBond_5type_name, 0, __pyx_n_s_HarmonicDumbbellBond_type_name, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__137)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 816, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_type_name, __pyx_t_5) < 0) __PYX_ERR(0, 816, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22461,7 +23804,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             raise Exception(
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_20HarmonicDumbbellBond_7valid_keys, 0, __pyx_n_s_HarmonicDumbbellBond_valid_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__133)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 820, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_20HarmonicDumbbellBond_7valid_keys, 0, __pyx_n_s_HarmonicDumbbellBond_valid_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__139)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 820, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_valid_keys, __pyx_t_5) < 0) __PYX_ERR(0, 820, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22473,7 +23816,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             raise Exception(
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_20HarmonicDumbbellBond_9required_keys, 0, __pyx_n_s_HarmonicDumbbellBond_required_ke, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__135)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 824, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_20HarmonicDumbbellBond_9required_keys, 0, __pyx_n_s_HarmonicDumbbellBond_required_ke, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__141)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 824, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_required_keys, __pyx_t_5) < 0) __PYX_ERR(0, 824, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22485,7 +23828,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             raise Exception(
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_20HarmonicDumbbellBond_11set_default_params, 0, __pyx_n_s_HarmonicDumbbellBond_set_default, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__137)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 828, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_20HarmonicDumbbellBond_11set_default_params, 0, __pyx_n_s_HarmonicDumbbellBond_set_default, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__143)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 828, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_set_default_params, __pyx_t_5) < 0) __PYX_ERR(0, 828, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22497,7 +23840,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             raise Exception(
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_20HarmonicDumbbellBond_13_get_params_from_es_core, 0, __pyx_n_s_HarmonicDumbbellBond__get_params, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__139)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 832, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_20HarmonicDumbbellBond_13_get_params_from_es_core, 0, __pyx_n_s_HarmonicDumbbellBond__get_params, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__145)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 832, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_get_params_from_es_core, __pyx_t_5) < 0) __PYX_ERR(0, 832, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22509,7 +23852,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             raise Exception(
  *                 "HarmonicDumbbellBond: ROTATION has to be defined in myconfig.hpp.")
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_20HarmonicDumbbellBond_15_set_params_in_es_core, 0, __pyx_n_s_HarmonicDumbbellBond__set_params, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__141)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 836, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_20HarmonicDumbbellBond_15_set_params_in_es_core, 0, __pyx_n_s_HarmonicDumbbellBond__set_params, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__147)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 836, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_set_params_in_es_core, __pyx_t_5) < 0) __PYX_ERR(0, 836, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22596,7 +23939,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return BONDED_IA_DIHEDRAL
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8Dihedral_1type_number, 0, __pyx_n_s_Dihedral_type_number, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__143)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 892, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8Dihedral_1type_number, 0, __pyx_n_s_Dihedral_type_number, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__149)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 892, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_type_number, __pyx_t_5) < 0) __PYX_ERR(0, 892, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22608,7 +23951,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return "DIHEDRAL"
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8Dihedral_3type_name, 0, __pyx_n_s_Dihedral_type_name, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__145)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 895, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8Dihedral_3type_name, 0, __pyx_n_s_Dihedral_type_name, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__151)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 895, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_type_name, __pyx_t_5) < 0) __PYX_ERR(0, 895, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22620,7 +23963,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return "mult", "bend", "phase"
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8Dihedral_5valid_keys, 0, __pyx_n_s_Dihedral_valid_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__147)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 898, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8Dihedral_5valid_keys, 0, __pyx_n_s_Dihedral_valid_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__153)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 898, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_valid_keys, __pyx_t_5) < 0) __PYX_ERR(0, 898, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22632,7 +23975,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return "mult", "bend", "phase"
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8Dihedral_7required_keys, 0, __pyx_n_s_Dihedral_required_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__149)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 901, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8Dihedral_7required_keys, 0, __pyx_n_s_Dihedral_required_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__155)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 901, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_required_keys, __pyx_t_5) < 0) __PYX_ERR(0, 901, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22644,7 +23987,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         self._params = {"mult'": 1., "bend": 0., "phase": 0.}
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8Dihedral_9set_default_params, 0, __pyx_n_s_Dihedral_set_default_params, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__151)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 904, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8Dihedral_9set_default_params, 0, __pyx_n_s_Dihedral_set_default_params, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__157)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 904, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_set_default_params, __pyx_t_5) < 0) __PYX_ERR(0, 904, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22656,7 +23999,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return \
  *             {"mult": bonded_ia_params[self._bond_id].p.dihedral.mult,
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8Dihedral_11_get_params_from_es_core, 0, __pyx_n_s_Dihedral__get_params_from_es_cor, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__153)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 907, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8Dihedral_11_get_params_from_es_core, 0, __pyx_n_s_Dihedral__get_params_from_es_cor, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__159)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 907, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_get_params_from_es_core, __pyx_t_5) < 0) __PYX_ERR(0, 907, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22668,7 +24011,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         dihedral_set_params(
  *             self._bond_id, self._params["mult"], self._params["bend"], self._params["phase"])
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8Dihedral_13_set_params_in_es_core, 0, __pyx_n_s_Dihedral__set_params_in_es_core, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__155)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 913, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_8Dihedral_13_set_params_in_es_core, 0, __pyx_n_s_Dihedral__set_params_in_es_core, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__161)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 913, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_set_params_in_es_core, __pyx_t_5) < 0) __PYX_ERR(0, 913, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22712,7 +24055,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_9Tabulated_1type_number, 0, __pyx_n_s_Tabulated_type_number, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__157)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1040, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_9Tabulated_1type_number, 0, __pyx_n_s_Tabulated_type_number, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__163)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1040, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_type_number, __pyx_t_5) < 0) __PYX_ERR(0, 1040, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22724,7 +24067,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_9Tabulated_3type_name, 0, __pyx_n_s_Tabulated_type_name, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__159)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1043, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_9Tabulated_3type_name, 0, __pyx_n_s_Tabulated_type_name, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__165)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1043, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_type_name, __pyx_t_5) < 0) __PYX_ERR(0, 1043, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22736,7 +24079,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_9Tabulated_5valid_keys, 0, __pyx_n_s_Tabulated_valid_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__161)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1046, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_9Tabulated_5valid_keys, 0, __pyx_n_s_Tabulated_valid_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__167)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1046, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_valid_keys, __pyx_t_5) < 0) __PYX_ERR(0, 1046, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22748,7 +24091,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_9Tabulated_7required_keys, 0, __pyx_n_s_Tabulated_required_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__163)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1049, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_9Tabulated_7required_keys, 0, __pyx_n_s_Tabulated_required_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__169)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1049, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_required_keys, __pyx_t_5) < 0) __PYX_ERR(0, 1049, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22760,7 +24103,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_9Tabulated_9set_default_params, 0, __pyx_n_s_Tabulated_set_default_params, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__165)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1052, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_9Tabulated_9set_default_params, 0, __pyx_n_s_Tabulated_set_default_params, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__171)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1052, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_set_default_params, __pyx_t_5) < 0) __PYX_ERR(0, 1052, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22772,7 +24115,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_9Tabulated_11_get_params_from_es_core, 0, __pyx_n_s_Tabulated__get_params_from_es_co, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__167)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1055, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_9Tabulated_11_get_params_from_es_core, 0, __pyx_n_s_Tabulated__get_params_from_es_co, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__173)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1055, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_get_params_from_es_core, __pyx_t_5) < 0) __PYX_ERR(0, 1055, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22784,7 +24127,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             raise Exception("TABULATED has to be defined in myconfig.hpp.")
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_9Tabulated_13_set_params_in_es_core, 0, __pyx_n_s_Tabulated__set_params_in_es_core, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__169)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1058, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_9Tabulated_13_set_params_in_es_core, 0, __pyx_n_s_Tabulated__set_params_in_es_core, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__175)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1058, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_set_params_in_es_core, __pyx_t_5) < 0) __PYX_ERR(0, 1058, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22828,7 +24171,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             return BONDED_IA_SUBT_LJ
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_7Subt_Lj_1type_number, 0, __pyx_n_s_Subt_Lj_type_number, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__171)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1065, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_7Subt_Lj_1type_number, 0, __pyx_n_s_Subt_Lj_type_number, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__177)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1065, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_type_number, __pyx_t_5) < 0) __PYX_ERR(0, 1065, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22840,7 +24183,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             return "SUBT_LJ"
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_7Subt_Lj_3type_name, 0, __pyx_n_s_Subt_Lj_type_name, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__173)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1068, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_7Subt_Lj_3type_name, 0, __pyx_n_s_Subt_Lj_type_name, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__179)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1068, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_type_name, __pyx_t_5) < 0) __PYX_ERR(0, 1068, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22852,7 +24195,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             return "r", "k"
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_7Subt_Lj_5valid_keys, 0, __pyx_n_s_Subt_Lj_valid_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__175)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1071, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_7Subt_Lj_5valid_keys, 0, __pyx_n_s_Subt_Lj_valid_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__181)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1071, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_valid_keys, __pyx_t_5) < 0) __PYX_ERR(0, 1071, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22864,7 +24207,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             return "r", "k"
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_7Subt_Lj_7required_keys, 0, __pyx_n_s_Subt_Lj_required_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__177)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1074, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_7Subt_Lj_7required_keys, 0, __pyx_n_s_Subt_Lj_required_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__183)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1074, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_required_keys, __pyx_t_5) < 0) __PYX_ERR(0, 1074, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22876,7 +24219,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             self._params = {"k": 0, "r": 0}
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_7Subt_Lj_9set_default_params, 0, __pyx_n_s_Subt_Lj_set_default_params, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__179)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1077, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_7Subt_Lj_9set_default_params, 0, __pyx_n_s_Subt_Lj_set_default_params, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__185)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1077, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_set_default_params, __pyx_t_5) < 0) __PYX_ERR(0, 1077, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22888,7 +24231,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             return \
  *                 {"k": bonded_ia_params[self._bond_id].p.subt_lj.k,
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_7Subt_Lj_11_get_params_from_es_core, 0, __pyx_n_s_Subt_Lj__get_params_from_es_core, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__181)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1080, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_7Subt_Lj_11_get_params_from_es_core, 0, __pyx_n_s_Subt_Lj__get_params_from_es_core, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__187)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1080, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_get_params_from_es_core, __pyx_t_5) < 0) __PYX_ERR(0, 1080, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -22900,7 +24243,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *             subt_lj_set_params(
  *                 self._bond_id, self._params["k"], self._params["r"])
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_7Subt_Lj_13_set_params_in_es_core, 0, __pyx_n_s_Subt_Lj__set_params_in_es_core, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__183)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1085, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_7Subt_Lj_13_set_params_in_es_core, 0, __pyx_n_s_Subt_Lj__set_params_in_es_core, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__189)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1085, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_set_params_in_es_core, __pyx_t_5) < 0) __PYX_ERR(0, 1085, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23202,7 +24545,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return BONDED_IA_OIF_GLOBAL_FORCES
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_17Oif_Global_Forces_1type_number, 0, __pyx_n_s_Oif_Global_Forces_type_number, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__185)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1281, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_17Oif_Global_Forces_1type_number, 0, __pyx_n_s_Oif_Global_Forces_type_number, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__191)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1281, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_type_number, __pyx_t_5) < 0) __PYX_ERR(0, 1281, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23214,7 +24557,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return "OIF_GLOBAL_FORCES"
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_17Oif_Global_Forces_3type_name, 0, __pyx_n_s_Oif_Global_Forces_type_name, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__187)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1284, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_17Oif_Global_Forces_3type_name, 0, __pyx_n_s_Oif_Global_Forces_type_name, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__193)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1284, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_type_name, __pyx_t_5) < 0) __PYX_ERR(0, 1284, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23226,7 +24569,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return "A0_g", "ka_g", "V0", "kv"
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_17Oif_Global_Forces_5valid_keys, 0, __pyx_n_s_Oif_Global_Forces_valid_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__189)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1287, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_17Oif_Global_Forces_5valid_keys, 0, __pyx_n_s_Oif_Global_Forces_valid_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__195)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1287, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_valid_keys, __pyx_t_5) < 0) __PYX_ERR(0, 1287, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23238,7 +24581,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return "A0_g", "ka_g", "V0", "kv"
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_17Oif_Global_Forces_7required_keys, 0, __pyx_n_s_Oif_Global_Forces_required_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__191)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1290, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_17Oif_Global_Forces_7required_keys, 0, __pyx_n_s_Oif_Global_Forces_required_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__197)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1290, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_required_keys, __pyx_t_5) < 0) __PYX_ERR(0, 1290, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23250,7 +24593,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         self._params = {"A0_g": 1., "ka_g": 0., "V0": 1., "kv": 0.}
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_17Oif_Global_Forces_9set_default_params, 0, __pyx_n_s_Oif_Global_Forces_set_default_pa, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__193)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1293, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_17Oif_Global_Forces_9set_default_params, 0, __pyx_n_s_Oif_Global_Forces_set_default_pa, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__199)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_set_default_params, __pyx_t_5) < 0) __PYX_ERR(0, 1293, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23262,7 +24605,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return \
  *             {"A0_g": bonded_ia_params[self._bond_id].p.oif_global_forces.A0_g,
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_17Oif_Global_Forces_11_get_params_from_es_core, 0, __pyx_n_s_Oif_Global_Forces__get_params_fr, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__195)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1296, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_17Oif_Global_Forces_11_get_params_from_es_core, 0, __pyx_n_s_Oif_Global_Forces__get_params_fr, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__201)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1296, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_get_params_from_es_core, __pyx_t_5) < 0) __PYX_ERR(0, 1296, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23274,7 +24617,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         oif_global_forces_set_params(
  *             self._bond_id, self._params["A0_g"], self._params["ka_g"], self._params["V0"], self._params["kv"])
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_17Oif_Global_Forces_13_set_params_in_es_core, 0, __pyx_n_s_Oif_Global_Forces__set_params_in, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__197)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1303, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_17Oif_Global_Forces_13_set_params_in_es_core, 0, __pyx_n_s_Oif_Global_Forces__set_params_in, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__203)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1303, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_set_params_in_es_core, __pyx_t_5) < 0) __PYX_ERR(0, 1303, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23318,7 +24661,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return BONDED_IA_OIF_LOCAL_FORCES
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_16Oif_Local_Forces_1type_number, 0, __pyx_n_s_Oif_Local_Forces_type_number, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__199)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1310, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_16Oif_Local_Forces_1type_number, 0, __pyx_n_s_Oif_Local_Forces_type_number, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__205)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1310, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_type_number, __pyx_t_5) < 0) __PYX_ERR(0, 1310, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23330,7 +24673,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return "OIF_LOCAL_FORCES"
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_16Oif_Local_Forces_3type_name, 0, __pyx_n_s_Oif_Local_Forces_type_name, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__201)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1313, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_16Oif_Local_Forces_3type_name, 0, __pyx_n_s_Oif_Local_Forces_type_name, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__207)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1313, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_type_name, __pyx_t_5) < 0) __PYX_ERR(0, 1313, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23342,7 +24685,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return "r0", "ks", "kslin", "phi0", "kb", "A01", "A02", "kal"
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_16Oif_Local_Forces_5valid_keys, 0, __pyx_n_s_Oif_Local_Forces_valid_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__203)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1316, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_16Oif_Local_Forces_5valid_keys, 0, __pyx_n_s_Oif_Local_Forces_valid_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__209)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1316, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_valid_keys, __pyx_t_5) < 0) __PYX_ERR(0, 1316, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23354,7 +24697,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return "r0", "ks", "kslin", "phi0", "kb", "A01", "A02", "kal"
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_16Oif_Local_Forces_7required_keys, 0, __pyx_n_s_Oif_Local_Forces_required_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__205)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1319, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_16Oif_Local_Forces_7required_keys, 0, __pyx_n_s_Oif_Local_Forces_required_keys, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__211)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1319, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_required_keys, __pyx_t_5) < 0) __PYX_ERR(0, 1319, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23366,7 +24709,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         self._params = {"r0": 1., "ks": 0., "kslin": 0.,
  *                         "phi0": 0., "kb": 0., "A01": 0., "A02": 0., "kal": 0.}
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_16Oif_Local_Forces_9set_default_params, 0, __pyx_n_s_Oif_Local_Forces_set_default_par, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__207)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1322, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_16Oif_Local_Forces_9set_default_params, 0, __pyx_n_s_Oif_Local_Forces_set_default_par, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__213)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1322, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_set_default_params, __pyx_t_5) < 0) __PYX_ERR(0, 1322, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23378,7 +24721,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         return \
  *             {"r0": bonded_ia_params[self._bond_id].p.oif_local_forces.r0,
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_16Oif_Local_Forces_11_get_params_from_es_core, 0, __pyx_n_s_Oif_Local_Forces__get_params_fro, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__209)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1326, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_16Oif_Local_Forces_11_get_params_from_es_core, 0, __pyx_n_s_Oif_Local_Forces__get_params_fro, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__215)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1326, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_get_params_from_es_core, __pyx_t_5) < 0) __PYX_ERR(0, 1326, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23390,7 +24733,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         oif_local_forces_set_params(
  *             self._bond_id, self._params["r0"], self._params["ks"], self._params["kslin"], self._params["phi0"], self._params["kb"], self._params["A01"], self._params["A02"], self._params["kal"])
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_16Oif_Local_Forces_13_set_params_in_es_core, 0, __pyx_n_s_Oif_Local_Forces__set_params_in, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__211)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1337, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_16Oif_Local_Forces_13_set_params_in_es_core, 0, __pyx_n_s_Oif_Local_Forces__set_params_in, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__217)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1337, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_4, __pyx_n_s_set_params_in_es_core, __pyx_t_5) < 0) __PYX_ERR(0, 1337, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23786,7 +25129,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         if not isinstance(key, int):
  *             raise ValueError(
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_18BondedInteractions_1__getitem__, 0, __pyx_n_s_BondedInteractions___getitem, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__213)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1368, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_18BondedInteractions_1__getitem__, 0, __pyx_n_s_BondedInteractions___getitem, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__219)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1368, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_3, __pyx_n_s_getitem, __pyx_t_5) < 0) __PYX_ERR(0, 1368, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23798,7 +25141,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         # Validate arguments
  * 
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_18BondedInteractions_3__setitem__, 0, __pyx_n_s_BondedInteractions___setitem, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__215)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1388, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_18BondedInteractions_3__setitem__, 0, __pyx_n_s_BondedInteractions___setitem, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__221)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1388, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_3, __pyx_n_s_setitem, __pyx_t_5) < 0) __PYX_ERR(0, 1388, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23810,7 +25153,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         for i in range(n_bonded_ia):
  *             if bonded_ia_params[i].type != -1:
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_18BondedInteractions_5__iter__, 0, __pyx_n_s_BondedInteractions___iter, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__217)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1408, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_18BondedInteractions_5__iter__, 0, __pyx_n_s_BondedInteractions___iter, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__223)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1408, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_3, __pyx_n_s_iter, __pyx_t_5) < 0) __PYX_ERR(0, 1408, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23822,7 +25165,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         """Add a bonded ia to the simulation>"""
  *         self[n_bonded_ia] = bonded_ia
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_18BondedInteractions_8add, 0, __pyx_n_s_BondedInteractions_add, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__219)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1413, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_18BondedInteractions_8add, 0, __pyx_n_s_BondedInteractions_add, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__225)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1413, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_3, __pyx_n_s_add, __pyx_t_5) < 0) __PYX_ERR(0, 1413, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23834,7 +25177,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         params = {}
  *         for i,bonded_instance in enumerate(self):
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_18BondedInteractions_10__getstate__, 0, __pyx_n_s_BondedInteractions___getstate, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__221)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1417, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_18BondedInteractions_10__getstate__, 0, __pyx_n_s_BondedInteractions___getstate, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__227)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1417, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_3, __pyx_n_s_getstate, __pyx_t_5) < 0) __PYX_ERR(0, 1417, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -23846,7 +25189,7 @@ PyMODINIT_FUNC PyInit_interactions(void)
  *         for i in params:
  *             if params[i] != None:
  */
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_18BondedInteractions_12__setstate__, 0, __pyx_n_s_BondedInteractions___setstate, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__223)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1427, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10espressomd_12interactions_18BondedInteractions_12__setstate__, 0, __pyx_n_s_BondedInteractions___setstate, NULL, __pyx_n_s_espressomd_interactions, __pyx_d, ((PyObject *)__pyx_codeobj__229)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1427, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (PyObject_SetItem(__pyx_t_3, __pyx_n_s_setstate, __pyx_t_5) < 0) __PYX_ERR(0, 1427, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
