@@ -327,14 +327,15 @@ inline void add_bonded_virials(Particle *p1)
     }
 
     get_mi_vector(dx, p1->r.p, p2->r.p);
+    //TODO insert LE stuff here
+    printf("\ndx=[%f, %f, %f]\n", dx[0], dx[1], dx[2]); //TODO delete
     calc_bonded_force(p1,p2,iaparams,&i,dx,force);
     *obsstat_bonded(&virials, type_num) += dx[0]*force[0] + dx[1]*force[1] + dx[2]*force[2];
 
  /* stress tensor part */
     for(k=0;k<3;k++)
       for(l=0;l<3;l++)
-	obsstat_bonded(&p_tensor, type_num)[k*3 + l] += force[k]*dx[l];
-
+	      obsstat_bonded(&p_tensor, type_num)[k*3 + l] += force[k]*dx[l];
   }
 }
 

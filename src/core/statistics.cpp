@@ -1477,6 +1477,7 @@ void invalidate_obs()
 {
   total_energy.init_status = 0;
   total_pressure.init_status = 0;
+  total_p_tensor.init_status = 0;
 }
 
 
