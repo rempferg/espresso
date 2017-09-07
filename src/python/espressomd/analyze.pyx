@@ -427,16 +427,15 @@ class Analysis(object):
         cdef int i
         tmp = np.zeros(9)
         for i in range(9):
-            value = c_analyze.total_p_tensor.data.e[i]
             for k in range(c_analyze.total_p_tensor.data.n // 9):
-                value += c_analyze.total_p_tensor.data.e[9*k + i]
-            tmp[i]=value
+                tmp[i] += c_analyze.total_p_tensor.data.e[9*k + i]
 
         p["total"] = tmp.reshape((3,3))
 
         # Ideal
         p["ideal"] = create_nparray_from_double_array(
             c_analyze.total_p_tensor.data.e, 9)
+        p["ideal"] = p["ideal"].reshape((3,3))
 
         # Bonded
         total_bonded = np.zeros((3, 3))
