@@ -3,15 +3,11 @@ Electrokinetics
 
 The electrokinetics setup in allows for the description of
 electro-hydrodynamic systems on the level of ion density distributions
-coupled to a Lattice-Boltzmann (LB) fluid. The ion density distributions
+coupled to a :ref:`Lattice-Boltzmann (LB) <Lattice-Boltzmann>` fluid. The ion density distributions
 may also interact with explicit charged particles, which are
 interpolated on the LB grid. In the following paragraph we briefly
-explain the electrokinetic model implemented in , before we come to the
+explain the electrokinetic model implemented in |es|, before we come to the
 description of the interface.
-
-If you are interested in using the electrokinetic implementation in for
-scientific purposes, please contact G. Rempfer before you start your
-project.
 
 Electrokinetic Equations
 ------------------------
@@ -22,28 +18,28 @@ continuity, diffusion-advection, Poisson, and Navier-Stokes equations:
 .. math::
 
    \begin{aligned}
-   \label{eq:ek-model-continuity} \frac{\partial n_k}{\partial t} & = & -\, \nabla \cdot \vec{j}_k \vphantom{\left(\frac{\partial}{\partial}\right)} ; \\
-   \label{eq:ek-model-fluxes} \vec{j}_{k} & = & -D_k \nabla n_k - \nu_k \, q_k n_k\, \nabla \Phi + n_k \vec{v}_{\mathrm{fl}} \vphantom{\left(\frac{\partial}{\partial}\right)} ; \\
-   \label{eq:ek-model-poisson} \Delta \Phi & = & -4 \pi \, {l_\mathrm{B}}\, {k_\mathrm{B}T}\sum_k q_k n_k \vphantom{\left(\frac{\partial}{\partial}\right)}; \\
-   \nonumber \left(\frac{\partial \vec{v}_{\mathrm{fl}}}{\partial t} + \vec{v}_{\mathrm{fl}} \cdot \vec{\nabla} \vec{v}_{\mathrm{fl}} \right) \rho_\mathrm{fl} & = & -{k_\mathrm{B}T}\, \nabla \rho_\mathrm{fl} - q_k n_k \nabla \Phi \\
-   \label{eq:ek-model-velocity} & & +\, \eta \vec{\Delta} \vec{v}_{\mathrm{fl}} + (\eta / 3 + \eta_{\text{\,b}}) \nabla (\nabla \cdot \vec{v}_{\mathrm{fl}}) \vphantom{\left(\frac{\partial}{\partial}\right)} ; \\
-   \label{eq:ek-model-continuity-fl} \frac{\partial \rho_\mathrm{fl}}{\partial t} & = & -\,\nabla\cdot\left( \rho_\mathrm{fl} \vec{v}_{\mathrm{fl}} \right) \vphantom{\left(\frac{\partial}{\partial}\right)} , \end{aligned}
+   \partial_t n_k &= -\nabla \cdot \vec j_k ; \\
+   \vec j_k &= -D_k \nabla n_k - \nu_k z_k e \, n_k \nabla \Phi + n_k \vec u ; \\
+   \nabla^2 \Phi &= -4 \pi l_B k_B T / e^2 \textstyle \sum_k z_k e \, n_k ; \\
+   \big( \partial_t \vec u + (\vec u \cdot \nabla) \vec u \big) \rho &= -k_B T \nabla \rho + \eta \nabla^2 \vec u + (\eta / 3 + \eta_\text{b}) \nabla (\nabla \cdot \vec u) - \textstyle\sum_k \big( k_B T \nabla n_k + z_k e n_k \nabla \Phi \big) ; \\
+   \partial_t \rho &= -\nabla \cdot \left( \rho \vec u \right) ,
+   \end{aligned}
 
 which define relations between the following observables
 
 :math:`n_k`
     the number density of the particles of species :math:`k`,
 
-:math:`\vec{j}_k`
+:math:`\vec j_k`
     the number density flux of the particles of species :math:`k`,
 
 :math:`\Phi`
     the electrostatic potential,
 
-:math:`\rho_{\mathrm{fl}}`
+:math:`\rho`
     the mass density of the fluid,
 
-:math:`\vec{v}_{\mathrm{fl}}`
+:math:`\vec u`
     the advective velocity of the fluid,
 
 and input parameters
@@ -54,27 +50,27 @@ and input parameters
 :math:`\nu_k`
     the mobility of species :math:`k`,
 
-:math:`q_k`
-    the charge of a single particle of species :math:`k`,
+:math:`z_k`
+    the valency of particles of species :math:`k`,
 
-:math:`{l_\mathrm{B}}`
+:math:`l_B`
     the Bjerrum length,
 
-:math:`{k_\mathrm{B}T}`
+:math:`k_B T`
     | the thermal energy given by the product of Boltzmann’s constant
-      :math:`k_\text{B}`
+      :math:`k_B`
     | and the temperature :math:`T`,
 
 :math:`\eta`
     the dynamic viscosity of the fluid,
 
-:math:`\eta_{\text{\,b}}`
+:math:`\eta_\text{b}`
     the bulk viscosity of the fluid.
 
 The temperature :math:`T`, and diffusion constants :math:`D_k` and
 mobilities :math:`\nu_k` of individual species are linked through the
 Einstein-Smoluchowski relation :math:`D_k /
-\nu_k = {k_\mathrm{B}T}`. The system of equations described in Eqs. -,
+\nu_k = k_B T`. :math:`e` denotes the elementary charge. This system of equations,
 combining diffusion-advection, electrostatics, and hydrodynamics is
 conventionally referred to as the *Electrokinetic Equations*.
 
@@ -97,7 +93,7 @@ The electrokinetic equations have the following properties:
    This restricts the application of the model to monovalent ions and
    moderate charge densities. At higher valencies or densities,
    overcharging and layering effects can occur, which lead to
-   non-monotonic charge densities and potentials, that can not be
+   non-monotonic charge densities and potentials that can not be
    covered by a mean-field model such as Poisson-Boltzmann or this one.
 
    Even in salt free systems containing only counter ions, the
@@ -123,14 +119,48 @@ The electrokinetic equations have the following properties:
 -  The density fluxes instantaneously relax to their local equilibrium
    values. Obviously one can not extract information about processes on
    length and time scales not covered by the model, such as dielectric
-   spectra at frequencies, high enough that they correspond to times
+   spectra at frequencies high enough that they correspond to times
    faster than the diffusive time scales of the charged species.
 
 Setup
 -----
 
-[ssec:ek-init]Initialization
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Initialization
+~~~~~~~~~~~~~~
+
+.. note:: Requires a NVIDIA CUDA capable GPU
+
+The following minimal example illustrates how to use the EK solver in |es|::
+
+    from espressomd import System, electrokinetics, shapes
+    sys = System()
+    sys.box_l = [10, 20, 30]
+    sys.time_step = 0.01
+    sys.cell_system.skin = 0.4
+
+    ek = electrokinetics.Electrokinetics(agrid=agrid, lb_density=density_water,
+                                         viscosity=viscosity_kinematic, friction=1.0,
+                                         T=kT, bjerrum_length=bjerrum_length)
+
+    counterions = electrokinetics.Species(density=density_counterions,
+                                          D=D, valency=valency,
+                                          ext_force=[ext_force,0,0])
+
+    ek.add_species(counterions)
+
+    bc_left = electrokinetics.EKBoundary(charge_density=sigma/agrid,
+                                               shape=shapes.Wall(normal=[0,0,1],
+                                               dist=padding))
+    bc_right = electrokinetics.EKBoundary(charge_density=sigma/agrid,
+                                                shape=shapes.Wall(normal=[0,0,-1],
+                                                dist=-(padding+width)))
+
+    system.ekboundaries.add(bc_left)
+    system.ekboundaries.add(bc_right)
+
+    system.actors.add(ek)
+
+    sys.integrator.run(100)
 
 The command initializes the LB fluid with a given set of parameters, and
 it is very similar to the Lattice-Boltzmann command in set-up. We
@@ -182,8 +212,8 @@ boundaries and MD particles, not between MD particles and MD particles.
 To get complete electrostatic interactions a particles Coulomb method
 like Ewald or P3M has to be activate too.
 
-[ssec:ek-diff-species]Diffusive Species
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Diffusive Species
+~~~~~~~~~~~~~~~~~
 
 The command followed by an integer (in the range 0 to 10) and several
 options can be used to initialize the diffusive species. Here the
@@ -199,8 +229,8 @@ before the diffusive species can be initialized. The variables , , and
 must be set to properly initialize the diffusive species; the is
 optional.
 
-[ssec:ek-boundaries]Boundaries
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Boundaries
+~~~~~~~~~~
 
 The command allows one to set up (internal or external) boundaries for
 the electrokinetics algorithm in much the same way as the command is
@@ -216,11 +246,11 @@ spherocylinder. We refer to the documentation of the command
 shapes. In order to properly set up the boundaries, the and relevant
 must be specified.
 
-[ssec:ek-output]Output
-----------------------
+Output
+------
 
-[ssec:ek-output-fields]Fields
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fields
+~~~~~~
 
 print
 
@@ -241,8 +271,8 @@ This print statement is similar to the above command. It enables the
 export of diffusive species properties, namely: and , which specify the
 number density and flux of species , respectively.
 
-[ssec:ek-local-quantities]Local Quantities
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Local Quantities
+~~~~~~~~~~~~~~~~
 
 node velocity
 
@@ -257,8 +287,8 @@ node density
 This command can be used to output the number density of the -th
 diffusive species on a single LB node.
 
-[ssec:ek-checkpointing]Checkpointing
-------------------------------------
+Checkpointing
+-------------
 
 checkpoint save checkpoint load
 
@@ -377,8 +407,8 @@ opposed to the other terms in the equation system Eqs. -, in our
 implementation, as will become clear in the following. This has the
 advantage that catalytic surfaces may be modeled.
 
-[ssec:ek-reac-init]Initialization and Geometry Definition
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Initialization and Geometry Definition
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The command is used to set up the catalytic reaction between three
 previously defined the diffusive species, of which the i identifiers are
@@ -414,8 +444,8 @@ the command, one must first set up a reaction, as described above. To
 successfully specify a region all the relevant arguments that go with
 the shape constraints must be provided.
 
-[sssec:ek-pdb-parse]Parsing PDB Files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Parsing PDB Files
+^^^^^^^^^^^^^^^^^
 
 The feature allows the user to parse simple PDB files, a file format
 introduced by the protein database to encode molecular structures.
